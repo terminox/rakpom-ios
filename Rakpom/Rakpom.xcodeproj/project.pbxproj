@@ -35,7 +35,6 @@
 		0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */; };
 		0FB4E65F2C0F119300E6926D /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65E2C0F119300E6926D /* ProfileSettingsView.swift */; };
 		0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6602C16F6E600E6926D /* GenderSelectionView.swift */; };
-		0FB4E6632C1739B600E6926D /* CustomerMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6622C1739B600E6926D /* CustomerMainTabView.swift */; };
 		0FB4E6672C175EEE00E6926D /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6662C175EEE00E6926D /* AboutUsView.swift */; };
 		0FB4E6692C1770F600E6926D /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */; };
 		0FB4E66B2C17719800E6926D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66A2C17719800E6926D /* TermsView.swift */; };
@@ -61,6 +60,8 @@
 		0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */; };
 		0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */; };
 		0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */; };
+		0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */; };
+		0FF351DE2C73B80B002EE1E7 /* CustomerMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DD2C73B80B002EE1E7 /* CustomerMainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +95,6 @@
 		0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingNumberView.swift; sourceTree = "<group>"; };
 		0FB4E65E2C0F119300E6926D /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
 		0FB4E6602C16F6E600E6926D /* GenderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionView.swift; sourceTree = "<group>"; };
-		0FB4E6622C1739B600E6926D /* CustomerMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainTabView.swift; sourceTree = "<group>"; };
 		0FB4E6662C175EEE00E6926D /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		0FB4E66A2C17719800E6926D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
@@ -120,6 +120,8 @@
 		0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNewsView.swift; sourceTree = "<group>"; };
 		0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSettingsView.swift; sourceTree = "<group>"; };
 		0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainView.swift; sourceTree = "<group>"; };
+		0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		0FF351DD2C73B80B002EE1E7 /* CustomerMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +157,8 @@
 				0F37DD502C04F09F009BB03D /* Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */,
-				0FB4E6622C1739B600E6926D /* CustomerMainTabView.swift */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
+				0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */,
 				0FF351D72C4902FA002EE1E7 /* Components */,
 				0FB4E66C2C183E5400E6926D /* Registration */,
 				0FB4E6552C0B985600E6926D /* Customer */,
@@ -403,6 +405,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				0FF351DD2C73B80B002EE1E7 /* CustomerMainTabView.swift */,
+				0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */,
+			);
+			path = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,7 +487,6 @@
 			files = (
 				0FB4E6702C1843C400E6926D /* RegistereSelectionView.swift in Sources */,
 				0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */,
-				0FB4E6632C1739B600E6926D /* CustomerMainTabView.swift in Sources */,
 				0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */,
 				0F37DD572C05D9F1009BB03D /* OptionButton.swift in Sources */,
 				0F37DD462C046D88009BB03D /* ReviewView.swift in Sources */,
@@ -490,9 +500,11 @@
 				0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */,
 				0F37DD4C2C048522009BB03D /* NotificationView.swift in Sources */,
 				0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */,
+				0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */,
 				0FB4E65F2C0F119300E6926D /* ProfileSettingsView.swift in Sources */,
 				0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */,
 				0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */,
+				0FF351DE2C73B80B002EE1E7 /* CustomerMainTabView.swift in Sources */,
 				0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */,
 				0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */,
 				0FF351B32C2C020E002EE1E7 /* RatingView.swift in Sources */,

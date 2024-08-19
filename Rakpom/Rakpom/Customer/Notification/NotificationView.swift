@@ -97,7 +97,6 @@ struct NotificationView: View {
         }
       }
     }
-    .padding(.bottom, 100)
     .background(.lightGray)
     .ignoresSafeArea()
   }
