@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct RakpomApp: App {
-  
-  
   var body: some Scene {
     WindowGroup {
       CustomerMainView()

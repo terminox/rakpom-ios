@@ -71,6 +71,7 @@ struct CustomTabBar: View {
         }
       }
     }
+    .background(.white)
   }
 }
 

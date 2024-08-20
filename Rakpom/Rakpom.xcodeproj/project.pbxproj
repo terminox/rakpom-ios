@@ -162,9 +162,9 @@
 			children = (
 				0F37DD502C04F09F009BB03D /* Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
+				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
 				0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */,
 				0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */,
-				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
 				0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */,
 				0FF351D72C4902FA002EE1E7 /* Components */,
 				0FB4E66C2C183E5400E6926D /* Registration */,
