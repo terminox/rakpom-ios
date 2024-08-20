@@ -56,7 +56,7 @@ struct ReservationView: View {
                   Image(systemName: "star.fill")
                     .font(.callout)
                     .fontDesign(.rounded)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.lightGray)
                 }
                 
                 Text("(\(detail.reviewCount))")
