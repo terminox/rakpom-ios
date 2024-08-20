@@ -9,7 +9,7 @@ import SwiftUI
 
 enum Tabs: Int {
   case prize = 0
-  case q = 1
+  case reservation = 1
   case point = 2
   case noti = 3
   case payment = 4
@@ -32,9 +32,9 @@ struct CustomTabBar: View {
       }
       
       Button {
-        selectedTab = .q
+        selectedTab = .reservation
       } label: {
-        if selectedTab == .q {
+        if selectedTab == .reservation {
           TabBarButtonSelected(imageName: "Q.fill", title: "จองคิว")
         } else {
           TabBarButton(imageName: "Q", title: "จองคิว")

@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct RakpomApp: App {
+  
+  init() {
+    UITabBar.appearance().isHidden = true
+  }
+  
   var body: some Scene {
     WindowGroup {
       CustomerMainView()
