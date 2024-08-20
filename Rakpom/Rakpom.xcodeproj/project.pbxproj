@@ -62,6 +62,9 @@
 		0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */; };
 		0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */; };
 		0FF351DE2C73B80B002EE1E7 /* CustomerMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DD2C73B80B002EE1E7 /* CustomerMainTabView.swift */; };
+		0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */; };
+		0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */; };
+		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,9 @@
 		0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainView.swift; sourceTree = "<group>"; };
 		0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		0FF351DD2C73B80B002EE1E7 /* CustomerMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainTabView.swift; sourceTree = "<group>"; };
+		0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomTabBar.swift; sourceTree = "<group>"; };
+		0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainTabView.swift; sourceTree = "<group>"; };
+		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 				0F37DD502C04F09F009BB03D /* Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */,
+				0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
 				0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */,
 				0FF351D72C4902FA002EE1E7 /* Components */,
@@ -410,6 +417,8 @@
 			children = (
 				0FF351DD2C73B80B002EE1E7 /* CustomerMainTabView.swift */,
 				0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */,
+				0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */,
+				0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */,
 			);
 			path = "Custom Tab Bar";
 			sourceTree = "<group>";
@@ -498,11 +507,13 @@
 				0F0FB36C2BF75558004BD500 /* HistoryView.swift in Sources */,
 				0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */,
 				0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */,
+				0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */,
 				0F37DD4C2C048522009BB03D /* NotificationView.swift in Sources */,
 				0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */,
 				0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */,
 				0FB4E65F2C0F119300E6926D /* ProfileSettingsView.swift in Sources */,
 				0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */,
+				0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */,
 				0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */,
 				0FF351DE2C73B80B002EE1E7 /* CustomerMainTabView.swift in Sources */,
 				0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */,
@@ -523,6 +534,7 @@
 				0F37DD602C05DEED009BB03D /* BackHeaderView.swift in Sources */,
 				0FB4E6742C19993A00E6926D /* RakpomSignUpView.swift in Sources */,
 				0F37DD5E2C05DE90009BB03D /* ScanConfirmView.swift in Sources */,
+				0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */,
 				0F37DD532C050D29009BB03D /* PaymentSelectionView.swift in Sources */,
 				0F37DD6F2C09BF9B009BB03D /* YourPointView.swift in Sources */,
 				0FEECF042C22E50600CA182B /* BarberHeaderView.swift in Sources */,

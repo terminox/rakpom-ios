@@ -104,7 +104,6 @@ struct BarberReviewView: View {
         }
       }
     }
-    .padding(.bottom, 100)
     .background(.white)
     .ignoresSafeArea()
   }

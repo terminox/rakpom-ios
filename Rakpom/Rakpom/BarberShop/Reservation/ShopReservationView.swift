@@ -92,7 +92,6 @@ struct ShopReservationView: View {
         }
       }
     }
-    .padding(.bottom, 100)
     .background(.lightGray)
     .ignoresSafeArea()
   }

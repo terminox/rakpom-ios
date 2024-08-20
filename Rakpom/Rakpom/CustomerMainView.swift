@@ -14,20 +14,6 @@ struct CustomerMainView: View {
     NavigationStack(path: $stackPath) {
       CustomerMainTabView()
         .navigationDestination(for: AnyHashable.self) { destination in
-
-//          if destination.base as? RecentBookingItem != nil {
-//            ReservationView()
-//          }
-          
-//          if let booking = destination.base as? RecentBookingItem {
-//            ReservationView(id: booking.id)
-//          } else if let booking = destination.base as? BookingItem {
-//            ReservationView(id: booking.id)
-//          } else if let confirmation = destination.base as? ConfirmationItem {
-//            ConfirmReservationView()
-//          } else if let review = destination.base as? ReviewItem {
-//            ReviewView()
-//          }
           
           switch destination.base {
             // HOME
