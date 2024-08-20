@@ -30,37 +30,36 @@ struct DetailConfirmation: View {
 struct ConfirmReservationView: View {
   
   let confirm: ConfirmationLayoutItem
+  @Binding var stackPath: [AnyHashable]
   
   var body: some View {
     GeometryReader { geo in
-      VStack {
-        // HEADER
-        CustomerHeaderView(id: "qwerty")
+      VStack(spacing: 16) {
+        Spacer()
         
-        VStack(spacing: 16) {
-          Image(systemName: "checkmark.circle")
-            .resizable()
-            .frame(width: 85, height: 85)
-            .foregroundColor(Color("BlueButton"))
-            .padding(.top, 80)
-          
-          Text("จองคิวสำเร็จ")
-            .font(.custom("Noto Sans Thai", size: 20))
-            .fontWeight(.bold)
-            .foregroundStyle(.black)
-            .padding(.bottom)
-          
-          DetailConfirmation(confirm: confirm)
-            .font(.custom("Noto Sans Thai", size: 18))
-          
-          Button {
-            // Back to Main Screen
-          } label: {
-            AppButton(title: "กลับสู่หน้าหลัก")
-          }
-          .padding(.horizontal, 36)
+        Image(systemName: "checkmark.circle")
+          .resizable()
+          .frame(width: 85, height: 85)
+          .foregroundColor(Color("BlueButton"))
+        
+        Text("จองคิวสำเร็จ")
+          .font(.custom("Noto Sans Thai", size: 20))
+          .fontWeight(.bold)
+          .foregroundStyle(.black)
+          .padding(.bottom)
+        
+        DetailConfirmation(confirm: confirm)
+          .font(.custom("Noto Sans Thai", size: 18))
+        
+        Button {
+          // Back to Main Screen
+          stackPath = []
+        } label: {
+          AppButton(title: "กลับสู่หน้าหลัก")
         }
+        .padding(.horizontal, 36)
         
+        Spacer()
       }
     }
     .background(.white)

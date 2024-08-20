@@ -14,7 +14,6 @@ struct CustomerMainView: View {
     NavigationStack(path: $stackPath) {
       CustomerMainTabView()
         .navigationDestination(for: AnyHashable.self) { destination in
-          
           switch destination.base {
             // HOME
           case let b as HomeScreen:
@@ -35,7 +34,7 @@ struct CustomerMainView: View {
             ReservationView(id: x.id)
               .navigationBarBackButtonHidden(true)
           case let item as ConfirmationLayoutItem:
-            ConfirmReservationView(confirm: item)
+            ConfirmReservationView(confirm: item, stackPath: $stackPath)
               .navigationBarBackButtonHidden(true)
           case let item as BookingReviewsNavItem:
             ReviewView(id: item.bookingID)
