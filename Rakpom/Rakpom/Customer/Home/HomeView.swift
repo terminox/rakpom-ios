@@ -14,11 +14,22 @@ struct SettingsScreen: Hashable {
 struct HomeView: View {
   let id: String
   
+  @Environment(\.dismiss) var dismiss
+  
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
         HStack {
           HStack {
+            Button {
+              dismiss()
+            } label: {
+              Image(systemName: "arrow.left")
+                .resizable()
+                .frame(width: 24, height: 20)
+                .foregroundColor(.black)
+            }
+
             Image("User")
               .resizable()
               .frame(width: 53, height: 53)
@@ -59,6 +70,8 @@ struct HomeView: View {
         .padding(.top, 40)
         .frame(maxWidth: .infinity)
         .frame(height: 133)
+        
+        Spacer()
         
         Image("Home10free1")
           .resizable()

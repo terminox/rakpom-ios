@@ -33,7 +33,7 @@ struct ReservationView: View {
         BackHeaderView(title: "จองคิว", id: "qwerty")
         
         ScrollView(showsIndicators: false) {
-          Image("Barber5")
+          Image("Barber3")
             .resizable()
             .frame(width: geo.size.width, height: geo.size.height * 0.3)
           
@@ -56,7 +56,7 @@ struct ReservationView: View {
                   Image(systemName: "star.fill")
                     .font(.callout)
                     .fontDesign(.rounded)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.lightGray)
                 }
                 
                 Text("(\(detail.reviewCount))")

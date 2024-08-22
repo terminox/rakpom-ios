@@ -14,7 +14,6 @@ struct CustomerMainView: View {
     NavigationStack(path: $stackPath) {
       CustomerMainTabView()
         .navigationDestination(for: AnyHashable.self) { destination in
-          
           switch destination.base {
             // HOME
           case let b as HomeScreen:
@@ -23,7 +22,7 @@ struct CustomerMainView: View {
           case let c as SettingsScreen:
             SettingsView(id: c.id)
               .navigationBarBackButtonHidden(true)
-          case let d as PointScreen:
+          case _ as PointScreen:
             YourPointView()
               .navigationBarBackButtonHidden(true)
             
@@ -35,18 +34,18 @@ struct CustomerMainView: View {
             ReservationView(id: x.id)
               .navigationBarBackButtonHidden(true)
           case let item as ConfirmationLayoutItem:
-            ConfirmReservationView(confirm: item)
+            ConfirmReservationView(confirm: item, stackPath: $stackPath)
               .navigationBarBackButtonHidden(true)
           case let item as BookingReviewsNavItem:
             ReviewView(id: item.bookingID)
               .navigationBarBackButtonHidden(true)
           
             // PAYMENT
-          case let a as PaymentMethod:
-            if a.type == "Scan" {
+          case let paymentMethod as PaymentMethod:
+            if paymentMethod.type == "Scan" {
               ScanConfirmView(type: "Scan")
                 .navigationBarBackButtonHidden(true)
-            } else if a.type == "Cash" {
+            } else if paymentMethod.type == "Cash" {
               CashConfirmView(type: "Cash")
                 .navigationBarBackButtonHidden(true)
             } else {
