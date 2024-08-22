@@ -46,7 +46,7 @@
 		0FB4E67A2C1C40CD00E6926D /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6792C1C40CD00E6926D /* OTPView.swift */; };
 		0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67C2C1C434B00E6926D /* CompletedView.swift */; };
 		0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */; };
-		0FEECF022C22E42A00CA182B /* TransectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF012C22E42A00CA182B /* TransectionView.swift */; };
+		0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF012C22E42A00CA182B /* TransactionView.swift */; };
 		0FEECF042C22E50600CA182B /* BarberHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF032C22E50600CA182B /* BarberHeaderView.swift */; };
 		0FEECF062C22E75100CA182B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF052C22E75100CA182B /* TitleView.swift */; };
 		0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF072C2362E800CA182B /* TransferDetailView.swift */; };
@@ -109,7 +109,7 @@
 		0FB4E6792C1C40CD00E6926D /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		0FB4E67C2C1C434B00E6926D /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHomeView.swift; sourceTree = "<group>"; };
-		0FEECF012C22E42A00CA182B /* TransectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransectionView.swift; sourceTree = "<group>"; };
+		0FEECF012C22E42A00CA182B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		0FEECF032C22E50600CA182B /* BarberHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHeaderView.swift; sourceTree = "<group>"; };
 		0FEECF052C22E75100CA182B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0FEECF072C2362E800CA182B /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			children = (
 				0FB4E6782C1C40B100E6926D /* Register */,
 				0FB4E67E2C1C46DA00E6926D /* Home */,
-				0FEECF002C22E2B100CA182B /* Transection */,
+				0FEECF002C22E2B100CA182B /* Transaction */,
 				0FF351A62C241504002EE1E7 /* Reservation */,
 				0FF351A92C2432DA002EE1E7 /* Notification */,
 				0FF351AC2C297406002EE1E7 /* Account */,
@@ -347,14 +347,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		0FEECF002C22E2B100CA182B /* Transection */ = {
+		0FEECF002C22E2B100CA182B /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				0FEECF012C22E42A00CA182B /* TransectionView.swift */,
+				0FEECF012C22E42A00CA182B /* TransactionView.swift */,
 				0FEECF072C2362E800CA182B /* TransferDetailView.swift */,
 				0FF351A42C241168002EE1E7 /* CashDetailView.swift */,
 			);
-			path = Transection;
+			path = Transaction;
 			sourceTree = "<group>";
 		};
 		0FF351A62C241504002EE1E7 /* Reservation */ = {
@@ -547,7 +547,7 @@
 				0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */,
 				0F37DD592C05DB31009BB03D /* AppButton.swift in Sources */,
 				0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */,
-				0FEECF022C22E42A00CA182B /* TransectionView.swift in Sources */,
+				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
 				0FEECF062C22E75100CA182B /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

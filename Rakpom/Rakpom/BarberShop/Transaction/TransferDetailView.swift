@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TransferDetailView: View {
+
   var body: some View {
     GeometryReader { geo in
       VStack {

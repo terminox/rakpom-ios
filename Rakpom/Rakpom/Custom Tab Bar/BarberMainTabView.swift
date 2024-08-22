@@ -15,7 +15,8 @@ struct BarberMainTabView: View {
     VStack(spacing: 0) {
       TabView(selection: $selectedTab) {
         Group {
-          TransectionView()
+//          TransectionView(transitionType: "Scan")
+          TransactionView()
             .tabItem {
               VStack(spacing: 4) {
                 selectedTab == .trans ? Image("Gift.fill") : Image("Gift")

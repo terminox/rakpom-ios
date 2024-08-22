@@ -17,8 +17,14 @@ struct BarberMainView: View {
         .navigationDestination(for: AnyHashable.self) { destination in
           
           switch destination.base {
-
-          
+          case let transactionType as TransactionDetail:
+            if transactionType.type == "Scan" {
+              TransferDetailView()
+                .navigationBarBackButtonHidden(true)
+            } else {
+              CashDetailView()
+                .navigationBarBackButtonHidden(true)
+            }
           default:
             EmptyView()
           }

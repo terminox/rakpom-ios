@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CashDetailView: View {
+  
   var body: some View {
     GeometryReader { geo in
       VStack {
@@ -47,7 +48,7 @@ struct CashDetailView: View {
           
           HStack {
             Text("ชำระด้วย   ")
-            Text("การโอน")
+            Text("เงินสด")
           }
           .font(.custom("Noto Sans Thai", size: 12))
           .foregroundStyle(.black)
