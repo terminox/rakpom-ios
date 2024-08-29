@@ -11,7 +11,7 @@ struct BarberReviewView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        BarberHeaderView()
+        BarberHeaderView(id: "asdf")
         
         TitleView(title: "รีวิวร้าน", color: .lightGray)
         

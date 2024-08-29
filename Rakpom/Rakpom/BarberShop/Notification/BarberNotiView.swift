@@ -11,7 +11,7 @@ struct BarberNotiView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        BarberHeaderView()
+        BarberHeaderView(id: "asdf")
         
         Image("MobilePayment")
           .padding(.top, 48)

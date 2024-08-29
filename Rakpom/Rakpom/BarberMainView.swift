@@ -25,6 +25,20 @@ struct BarberMainView: View {
               CashDetailView()
                 .navigationBarBackButtonHidden(true)
             }
+            
+          case _ as WithdrawHistory:
+            WithdrawListView()
+              .navigationBarBackButtonHidden(true)
+            
+          case let item as BarberHomeScreen:
+            BarberHomeView(id: item.id)
+              .navigationBarBackButtonHidden(true)
+          case _ as News:
+            ImportantNewsView()
+              .navigationBarBackButtonHidden(true)
+          case _ as ProfileSettings:
+            ShopSettingsView()
+              .navigationBarBackButtonHidden(true)
           default:
             EmptyView()
           }

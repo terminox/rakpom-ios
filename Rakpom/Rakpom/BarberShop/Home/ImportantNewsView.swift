@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ImportantNewsView: View {
+  @Environment(\.dismiss) var dismiss
+  
   var body: some View {
     GeometryReader { geo in
       VStack(alignment: .leading, spacing: 0) {
         HStack {
           HStack {
             Button {
-              // Back
+              dismiss()
             } label: {
               Image(systemName: "arrow.left")
                 .resizable()

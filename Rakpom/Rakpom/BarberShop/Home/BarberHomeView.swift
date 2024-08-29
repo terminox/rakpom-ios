@@ -7,29 +7,47 @@
 
 import SwiftUI
 
+struct News: Hashable {
+  let id: String
+}
+
+struct ProfileSettings: Hashable {
+  let id: String
+}
+
 struct BarberHomeView: View {
-  private let imageNames: [String] = ["Barber1", "Barber2", "Barber3", "Barber4"]
+  @Environment(\.dismiss) var dismiss
   
-  private var data: [String] = ["Barber1", "Barber2", "Barber3", "Barber4"]
-  private let adaptiveColumn = [
-    GridItem(.adaptive(minimum: 150))
-  ]
+  let imageNames: [String] = ["Barber1", "Barber2", "Barber3", "Barber4"]
+  
+  var data: [String] = ["Barber1", "Barber2", "Barber3", "Barber4"]
+  let adaptiveColumn = [GridItem(.adaptive(minimum: 150))]
+  
+  let id: String
   
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
         HStack {
           HStack {
+            Button {
+              dismiss()
+            } label: {
+              Image(systemName: "arrow.left")
+                .resizable()
+                .frame(width: 24, height: 20)
+                .foregroundColor(.black)
+            }
+            
             Text("ร้านค้าของฉัน")
               .font(.custom("Noto Sans Thai", size: 20))
               .foregroundStyle(.black)
+              .padding(4)
           }
           
           Spacer()
           
-          Button {
-            // Navigate to Settings
-          } label : {
+          NavigationLink(value: AnyHashable(ProfileSettings(id: id))) {
             Image(systemName: "gearshape")
               .resizable()
               .frame(width: 28, height: 28)
@@ -65,10 +83,12 @@ struct BarberHomeView: View {
           
           Spacer()
           
-          Image(systemName: "chevron.right")
-            .resizable()
-            .frame(width: 10, height: 17)
-            .foregroundColor(.darkGray)
+          NavigationLink(value: AnyHashable(News(id: id))) {
+            Image(systemName: "chevron.right")
+              .resizable()
+              .frame(width: 10, height: 17)
+              .foregroundColor(.darkGray)
+          }
         }
         .padding()
         .background(.blueBG)
@@ -141,5 +161,5 @@ struct BarberHomeView: View {
 }
 
 #Preview {
-  BarberHomeView()
+  BarberHomeView(id: "asdf")
 }

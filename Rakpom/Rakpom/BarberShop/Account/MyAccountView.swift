@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+struct WithdrawHistory: Hashable {
+  let id: String
+}
+
 struct MyAccountView: View {
+  
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        BarberHeaderView()
+        BarberHeaderView(id: "asdf")
         
         TitleView(title: "บัญชีของคุณ", color: .lightGray)
         
@@ -54,9 +59,7 @@ struct MyAccountView: View {
         .padding(.horizontal, 36)
         .padding(.top, 27)
         
-        Button {
-          
-        } label: {
+        NavigationLink(value: AnyHashable(WithdrawHistory(id: "a"))) {
           Text("ดูประวัติการถอนเงิน")
             .foregroundColor(.blueButton)
             .font(.custom("Noto Sans Thai", size: 16))

@@ -13,7 +13,7 @@ struct ShopReservationView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        BarberHeaderView()
+        BarberHeaderView(id: "asdf")
         
         Toggle("รับจองคิวอัตโนมัติ", isOn: $autoReserve)
           .font(.custom("Noto Sans Thai", size: 18))

@@ -23,7 +23,7 @@ struct TransactionView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        BarberHeaderView()
+        BarberHeaderView(id: "asdf")
         
         TitleView(title: "ร้านของฉัน", color: .white)
         ScrollView {

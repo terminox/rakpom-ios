@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+struct BarberHomeScreen: Hashable {
+  let id: String
+}
+
 struct BarberHeaderView: View {
+  let id: String
+  
   var body: some View {
     HStack {
       HStack(spacing: 16) {
@@ -31,9 +37,7 @@ struct BarberHeaderView: View {
       Spacer()
       
       HStack(alignment: .center, spacing: 0) {
-        Button {
-          // Navigate to Home screen
-        } label : {
+        NavigationLink(value: AnyHashable(BarberHomeScreen(id: id))) {
           Image(systemName: "house")
             .resizable()
             .frame(width: 25, height: 22)
@@ -55,5 +59,5 @@ struct BarberHeaderView: View {
 }
 
 #Preview {
-  BarberHeaderView()
+  BarberHeaderView(id: "asdf")
 }
