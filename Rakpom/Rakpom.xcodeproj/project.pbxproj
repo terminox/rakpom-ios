@@ -65,6 +65,8 @@
 		0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */; };
 		0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */; };
 		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
+		98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */; };
+		98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,8 @@
 		0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomTabBar.swift; sourceTree = "<group>"; };
 		0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainTabView.swift; sourceTree = "<group>"; };
 		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
+		98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +191,9 @@
 		0F37DD442C008481009BB03D /* Reservation */ = {
 			isa = PBXGroup;
 			children = (
-				0F0FB36B2BF75558004BD500 /* HistoryView.swift */,
+				98AFA44F2C82417C00C95DA4 /* History */,
 				0F37DD402BFF06D0009BB03D /* ReservationView.swift */,
+				98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */,
 				0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */,
 				0F37DD452C046D88009BB03D /* ReviewView.swift */,
 			);
@@ -423,6 +428,15 @@
 			path = "Custom Tab Bar";
 			sourceTree = "<group>";
 		};
+		98AFA44F2C82417C00C95DA4 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0F0FB36B2BF75558004BD500 /* HistoryView.swift */,
+				98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +520,7 @@
 				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,
 				0F0FB36C2BF75558004BD500 /* HistoryView.swift in Sources */,
 				0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */,
+				98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */,
 				0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */,
 				0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */,
 				0F37DD4C2C048522009BB03D /* NotificationView.swift in Sources */,
@@ -549,6 +564,7 @@
 				0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */,
 				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
 				0FEECF062C22E75100CA182B /* TitleView.swift in Sources */,
+				98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
