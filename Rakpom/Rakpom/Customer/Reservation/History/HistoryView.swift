@@ -40,19 +40,13 @@ struct BookingItem: Identifiable, Hashable {
 }
 
 struct HistoryView: View {
-  let recentBookings: [RecentBookingItem] = [
-    RecentBookingItem(id: "12345", image: AnyView(Image("Barber1")), name: "Rakpom", address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900"),
-    RecentBookingItem(id: "44445", image: AnyView(Image("Barber2")), name: "Rakchan", address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900"),
-    RecentBookingItem(id: "16754", image: AnyView(Image("Barber3")), name: "Rakter", address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900")
-  ]
   
-  let bookings: [BookingItem] = [
-    BookingItem(id: "12345", image: AnyView(Image("Barber1")), name: "Rakpom", address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900"),
-    BookingItem(id: "44445", image: AnyView(Image("Barber2")), name: "Rakchan", address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900"),
-    BookingItem(id: "16754", image: AnyView(Image("Barber3")), name: "Rakter", address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900")
-  ]
+  @StateObject var viewModel = HistoryViewModel()
   
   var body: some View {
+    let recentBookings = viewModel.recentBookings
+    let bookings = viewModel.bookings
+    
     GeometryReader { geo in
       VStack {
         // HEADER
@@ -110,7 +104,7 @@ struct HistoryView: View {
             
             ForEach(bookings) { booking in
               NavigationLink(value: AnyHashable(booking)) {
-                BookingItemView(index: 1, width: geo.size.width)
+                BookingItemView(booking: booking, width: geo.size.width)
               }
             }
           }
@@ -121,6 +115,9 @@ struct HistoryView: View {
 //    .padding(.bottom, 100)
     .background(.white)
     .ignoresSafeArea()
+    .task {
+      await viewModel.fetch()
+    }
   }
 }
 
@@ -161,35 +158,37 @@ struct RecentBookingItemView: View {
 }
 
 struct BookingItemView: View {
-  let index: Int
+  let booking: BookingItem
   let width: Double
 
   var body: some View {
     HStack(spacing: 16) {
-      Image("Barber\(index + 2)")
-        .resizable()
-        .aspectRatio(contentMode: .fill)
+      booking.image
         .frame(width: width / 3, height: 82)
         .clipShape(RoundedRectangle(cornerRadius: 4))
       
       VStack(alignment: .leading, spacing: 8) {
-        Text("ร้านลุงหนุ่ม")
+        Text(booking.name)
           .font(.custom("Noto Sans Thai", size: 16))
           .foregroundStyle(.black)
         
         HStack(alignment: .firstTextBaseline, spacing: 0) {
           Image("Location")
 
-          Text("35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900")
+          Text(booking.address)
+            .multilineTextAlignment(.leading)
             .font(.custom("Noto Sans Thai", size: 13))
             .foregroundStyle(.gray)
             .lineLimit(3)
             .padding(.horizontal, 4)
         }
       }
+      .padding(.top, 5)
     }
-    .padding(.horizontal)
-    .frame(width: width, height: 97)
+    .padding(.horizontal, 26)
+    .padding(.vertical, 8)
+    .frame(width: width, alignment: .leading)
+//    .frame(minHeight: 97)
     .background(.white)
   }
 }
