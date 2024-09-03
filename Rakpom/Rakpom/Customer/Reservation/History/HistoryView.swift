@@ -48,52 +48,53 @@ struct HistoryView: View {
     let bookings = viewModel.bookings
     
     GeometryReader { geo in
-      VStack {
+      VStack(spacing: 0) {
         // HEADER
         CustomerHeaderView(id: "qwerty")
         
         // SEARCH
         ScrollView(.vertical, showsIndicators: false) {
-          HStack {
-            Image(systemName: "magnifyingglass")
-              .foregroundStyle(.gray)
-              .font(.headline)
+          VStack(spacing: 0) {
+            HStack {
+              Image(systemName: "magnifyingglass")
+                .foregroundStyle(.gray)
+                .font(.headline)
+              
+              Text("ค้นหา...")
+                .font(.custom("Noto Sans Thai", size: 14))
+                .foregroundStyle(.black)
+              
+              Spacer()
+            }
+            .padding()
+            .frame(width: geo.size.width - 40, height: 44)
+            .background(Color("LightGray"))
+            .clipShape(Capsule())
+            .padding()
+            .background(.white)
             
-            Text("ค้นหา...")
-              .font(.custom("Noto Sans Thai", size: 14))
-              .foregroundStyle(.black)
-            
-            Spacer()
-          }
-          .padding()
-          .frame(width: geo.size.width - 40, height: 44)
-          .background(Color("LightGray"))
-          .clipShape(Capsule())
-          .padding()
-          
-          // LAST VISITED SHOPS
-          VStack(alignment: .leading) {
-            Text("ร้านตัดผมล่าสุด")
-              .font(.custom("Noto Sans Thai", size: 18))
-              .fontWeight(.medium)
-              .foregroundStyle(.black)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-              HStack {
-                ForEach(recentBookings) { booking in
-                  NavigationLink(value: AnyHashable(booking)) {
-                    RecentBookingItemView()
+            // LAST VISITED SHOPS
+            VStack(alignment: .leading) {
+              Text("ร้านตัดผมล่าสุด")
+                .font(.custom("Noto Sans Thai", size: 18))
+                .fontWeight(.medium)
+                .foregroundStyle(.black)
+                .padding(.horizontal, 20)
+              
+              ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                  ForEach(recentBookings) { booking in
+                    NavigationLink(value: AnyHashable(booking)) {
+                      RecentBookingItemView(recentBooking: booking)
+                    }
                   }
                 }
+                .padding(.horizontal, 4)
+                .padding(.bottom, 16)
+                .padding(.horizontal)
               }
-              .padding(.horizontal, 4)
-              .padding(.bottom, 16)
             }
-          }
-          .padding(.horizontal)
-          
-          // RESERVATION
-          VStack(alignment: .leading) {
+            
             Text("จองคิวตัดผม")
               .font(.custom("Noto Sans Thai", size: 16))
               .foregroundStyle(.black)
@@ -101,22 +102,27 @@ struct HistoryView: View {
               .padding()
               .frame(width: geo.size.width, height: 39, alignment: .leading)
               .background(.blueApp)
-            
+          }
+          .background(.white)
+          
+          // RESERVATION
+          VStack(alignment: .leading) {
             ForEach(bookings) { booking in
               NavigationLink(value: AnyHashable(booking)) {
                 BookingItemView(booking: booking, width: geo.size.width)
               }
             }
           }
-          .background(Color("LightGray"))
         }
+        .background(.lightGray)
       }
     }
-//    .padding(.bottom, 100)
-    .background(.white)
     .ignoresSafeArea()
     .task {
       await viewModel.fetch()
+    }
+    .task {
+      await viewModel.fetchRecentBookings()
     }
   }
 }
@@ -126,15 +132,18 @@ struct HistoryView: View {
 }
 
 struct RecentBookingItemView: View {
+  
+  let recentBooking: RecentBookingItem
+  
   var body: some View {
     VStack(alignment: .leading, spacing: 4) {
-      Image("Barber1")
-        .resizable()
-        .aspectRatio(contentMode: .fill)
+      recentBooking.image
+      //        .resizable()
+      //        .aspectRatio(contentMode: .fill)
         .frame(width: 131, height: 90)
         .clipped()
       
-      Text("ช่างชุ่ย")
+      Text(recentBooking.name)
         .font(.custom("Noto Sans Thai", size: 12))
         .foregroundStyle(.black)
         .padding(.horizontal, 6)
@@ -142,7 +151,7 @@ struct RecentBookingItemView: View {
       HStack(alignment: .top, spacing: 0) {
         Image("Location")
           .padding(.leading, 4)
-        Text("35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900")
+        Text(recentBooking.address)
           .font(.custom("Noto Sans Thai", size: 11))
           .foregroundStyle(.gray)
           .lineLimit(3)
@@ -160,7 +169,7 @@ struct RecentBookingItemView: View {
 struct BookingItemView: View {
   let booking: BookingItem
   let width: Double
-
+  
   var body: some View {
     HStack(spacing: 16) {
       booking.image
@@ -174,7 +183,7 @@ struct BookingItemView: View {
         
         HStack(alignment: .firstTextBaseline, spacing: 0) {
           Image("Location")
-
+          
           Text(booking.address)
             .multilineTextAlignment(.leading)
             .font(.custom("Noto Sans Thai", size: 13))
@@ -188,7 +197,6 @@ struct BookingItemView: View {
     .padding(.horizontal, 26)
     .padding(.vertical, 8)
     .frame(width: width, alignment: .leading)
-//    .frame(minHeight: 97)
     .background(.white)
   }
 }

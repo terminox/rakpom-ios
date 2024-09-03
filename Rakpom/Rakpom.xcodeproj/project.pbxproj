@@ -46,6 +46,8 @@
 		0FB4E67A2C1C40CD00E6926D /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6792C1C40CD00E6926D /* OTPView.swift */; };
 		0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67C2C1C434B00E6926D /* CompletedView.swift */; };
 		0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */; };
+		0FE9C46D2C863B6000B6B472 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE9C46C2C863B6000B6B472 /* NotificationViewModel.swift */; };
+		0FE9C46F2C870DF100B6B472 /* PointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE9C46E2C870DF100B6B472 /* PointViewModel.swift */; };
 		0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF012C22E42A00CA182B /* TransactionView.swift */; };
 		0FEECF042C22E50600CA182B /* BarberHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF032C22E50600CA182B /* BarberHeaderView.swift */; };
 		0FEECF062C22E75100CA182B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF052C22E75100CA182B /* TitleView.swift */; };
@@ -111,6 +113,8 @@
 		0FB4E6792C1C40CD00E6926D /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		0FB4E67C2C1C434B00E6926D /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHomeView.swift; sourceTree = "<group>"; };
+		0FE9C46C2C863B6000B6B472 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		0FE9C46E2C870DF100B6B472 /* PointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewModel.swift; sourceTree = "<group>"; };
 		0FEECF012C22E42A00CA182B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		0FEECF032C22E50600CA182B /* BarberHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHeaderView.swift; sourceTree = "<group>"; };
 		0FEECF052C22E75100CA182B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -192,8 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				98AFA44F2C82417C00C95DA4 /* History */,
-				0F37DD402BFF06D0009BB03D /* ReservationView.swift */,
-				98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */,
+				0FE9C4702C878BDC00B6B472 /* Reservation */,
 				0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */,
 				0F37DD452C046D88009BB03D /* ReviewView.swift */,
 			);
@@ -204,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				0F37DD482C047D13009BB03D /* PointView.swift */,
+				0FE9C46E2C870DF100B6B472 /* PointViewModel.swift */,
 			);
 			path = Point;
 			sourceTree = "<group>";
@@ -212,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				0F37DD4B2C048522009BB03D /* NotificationView.swift */,
+				0FE9C46C2C863B6000B6B472 /* NotificationViewModel.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -350,6 +355,15 @@
 				0FF351B82C37F579002EE1E7 /* ShopSettings */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0FE9C4702C878BDC00B6B472 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				0F37DD402BFF06D0009BB03D /* ReservationView.swift */,
+				98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */,
+			);
+			path = Reservation;
 			sourceTree = "<group>";
 		};
 		0FEECF002C22E2B100CA182B /* Transaction */ = {
@@ -527,6 +541,7 @@
 				0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */,
 				0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */,
 				0FB4E65F2C0F119300E6926D /* ProfileSettingsView.swift in Sources */,
+				0FE9C46F2C870DF100B6B472 /* PointViewModel.swift in Sources */,
 				0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */,
 				0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */,
 				0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */,
@@ -565,6 +580,7 @@
 				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
 				0FEECF062C22E75100CA182B /* TitleView.swift in Sources */,
 				98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */,
+				0FE9C46D2C863B6000B6B472 /* NotificationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
