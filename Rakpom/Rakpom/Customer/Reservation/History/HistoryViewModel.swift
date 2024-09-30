@@ -32,7 +32,7 @@ class HistoryViewModel: ObservableObject {
   // RECENT BOOKINGS
   func fetchRecentBookings() async {
     let session = URLSession(configuration: .ephemeral)
-    let url = URL(string: "https://f166-184-22-191-39.ngrok-free.app/api/v1/users/shops/recent")!
+    let url = URL(string: "https://e395-184-22-157-24.ngrok-free.app/api/v1/users/shops/recent")!
     var urlRequest = URLRequest(url: url)
     urlRequest.addValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDFKNE1EWjdUMTgwSFQ1OTZGOFI1RTJQMU4iLCJlbWFpbCI6InRlc3QxQHJha3BvbS5kZXYiLCJtZW1iZXJJRCI6IjEiLCJmdWxsTmFtZSI6bnVsbCwiZ2VuZGVyIjpudWxsLCJwaG9uZU51bWJlciI6bnVsbH0sImlhdCI6MTcyMjk2Nzg1M30.jwFbYPpfDlATDBSe4A7guaNkTVMzWnicGqmLud2Bc0o", forHTTPHeaderField: "Authorization")
     
@@ -83,7 +83,7 @@ class HistoryViewModel: ObservableObject {
   // BOOKINGS
   func fetch() async {
     let session = URLSession(configuration: .ephemeral)
-    let url = URL(string: "https://f166-184-22-191-39.ngrok-free.app/api/v1/users/shops/pages?offset=0&limit=20")!
+    let url = URL(string: "https://e395-184-22-157-24.ngrok-free.app/api/v1/users/shops/pages?offset=0&limit=20")!
     var urlRequest = URLRequest(url: url)
     urlRequest.addValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDFKNE1EWjdUMTgwSFQ1OTZGOFI1RTJQMU4iLCJlbWFpbCI6InRlc3QxQHJha3BvbS5kZXYiLCJtZW1iZXJJRCI6IjEiLCJmdWxsTmFtZSI6bnVsbCwiZ2VuZGVyIjpudWxsLCJwaG9uZU51bWJlciI6bnVsbH0sImlhdCI6MTcyMjk2Nzg1M30.jwFbYPpfDlATDBSe4A7guaNkTVMzWnicGqmLud2Bc0o", forHTTPHeaderField: "Authorization")
     
