@@ -10,13 +10,15 @@ import SwiftUI
 @main
 struct RakpomApp: App {
   
+  let viewFactory = RakpomViewFactory()
+  
   init() {
     UITabBar.appearance().isHidden = true
   }
   
   var body: some Scene {
     WindowGroup {
-      CustomerMainView()
+      viewFactory.makeRootView()
     }
   }
 }

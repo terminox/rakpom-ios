@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -134,6 +134,12 @@
 		98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		98A4699A2CECEA2D00AFF23D /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
+		98A4699B2CECEA3000AFF23D /* Users */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Users; sourceTree = "<group>"; };
+		98A4699C2CECEA3200AFF23D /* Shops */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shops; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		0F0FB3632BF75558004BD500 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -164,6 +170,9 @@
 		0F0FB3682BF75558004BD500 /* Rakpom */ = {
 			isa = PBXGroup;
 			children = (
+				98A4699B2CECEA3000AFF23D /* Users */,
+				98A4699C2CECEA3200AFF23D /* Shops */,
+				98A4699A2CECEA2D00AFF23D /* Shared */,
 				0F37DD502C04F09F009BB03D /* Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
@@ -451,6 +460,11 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				98A4699A2CECEA2D00AFF23D /* Shared */,
+				98A4699B2CECEA3000AFF23D /* Users */,
+				98A4699C2CECEA3200AFF23D /* Shops */,
 			);
 			name = Rakpom;
 			productName = Rakpom;
