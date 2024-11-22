@@ -65,6 +65,8 @@
 		0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */; };
 		0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */; };
 		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
+		986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC52CF0ECD300EA4297 /* FirebaseAuth */; };
+		986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC72CF0ECD300EA4297 /* FirebaseStorage */; };
 		98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */; };
 		98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */; };
 		98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D03D2CEFAA9400722600 /* Alamofire */; };
@@ -150,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */,
+				986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */,
+				986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */,
 				98B1D0432CEFAAFF00722600 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,8 +507,8 @@
 			);
 			mainGroup = 0F0FB35D2BF75558004BD500;
 			packageReferences = (
-				98B1D0412CEFAAFF00722600 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				98FAC9C42CF084AE0010572B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 0F0FB3672BF75558004BD500 /* Products */;
 			projectDirPath = "";
@@ -905,6 +909,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
 		98B1D03C2CEFAA9400722600 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -932,6 +944,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		986AFDC52CF0ECD300EA4297 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		986AFDC72CF0ECD300EA4297 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		98B1D03D2CEFAA9400722600 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 98B1D03C2CEFAA9400722600 /* XCRemoteSwiftPackageReference "Alamofire" */;

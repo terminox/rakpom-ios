@@ -1,41 +1,40 @@
 //
-//  RakpomSignUpView.swift
+//  PhoneFormView.swift
 //  Rakpom
 //
-//  Created by CatMeox on 12/6/2567 BE.
+//  Created by yossa on 22/11/2567 BE.
 //
 
-import PhotosUI
 import SwiftUI
+import PhotosUI
 
-// MARK: - RakpomSignUpView
-
-struct RakpomSignUpView: View {
+struct PhoneFormView: View {
   @State private var avatarItem: PhotosPickerItem?
   @State private var avatarImage: Image?
-
-  @State private var name = ""
-  @State private var age = ""
-  @State private var telNo = ""
-  @State private var email = ""
-
-  @State var isMaleSelected = false
-  @State var isFemaleSelected = false
-
+  
+  @State private var name: String = ""
+  @State private var age: String = ""
+  @State private var telNo: String = ""
+  @State private var email: String = ""
+  
+  @State var isMaleSelected: Bool = false
+  @State var isFemaleSelected: Bool = false
+  
   /// Description
   var body: some View {
-    GeometryReader { _ in
+    GeometryReader { geo in
       ScrollView {
         VStack {
           ZStack {
-            if avatarImage != nil {
+            if ((avatarImage) != nil) {
               avatarImage?
                 .resizable()
                 .frame(width: 82, height: 82)
                 .clipShape(Circle())
                 .overlay(
                   Circle()
-                    .stroke(.blueButton, lineWidth: 3))
+                    .stroke(.blueButton, lineWidth: 3)
+                )
             } else {
               Image(systemName: "person.fill")
                 .resizable()
@@ -45,7 +44,7 @@ struct RakpomSignUpView: View {
                 .foregroundColor(.halfGray)
                 .clipShape(Circle())
             }
-
+            
             PhotosPicker(selection: $avatarItem, matching: .images) {
               Image(systemName: "pencil")
                 .padding(6)
@@ -66,15 +65,15 @@ struct RakpomSignUpView: View {
               }
             }
           }
-
+          
           VStack(spacing: 16) {
             TextFieldView(title: "ชื่อบัญชีผู้ใช้", info: $name)
-
+            
             VStack(alignment: .leading, spacing: 4) {
               Text("เพศ")
                 .font(.custom("Noto Sans Thai", size: 14))
                 .foregroundStyle(.black)
-
+              
               HStack(spacing: 16) {
                 Button {
                   isMaleSelected = true
@@ -86,7 +85,7 @@ struct RakpomSignUpView: View {
                         .renderingMode(.template)
                         .foregroundColor(.blueButton)
                       Text("ชาย")
-
+                      
                       Spacer()
                     }
                     .padding()
@@ -97,14 +96,15 @@ struct RakpomSignUpView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .overlay(
                       RoundedRectangle(cornerRadius: 12)
-                        .stroke(.blueButton))
+                        .stroke(.blueButton)
+                    )
                   } else {
                     HStack {
                       Image("Male")
                         .renderingMode(.template)
                         .foregroundColor(.gray)
                       Text("ชาย")
-
+                      
                       Spacer()
                     }
                     .padding()
@@ -115,10 +115,11 @@ struct RakpomSignUpView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .overlay(
                       RoundedRectangle(cornerRadius: 12)
-                        .stroke(.halfGray))
+                        .stroke(.halfGray)
+                    )
                   }
                 }
-
+                
                 Button {
                   isMaleSelected = false
                   isFemaleSelected = true
@@ -129,7 +130,7 @@ struct RakpomSignUpView: View {
                         .renderingMode(.template)
                         .foregroundColor(.blueButton)
                       Text("หญิง")
-
+                      
                       Spacer()
                     }
                     .padding()
@@ -140,14 +141,15 @@ struct RakpomSignUpView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .overlay(
                       RoundedRectangle(cornerRadius: 12)
-                        .stroke(.blueButton))
+                        .stroke(.blueButton)
+                    )
                   } else {
                     HStack {
                       Image("Female")
                         .renderingMode(.template)
                         .foregroundColor(.gray)
                       Text("หญิง")
-
+                      
                       Spacer()
                     }
                     .padding()
@@ -158,21 +160,22 @@ struct RakpomSignUpView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .overlay(
                       RoundedRectangle(cornerRadius: 12)
-                        .stroke(.halfGray))
+                        .stroke(.halfGray)
+                    )
                   }
                 }
               }
             }
-
+            
             TextFieldView(title: "อายุ", info: $age)
-
+            
             TextFieldView(title: "เบอร์โทรศัพท์", info: $telNo)
-
+            
             TextFieldView(title: "อีเมล (ถ้ามี)", info: $email)
-
+            
             Button {
               // register
-            } label: {
+            }label: {
               AppButton(title: "ลงทะเบียน")
                 .padding(.horizontal, 36)
                 .padding(.top)
@@ -188,31 +191,6 @@ struct RakpomSignUpView: View {
 
 #Preview {
   BackScaffold(back: {}) {
-    RakpomSignUpView()
-  }
-}
-
-// MARK: - TextFieldView
-
-struct TextFieldView: View {
-  let title: String
-  @Binding var info: String
-
-  var body: some View {
-    VStack(alignment: .leading, spacing: 4) {
-      Text(title)
-        .font(.custom("Noto Sans Thai", size: 14))
-        .foregroundStyle(.black)
-
-      TextField("", text: $info)
-        .font(.custom("Noto Sans Thai", size: 14))
-        .foregroundStyle(.black)
-        .padding()
-        .frame(width: 320, height: 48)
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .overlay(
-          RoundedRectangle(cornerRadius: 12)
-            .stroke(.halfGray))
-    }
+    PhoneFormView()
   }
 }
