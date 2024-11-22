@@ -18,6 +18,7 @@ struct SignUpView: View {
           Image("Logo2")
           
           Button {
+            // TODO
             // Register with rakpom
           } label: {
             HStack {
@@ -42,24 +43,28 @@ struct SignUpView: View {
           }
           
           Button {
+            // TODO
             // Register with google
           } label: {
             SignUpSelectionView(title: "ดำเนินการด้วย Google", icon: Image("Google"))
           }
           
           Button {
+            // TODO
             // Register with fb
           } label: {
             SignUpSelectionView(title: "ดำเนินการด้วย Facebook", icon: Image("FB"))
           }
           
           Button {
+            // TODO
             // Register with line
           } label: {
             SignUpSelectionView(title: "ดำเนินการด้วย Line", icon: Image("Line"))
           }
           
           Button {
+            // TODO
             //Register with apple
           } label : {
             SignUpSelectionView(title: "ดำเนินการด้วย Apple", icon: Image("Apple"))

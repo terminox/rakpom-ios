@@ -14,8 +14,9 @@ extension RakpomViewFactory: RootViewFactory {
   }
   
   func makeRootSignupView(onSignupCompleted: @escaping (SignupResult) -> Void) -> AnyView {
-    // TODO
-    AnyView(EmptyView())
+    let viewModel = SignupCoordinatorViewModel(factory: self, onCompleted: onSignupCompleted)
+    let view = SignupCoordinatorView(viewModel: viewModel)
+    return AnyView(view)
   }
   
   func makeRootUserProfileFormView(onCompleted: @escaping () -> Void) -> AnyView {

@@ -1,5 +1,5 @@
 //
-//  RegistereSelectionView.swift
+//  RegisterSelectionView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 11/6/2567 BE.
@@ -7,41 +7,42 @@
 
 import SwiftUI
 
-struct RegistereSelectionView: View {
-  @State private var isCustomerSelected: Bool = false
-  @State private var isShopSelected: Bool = false
+struct RegisterSelectionView: View {
   
+  let onSelected: (RegistrationType) -> Void
+
+  // MARK: Internal
+
   var body: some View {
-    GeometryReader { geo in
+    GeometryReader { _ in
       VStack {
         HStack {
           Text("ลงทะเบียน")
             .font(.custom("Noto Sans Thai", size: 20))
             .foregroundStyle(.black)
             .padding()
-          
+
           Spacer()
-          
+
           Image("Logo")
-          
+
         }
         .padding()
         .padding(.top, 40)
         .frame(maxWidth: .infinity)
         .frame(height: 133)
         .background(.blueApp)
-        
+
         Text("เลือกการลงทะเบียนของคุณ")
           .font(.custom("Noto Sans Thai", size: 20))
           .foregroundStyle(.black)
           .padding(.top, 130)
-        
+
         HStack(spacing: 40) {
           Button {
-            isCustomerSelected = true
-            isShopSelected = false
+            selectedType = .user
           } label: {
-            if isCustomerSelected {
+            if selectedType == .user {
               VStack {
                 Image("Person.2")
                   .renderingMode(.template)
@@ -49,8 +50,8 @@ struct RegistereSelectionView: View {
                   .padding()
                   .frame(width: 100, height: 100)
                   .background(.blueApp)
-                .clipShape(Circle())
-                
+                  .clipShape(Circle())
+
                 Text("ลูกค้า")
                   .font(.custom("Noto Sans Thai", size: 16))
                   .foregroundColor(.black)
@@ -62,21 +63,19 @@ struct RegistereSelectionView: View {
                   .frame(width: 100, height: 100)
                   .overlay(
                     Circle()
-                      .stroke(.blueButton)
-                )
-                
+                      .stroke(.blueButton))
+
                 Text("ลูกค้า")
                   .font(.custom("Noto Sans Thai", size: 16))
                   .foregroundColor(.black)
               }
             }
           }
-          
+
           Button {
-            isCustomerSelected = false
-            isShopSelected = true
+            selectedType = .shop
           } label: {
-            if isShopSelected {
+            if selectedType == .shop {
               VStack {
                 Image("Scissors")
                   .renderingMode(.template)
@@ -84,8 +83,8 @@ struct RegistereSelectionView: View {
                   .padding()
                   .frame(width: 100, height: 100)
                   .background(.blueApp)
-                .clipShape(Circle())
-                
+                  .clipShape(Circle())
+
                 Text("ร้านตัดผม")
                   .font(.custom("Noto Sans Thai", size: 16))
                   .foregroundColor(.black)
@@ -97,9 +96,8 @@ struct RegistereSelectionView: View {
                   .frame(width: 100, height: 100)
                   .overlay(
                     Circle()
-                      .stroke(.blueButton)
-                )
-                
+                      .stroke(.blueButton))
+
                 Text("ร้านตัดผม")
                   .font(.custom("Noto Sans Thai", size: 16))
                   .foregroundColor(.black)
@@ -108,9 +106,10 @@ struct RegistereSelectionView: View {
           }
         }
         .padding()
-        
+
         Button {
-          
+          guard let selectedType = selectedType else { return }
+          onSelected(selectedType)
         } label: {
           AppButton(title: "ถัดไป")
             .padding(36)
@@ -120,8 +119,13 @@ struct RegistereSelectionView: View {
     .background(.white)
     .ignoresSafeArea()
   }
+
+  // MARK: Private
+
+  @State private var selectedType: RegistrationType?
+  
 }
 
 #Preview {
-  RegistereSelectionView()
+  RegisterSelectionView(onSelected: { _ in })
 }

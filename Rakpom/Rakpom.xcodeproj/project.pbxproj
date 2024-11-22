@@ -39,7 +39,7 @@
 		0FB4E6692C1770F600E6926D /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */; };
 		0FB4E66B2C17719800E6926D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66A2C17719800E6926D /* TermsView.swift */; };
 		0FB4E66E2C183EE000E6926D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66D2C183EE000E6926D /* LaunchView.swift */; };
-		0FB4E6702C1843C400E6926D /* RegistereSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66F2C1843C400E6926D /* RegistereSelectionView.swift */; };
+		0FB4E6702C1843C400E6926D /* RegisterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66F2C1843C400E6926D /* RegisterSelectionView.swift */; };
 		0FB4E6722C18D02300E6926D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6712C18D02300E6926D /* SignUpView.swift */; };
 		0FB4E6742C19993A00E6926D /* RakpomSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6732C19993A00E6926D /* RakpomSignUpView.swift */; };
 		0FB4E6772C1AE19C00E6926D /* BarberRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6762C1AE19C00E6926D /* BarberRegisterView.swift */; };
@@ -67,6 +67,9 @@
 		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
 		98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */; };
 		98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */; };
+		98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D03D2CEFAA9400722600 /* Alamofire */; };
+		98B1D0432CEFAAFF00722600 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D0422CEFAAFF00722600 /* FirebaseAuth */; };
+		98FAC9C82CF0A4800010572B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +107,7 @@
 		0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		0FB4E66A2C17719800E6926D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		0FB4E66D2C183EE000E6926D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		0FB4E66F2C1843C400E6926D /* RegistereSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistereSelectionView.swift; sourceTree = "<group>"; };
+		0FB4E66F2C1843C400E6926D /* RegisterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectionView.swift; sourceTree = "<group>"; };
 		0FB4E6712C18D02300E6926D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0FB4E6732C19993A00E6926D /* RakpomSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakpomSignUpView.swift; sourceTree = "<group>"; };
 		0FB4E6762C1AE19C00E6926D /* BarberRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberRegisterView.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
 		98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
+		98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -145,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */,
+				98B1D0432CEFAAFF00722600 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +180,7 @@
 				98A4699C2CECEA3200AFF23D /* Shops */,
 				98A4699A2CECEA2D00AFF23D /* Shared */,
 				0F37DD502C04F09F009BB03D /* Info.plist */,
+				98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
 				0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */,
@@ -320,7 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				0FB4E66D2C183EE000E6926D /* LaunchView.swift */,
-				0FB4E66F2C1843C400E6926D /* RegistereSelectionView.swift */,
+				0FB4E66F2C1843C400E6926D /* RegisterSelectionView.swift */,
 				0FB4E6712C18D02300E6926D /* SignUpView.swift */,
 				0FB4E6732C19993A00E6926D /* RakpomSignUpView.swift */,
 			);
@@ -495,6 +502,10 @@
 				Base,
 			);
 			mainGroup = 0F0FB35D2BF75558004BD500;
+			packageReferences = (
+				98B1D0412CEFAAFF00722600 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				98FAC9C42CF084AE0010572B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0F0FB3672BF75558004BD500 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -512,6 +523,7 @@
 				0F0FB3712BF7555A004BD500 /* Preview Assets.xcassets in Resources */,
 				0F37DD4F2C04F072009BB03D /* NotoSansThai.ttf in Resources */,
 				0F0FB36E2BF7555A004BD500 /* Assets.xcassets in Resources */,
+				98FAC9C82CF0A4800010572B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FB4E6702C1843C400E6926D /* RegistereSelectionView.swift in Sources */,
+				0FB4E6702C1843C400E6926D /* RegisterSelectionView.swift in Sources */,
 				0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */,
 				0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */,
 				0F37DD572C05D9F1009BB03D /* OptionButton.swift in Sources */,
@@ -712,22 +724,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Rakpom/Preview Content\"";
-				DEVELOPMENT_TEAM = A524LR8F6J;
+				DEVELOPMENT_TEAM = D45XUJ5XY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Rakpom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = la;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.catmeox.Rakpom;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakpom.rakpomapp.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -743,28 +757,127 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Rakpom/Preview Content\"";
-				DEVELOPMENT_TEAM = A524LR8F6J;
+				DEVELOPMENT_TEAM = D45XUJ5XY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Rakpom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = la;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.catmeox.Rakpom;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakpom.rakpomapp.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		98FAC9CB2CF0A5330010572B /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		98FAC9CC2CF0A5330010572B /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rakpom/Preview Content\"";
+				DEVELOPMENT_TEAM = D45XUJ5XY2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rakpom/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = la;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakpom.rakpomapp.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
 		};
 /* End XCBuildConfiguration section */
 
@@ -773,6 +886,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F0FB3722BF7555A004BD500 /* Debug */,
+				98FAC9CB2CF0A5330010572B /* Staging */,
 				0F0FB3732BF7555A004BD500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -782,12 +896,53 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F0FB3752BF7555A004BD500 /* Debug */,
+				98FAC9CC2CF0A5330010572B /* Staging */,
 				0F0FB3762BF7555A004BD500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98B1D03C2CEFAA9400722600 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		98B1D0412CEFAAFF00722600 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+		98FAC9C42CF084AE0010572B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98B1D03D2CEFAA9400722600 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98B1D03C2CEFAA9400722600 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		98B1D0422CEFAAFF00722600 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98B1D0412CEFAAFF00722600 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F0FB35E2BF75558004BD500 /* Project object */;
 }

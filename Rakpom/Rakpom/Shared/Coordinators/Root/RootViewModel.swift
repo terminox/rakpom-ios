@@ -24,13 +24,13 @@ class RootViewModel: ObservableObject {
 
   // MARK: Lifecycle
 
-  init(factory: RootViewFactory) {
+  init(factory: any RootViewFactory) {
     self.factory = factory
   }
 
   // MARK: Internal
 
-  let factory: RootViewFactory
+  let factory: any RootViewFactory
 
   @Published var anyView: AnyView?
 

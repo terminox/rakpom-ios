@@ -20,7 +20,7 @@ struct RakpomSignUpView: View {
   @State var isMaleSelected: Bool = false
   @State var isFemaleSelected: Bool = false
   
-  /// <#Description#>
+  /// Description
   var body: some View {
     GeometryReader { geo in      
       VStack {
