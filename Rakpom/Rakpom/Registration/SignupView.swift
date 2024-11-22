@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpView: View {
+struct SignupView: View {
   var body: some View {
     GeometryReader { geeo in
       ZStack {
@@ -77,7 +77,7 @@ struct SignUpView: View {
 }
 
 #Preview {
-  SignUpView()
+  SignupView()
 }
 
 struct SignUpSelectionView: View {

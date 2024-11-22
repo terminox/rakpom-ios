@@ -14,7 +14,7 @@ extension RakpomViewFactory: SignupCoordinatorViewFactory {
   }
   
   func makeSignupMethodSelectionView(onSignupPressed: () -> Void) -> AnyView {
-    let view = SignUpView()
+    let view = SignupView()
     return AnyView(view)
   }
   

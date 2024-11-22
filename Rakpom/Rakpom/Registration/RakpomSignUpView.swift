@@ -195,6 +195,7 @@ struct RakpomSignUpView: View {
 // MARK: - TextFieldView
 
 struct TextFieldView: View {
+  
   let title: String
   @Binding var info: String
 
