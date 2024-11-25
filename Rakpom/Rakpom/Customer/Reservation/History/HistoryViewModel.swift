@@ -33,7 +33,7 @@ class HistoryViewModel: ObservableObject {
       let (data, _) = try await session.data(for: urlRequest)
       print("data: ", data)
       let decoder = JSONDecoder()
-      let response = try decoder.decode(RemoteResponse.self, from: data)
+      let response = try decoder.decode(LegacyRemoteResponse.self, from: data)
       
       if let errorMessage = response.error {
         print(errorMessage)
@@ -70,7 +70,7 @@ class HistoryViewModel: ObservableObject {
   }
 }
 
-struct RemoteResponse: Decodable {
+struct LegacyRemoteResponse: Decodable {
   let data: [RemoteShop]?
   let error: String?
 }

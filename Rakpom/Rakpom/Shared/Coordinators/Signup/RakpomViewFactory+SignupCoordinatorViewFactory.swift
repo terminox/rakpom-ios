@@ -13,18 +13,29 @@ extension RakpomViewFactory: SignupCoordinatorViewFactory {
     return AnyView(view)
   }
   
-  func makeSignupMethodSelectionView(onSignupPressed: () -> Void) -> AnyView {
-    let view = SignupView()
+  func makeSignupMethodSelectionView(onSignupPressed: @escaping () -> Void) -> AnyView {
+    let view = SignupView(onSignupPressed: onSignupPressed)
     return AnyView(view)
   }
   
-  func makeSignupPhoneFormView(registrationType: RegistrationType, onSuccess: (PhoneFormResponse) -> Void) -> AnyView {
-    // TODO
-    AnyView(EmptyView())
+  func makeSignupPhoneFormView(back: @escaping () -> Void, registrationType: RegistrationType, onSuccess: @escaping (PhoneFormResponse) -> Void) -> AnyView {
+    let service = FirebasePhoneSubmissionService()
+    let viewModel = PhoneFormViewModel(service: service, onSuccess: onSuccess)
+    let view = BackScaffold(back: back) {
+      PhoneFormView(onSubmit: viewModel.submit)
+    }
+    .navigationBarBackButtonHidden()
+    return AnyView(view)
   }
   
-  func makeSignupOTPFormView(registrationType: RegistrationType, refCode: String, onSuccess: (SignupState) -> Void) -> AnyView {
-    // TODO
-    AnyView(EmptyView())
+  func makeSignupOTPFormView(back: @escaping () -> Void, registrationType: RegistrationType, refCode: String, onSuccess: @escaping (SignupState) -> Void) -> AnyView {
+    let service = AggregatedOTPService(url: Config.apiURL.appending(path: "users/signup/phone"))
+    let viewModel = OTPFormViewModel(refCode: refCode, service: service, onSuccess: onSuccess)
+    let view = BackScaffold(back: back) {
+      OTPFormView(onSubmit: viewModel.submit)
+    }
+    .navigationBarBackButtonHidden()
+    
+    return AnyView(view)
   }
 }

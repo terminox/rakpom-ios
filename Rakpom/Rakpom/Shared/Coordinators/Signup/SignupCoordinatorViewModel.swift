@@ -11,17 +11,19 @@ import SwiftUI
 
 protocol SignupCoordinatorViewFactory {
   func makeSignupRegistrationTypeView(onSelected: @escaping (RegistrationType) -> Void) -> AnyView
-  func makeSignupMethodSelectionView(onSignupPressed: () -> Void) -> AnyView
+  func makeSignupMethodSelectionView(onSignupPressed: @escaping () -> Void) -> AnyView
 
   func makeSignupPhoneFormView(
+    back: @escaping () -> Void,
     registrationType: RegistrationType,
-    onSuccess: (PhoneFormResponse) -> Void)
+    onSuccess: @escaping (PhoneFormResponse) -> Void)
     -> AnyView
 
   func makeSignupOTPFormView(
+    back: @escaping () -> Void,
     registrationType: RegistrationType,
     refCode: String,
-    onSuccess: (SignupState) -> Void)
+    onSuccess: @escaping (SignupState) -> Void)
     -> AnyView
 }
 
@@ -62,9 +64,12 @@ class SignupCoordinatorViewModel: ObservableObject {
         return AnyView(EmptyView())
       }
       
-      return factory.makeSignupPhoneFormView(registrationType: registrationType, onSuccess: { [weak self] response in
-        self?.displayOTPForm(response: response)
-      })
+      return factory.makeSignupPhoneFormView(
+        back: { [weak self] in self?.back() },
+        registrationType: registrationType,
+        onSuccess: { [weak self] response in
+          self?.displayOTPForm(response: response)
+        })
       
     case .otpForm:
       guard let registrationType = registrationType, let refCode = refCode else {
@@ -72,6 +77,7 @@ class SignupCoordinatorViewModel: ObservableObject {
       }
 
       return factory.makeSignupOTPFormView(
+        back: { [weak self] in self?.back() },
         registrationType: registrationType,
         refCode: refCode,
         onSuccess: { [weak self] state in
@@ -79,6 +85,10 @@ class SignupCoordinatorViewModel: ObservableObject {
           self?.onCompleted(result)
         })
     }
+  }
+  
+  func back() {
+    _ = path.removeLast()
   }
 
   func displaySignupMethod(registrationType: RegistrationType) {

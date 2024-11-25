@@ -7,68 +7,42 @@
 
 import SwiftUI
 
+// MARK: - SignupView
+
 struct SignupView: View {
+
+  let onSignupPressed: () -> Void
+
   var body: some View {
-    GeometryReader { geeo in
-      ZStack {
-        Image("BG")
-          .resizable()
-        
-        VStack(spacing: 16) {
-          Image("Logo2")
-          
-          Button {
-            // TODO
-            // Register with rakpom
-          } label: {
-            HStack {
-              Image("Logo")
-                .resizable()
-                .frame(width: 33, height: 33)
-                .padding(.leading, 44)
-              Text("ลงทะเบียนด้วย รักผม")
-                .font(.custom("Noto Sans Thai", size: 16))
-                .foregroundStyle(.black)
-                .padding(.leading, -6)
-              
-              Spacer()
-            }
-            .frame(width: 318, height: 42)
-            .background(.white)
-            .clipShape(Capsule())
-            .overlay(
-              Capsule()
-                .stroke(.halfGray)
-            )
+    ZStack {
+      Image("BG")
+        .resizable()
+
+      VStack(spacing: 16) {
+        Image("Logo2")
+
+        Button {
+          onSignupPressed()
+        } label: {
+          HStack {
+            Image("Logo")
+              .resizable()
+              .frame(width: 33, height: 33)
+              .padding(.leading, 44)
+            
+            Text("ลงทะเบียนด้วย รักผม")
+              .font(.custom("Noto Sans Thai", size: 16))
+              .foregroundStyle(.black)
+              .padding(.leading, -6)
+
+            Spacer()
           }
-          
-          Button {
-            // TODO
-            // Register with google
-          } label: {
-            SignUpSelectionView(title: "ดำเนินการด้วย Google", icon: Image("Google"))
-          }
-          
-          Button {
-            // TODO
-            // Register with fb
-          } label: {
-            SignUpSelectionView(title: "ดำเนินการด้วย Facebook", icon: Image("FB"))
-          }
-          
-          Button {
-            // TODO
-            // Register with line
-          } label: {
-            SignUpSelectionView(title: "ดำเนินการด้วย Line", icon: Image("Line"))
-          }
-          
-          Button {
-            // TODO
-            //Register with apple
-          } label : {
-            SignUpSelectionView(title: "ดำเนินการด้วย Apple", icon: Image("Apple"))
-          }
+          .frame(width: 318, height: 42)
+          .background(.white)
+          .clipShape(Capsule())
+          .overlay(
+            Capsule()
+              .stroke(.halfGray))
         }
       }
     }
@@ -77,13 +51,15 @@ struct SignupView: View {
 }
 
 #Preview {
-  SignupView()
+  SignupView(onSignupPressed: {})
 }
+
+// MARK: - SignUpSelectionView
 
 struct SignUpSelectionView: View {
   let title: String
   let icon: Image
-  
+
   var body: some View {
     HStack {
       icon
@@ -93,15 +69,14 @@ struct SignUpSelectionView: View {
       Text(title)
         .font(.custom("Noto Sans Thai", size: 16))
         .foregroundStyle(.black)
-      
+
       Spacer()
     }
     .frame(width: 318, height: 42)
     .background(.white)
     .clipShape(Capsule())
     .overlay(
-    Capsule()
-      .stroke(.halfGray)
-    )
+      Capsule()
+        .stroke(.halfGray))
   }
 }

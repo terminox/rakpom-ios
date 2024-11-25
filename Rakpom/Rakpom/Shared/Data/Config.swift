@@ -9,10 +9,10 @@ import Foundation
 
 struct Config {
   #if DEBUG
-  let url: URL = URL(string: "http://127.0.0.1/api/v1")!
+  static let apiURL: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
   #elseif STAGING
-  let url: URL = URL(string: "http://127.0.0.1/api/v1")!
+  static let url: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
   #else
-  let url: URL = URL(string: "http://127.0.0.1/api/v1")!
+  static let url: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
   #endif
 }
