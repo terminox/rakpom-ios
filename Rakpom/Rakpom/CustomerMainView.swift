@@ -16,15 +16,15 @@ struct CustomerMainView: View {
         .navigationDestination(for: AnyHashable.self) { destination in
           switch destination.base {
             // HOME
-          case let b as HomeScreen:
-            HomeView(id: b.id)
-              .navigationBarBackButtonHidden(true)
+//          case let b as HomeScreen:
+//            HomeView(id: b.id)
+//              .navigationBarBackButtonHidden(true)
           case let c as SettingsScreen:
             SettingsView(id: c.id)
               .navigationBarBackButtonHidden(true)
-          case _ as PointScreen:
-            YourPointView()
-              .navigationBarBackButtonHidden(true)
+//          case _ as PointScreen:
+//            YourPointView()
+//              .navigationBarBackButtonHidden(true)
             
             // BOOKING
           case let booking as RecentBookingItem:

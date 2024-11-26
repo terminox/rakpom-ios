@@ -12,9 +12,6 @@ struct PointView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        // HEADER
-        CustomerHeaderView(id: "qwerty")
-        
         TitleView(title: "ประวัติการใช้บริการ", color: .white)
         
         ScrollView {

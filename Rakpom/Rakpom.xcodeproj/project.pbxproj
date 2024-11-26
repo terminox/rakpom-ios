@@ -18,11 +18,7 @@
 		0F37DD4C2C048522009BB03D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD4B2C048522009BB03D /* NotificationView.swift */; };
 		0F37DD4F2C04F072009BB03D /* NotoSansThai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */; };
 		0F37DD532C050D29009BB03D /* PaymentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD522C050D29009BB03D /* PaymentSelectionView.swift */; };
-		0F37DD552C05C3FE009BB03D /* CustomerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD542C05C3FE009BB03D /* CustomerHeaderView.swift */; };
-		0F37DD572C05D9F1009BB03D /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD562C05D9F1009BB03D /* OptionButton.swift */; };
-		0F37DD592C05DB31009BB03D /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD582C05DB31009BB03D /* AppButton.swift */; };
 		0F37DD5E2C05DE90009BB03D /* ScanConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD5D2C05DE90009BB03D /* ScanConfirmView.swift */; };
-		0F37DD602C05DEED009BB03D /* BackHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD5F2C05DEED009BB03D /* BackHeaderView.swift */; };
 		0F37DD622C08DBA1009BB03D /* CashConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD612C08DBA1009BB03D /* CashConfirmView.swift */; };
 		0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD652C08E579009BB03D /* PointConfirmView.swift */; };
 		0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD672C08ECB3009BB03D /* SubmitPaymentView.swift */; };
@@ -47,15 +43,12 @@
 		0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67C2C1C434B00E6926D /* CompletedView.swift */; };
 		0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */; };
 		0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF012C22E42A00CA182B /* TransactionView.swift */; };
-		0FEECF042C22E50600CA182B /* BarberHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF032C22E50600CA182B /* BarberHeaderView.swift */; };
-		0FEECF062C22E75100CA182B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF052C22E75100CA182B /* TitleView.swift */; };
 		0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF072C2362E800CA182B /* TransferDetailView.swift */; };
 		0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351A42C241168002EE1E7 /* CashDetailView.swift */; };
 		0FF351A82C241542002EE1E7 /* ShopReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351A72C241542002EE1E7 /* ShopReservationView.swift */; };
 		0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351AA2C2574F7002EE1E7 /* BarberNotiView.swift */; };
 		0FF351AE2C2974CA002EE1E7 /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351AD2C2974CA002EE1E7 /* MyAccountView.swift */; };
 		0FF351B12C29DE75002EE1E7 /* WithdrawListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B02C29DE75002EE1E7 /* WithdrawListView.swift */; };
-		0FF351B32C2C020E002EE1E7 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B22C2C020E002EE1E7 /* RatingView.swift */; };
 		0FF351B52C2C1269002EE1E7 /* BarberReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */; };
 		0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */; };
 		0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */; };
@@ -88,11 +81,7 @@
 		0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansThai.ttf; sourceTree = "<group>"; };
 		0F37DD502C04F09F009BB03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0F37DD522C050D29009BB03D /* PaymentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionView.swift; sourceTree = "<group>"; };
-		0F37DD542C05C3FE009BB03D /* CustomerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeaderView.swift; sourceTree = "<group>"; };
-		0F37DD562C05D9F1009BB03D /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
-		0F37DD582C05DB31009BB03D /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		0F37DD5D2C05DE90009BB03D /* ScanConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanConfirmView.swift; sourceTree = "<group>"; };
-		0F37DD5F2C05DEED009BB03D /* BackHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackHeaderView.swift; sourceTree = "<group>"; };
 		0F37DD612C08DBA1009BB03D /* CashConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashConfirmView.swift; sourceTree = "<group>"; };
 		0F37DD652C08E579009BB03D /* PointConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointConfirmView.swift; sourceTree = "<group>"; };
 		0F37DD672C08ECB3009BB03D /* SubmitPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPaymentView.swift; sourceTree = "<group>"; };
@@ -117,15 +106,12 @@
 		0FB4E67C2C1C434B00E6926D /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHomeView.swift; sourceTree = "<group>"; };
 		0FEECF012C22E42A00CA182B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
-		0FEECF032C22E50600CA182B /* BarberHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHeaderView.swift; sourceTree = "<group>"; };
-		0FEECF052C22E75100CA182B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0FEECF072C2362E800CA182B /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
 		0FF351A42C241168002EE1E7 /* CashDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashDetailView.swift; sourceTree = "<group>"; };
 		0FF351A72C241542002EE1E7 /* ShopReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReservationView.swift; sourceTree = "<group>"; };
 		0FF351AA2C2574F7002EE1E7 /* BarberNotiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberNotiView.swift; sourceTree = "<group>"; };
 		0FF351AD2C2974CA002EE1E7 /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
 		0FF351B02C29DE75002EE1E7 /* WithdrawListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawListView.swift; sourceTree = "<group>"; };
-		0FF351B22C2C020E002EE1E7 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberReviewView.swift; sourceTree = "<group>"; };
 		0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNewsView.swift; sourceTree = "<group>"; };
 		0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSettingsView.swift; sourceTree = "<group>"; };
@@ -190,7 +176,6 @@
 				0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */,
 				0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */,
 				0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */,
-				0FF351D72C4902FA002EE1E7 /* Components */,
 				0FB4E66C2C183E5400E6926D /* Registration */,
 				0FB4E6552C0B985600E6926D /* Customer */,
 				0FB4E6752C1AE16000E6926D /* BarberShop */,
@@ -423,20 +408,6 @@
 			path = ShopSettings;
 			sourceTree = "<group>";
 		};
-		0FF351D72C4902FA002EE1E7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				0FEECF032C22E50600CA182B /* BarberHeaderView.swift */,
-				0F37DD542C05C3FE009BB03D /* CustomerHeaderView.swift */,
-				0F37DD5F2C05DEED009BB03D /* BackHeaderView.swift */,
-				0FEECF052C22E75100CA182B /* TitleView.swift */,
-				0FF351B22C2C020E002EE1E7 /* RatingView.swift */,
-				0F37DD562C05D9F1009BB03D /* OptionButton.swift */,
-				0F37DD582C05DB31009BB03D /* AppButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,10 +512,8 @@
 				0FB4E6702C1843C400E6926D /* RegisterSelectionView.swift in Sources */,
 				0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */,
 				0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */,
-				0F37DD572C05D9F1009BB03D /* OptionButton.swift in Sources */,
 				0F37DD462C046D88009BB03D /* ReviewView.swift in Sources */,
 				0FB4E6542C0B8CE000E6926D /* MonthlyWinPrizeView.swift in Sources */,
-				0F37DD552C05C3FE009BB03D /* CustomerHeaderView.swift in Sources */,
 				0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */,
 				0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */,
 				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,
@@ -563,7 +532,6 @@
 				0FF351DE2C73B80B002EE1E7 /* CustomerMainTabView.swift in Sources */,
 				0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */,
 				0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */,
-				0FF351B32C2C020E002EE1E7 /* RatingView.swift in Sources */,
 				0FB4E66B2C17719800E6926D /* TermsView.swift in Sources */,
 				0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */,
 				0F37DD622C08DBA1009BB03D /* CashConfirmView.swift in Sources */,
@@ -576,13 +544,11 @@
 				0F37DD6A2C08F106009BB03D /* WriteReviewView.swift in Sources */,
 				0FB4E67A2C1C40CD00E6926D /* OTPView.swift in Sources */,
 				0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */,
-				0F37DD602C05DEED009BB03D /* BackHeaderView.swift in Sources */,
 				0FB4E6742C19993A00E6926D /* RakpomSignUpView.swift in Sources */,
 				0F37DD5E2C05DE90009BB03D /* ScanConfirmView.swift in Sources */,
 				0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */,
 				0F37DD532C050D29009BB03D /* PaymentSelectionView.swift in Sources */,
 				0F37DD6F2C09BF9B009BB03D /* YourPointView.swift in Sources */,
-				0FEECF042C22E50600CA182B /* BarberHeaderView.swift in Sources */,
 				0F37DD492C047D13009BB03D /* PointView.swift in Sources */,
 				0FB4E6772C1AE19C00E6926D /* BarberRegisterView.swift in Sources */,
 				0FB4E66E2C183EE000E6926D /* LaunchView.swift in Sources */,
@@ -590,10 +556,8 @@
 				0F37DD412BFF06D0009BB03D /* ReservationView.swift in Sources */,
 				0FB4E6722C18D02300E6926D /* SignupView.swift in Sources */,
 				0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */,
-				0F37DD592C05DB31009BB03D /* AppButton.swift in Sources */,
 				0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */,
 				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
-				0FEECF062C22E75100CA182B /* TitleView.swift in Sources */,
 				98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

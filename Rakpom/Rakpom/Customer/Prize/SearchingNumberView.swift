@@ -15,8 +15,6 @@ struct SearchingNumberView: View {
   var body: some View {
     GeometryReader { geo in
       VStack {
-        CustomerHeaderView(id: "qwerty")
-        
         Text("รางวัลงวดวันที่ " + "1 ม.ค. 66" + " (ล่าง)")
           .font(.custom("Noto Sans Thai", size: 20))
           .fontWeight(.semibold)

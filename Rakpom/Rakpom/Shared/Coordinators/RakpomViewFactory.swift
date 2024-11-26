@@ -11,6 +11,10 @@ import SwiftUI
 // MARK: - RakpomViewFactory
 
 class RakpomViewFactory {
+
+  lazy var tokenManager = FirebaseTokenManager()
+  lazy var client = RakpomAlamofireWrapper(tokenManager: tokenManager)
+
   func makeRootView() -> AnyView {
     let viewModel = RootViewModel(factory: self)
     let userProfileService = AlamofireRootInitialStateAdapterUserProfileService()

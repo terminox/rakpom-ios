@@ -21,8 +21,6 @@ struct PaymentSelectionView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        CustomerHeaderView(id: "qwerty")
-        
         TitleView(title: "ยืนยันการชำระเงิน", color: .white)
         
         Text("เลือกการชำระเงินของคุณ")

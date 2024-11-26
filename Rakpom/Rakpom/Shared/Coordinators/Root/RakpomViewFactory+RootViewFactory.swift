@@ -12,29 +12,38 @@ extension RakpomViewFactory: RootViewFactory {
     let view = LaunchView()
     return AnyView(view)
   }
-  
+
   func makeRootSignupView(onSignupCompleted: @escaping (SignupResult) -> Void) -> AnyView {
     let viewModel = SignupCoordinatorViewModel(factory: self, onCompleted: onSignupCompleted)
     let view = SignupCoordinatorView(viewModel: viewModel)
     return AnyView(view)
   }
-  
-  func makeRootUserProfileFormView(onCompleted: @escaping () -> Void) -> AnyView {
+
+  func makeRootUserProfileFormView(onCompleted _: @escaping () -> Void) -> AnyView {
     // TODO
     AnyView(EmptyView())
   }
-  
-  func makeRootShopProfileFormView(onCompleted: @escaping () -> Void) -> AnyView {
+
+  func makeRootShopProfileFormView(onCompleted _: @escaping () -> Void) -> AnyView {
     // TODO
     AnyView(EmptyView())
   }
-  
-  func makeRootMainView(onLogout: @escaping () -> Void) -> AnyView {
-    // TODO
-    AnyView(EmptyView())
+
+  func makeRootMainView(onLogout _: @escaping () -> Void) -> AnyView {
+    let url = Config.apiURL.appending(path: "users/profiles/me")
+    let service = AlamofireUserAppScaffoldService(url: url, client: client)
+    let scaffoldViewModel = UserAppScaffoldViewModel(service: service)
+    let view = UserAppScaffold(viewModel: scaffoldViewModel, onAvatarPressed: {}, onPointPressed: {}) {
+      CustomerMainView()
+    }
+    .task {
+      await scaffoldViewModel.fetch()
+    }
+
+    return AnyView(view)
   }
-  
-  func makeRootShopMainView(onLogout: @escaping () -> Void) -> AnyView {
+
+  func makeRootShopMainView(onLogout _: @escaping () -> Void) -> AnyView {
     // TODO
     AnyView(EmptyView())
   }

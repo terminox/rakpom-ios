@@ -11,9 +11,6 @@ struct NotificationView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        // HEADER
-        CustomerHeaderView(id: "qwerty")
-        
         TitleView(title: "แจ้งเตือน", color: .white)
         
         ScrollView {

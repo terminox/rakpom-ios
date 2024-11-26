@@ -49,9 +49,6 @@ struct HistoryView: View {
     
     GeometryReader { geo in
       VStack {
-        // HEADER
-        CustomerHeaderView(id: "qwerty")
-        
         // SEARCH
         ScrollView(.vertical, showsIndicators: false) {
           HStack {
@@ -115,9 +112,9 @@ struct HistoryView: View {
 //    .padding(.bottom, 100)
     .background(.white)
     .ignoresSafeArea()
-    .task {
-      await viewModel.fetch()
-    }
+//    .task {
+//      await viewModel.fetch()
+//    }
   }
 }
 

@@ -53,7 +53,6 @@ struct MonthlyWinPrizeView: View {
 //        .padding(24)
 //        
 //        Divider()
-        CustomerHeaderView(id: "qwerty")
         
         VStack(spacing: 8) {
           Text("รหัสงวดวันที่ " + "20 ม.ค. 66")
