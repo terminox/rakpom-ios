@@ -25,7 +25,6 @@
 		0F37DD6A2C08F106009BB03D /* WriteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD692C08F106009BB03D /* WriteReviewView.swift */; };
 		0F37DD6C2C08F7F8009BB03D /* ReviewCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD6B2C08F7F8009BB03D /* ReviewCompletedView.swift */; };
 		0F37DD6F2C09BF9B009BB03D /* YourPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD6E2C09BF9B009BB03D /* YourPointView.swift */; };
-		0FB4E6542C0B8CE000E6926D /* MonthlyWinPrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6532C0B8CE000E6926D /* MonthlyWinPrizeView.swift */; };
 		0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6572C0B98FC00E6926D /* SettingsView.swift */; };
 		0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65A2C0B991B00E6926D /* HomeView.swift */; };
 		0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */; };
@@ -88,7 +87,6 @@
 		0F37DD692C08F106009BB03D /* WriteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewView.swift; sourceTree = "<group>"; };
 		0F37DD6B2C08F7F8009BB03D /* ReviewCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCompletedView.swift; sourceTree = "<group>"; };
 		0F37DD6E2C09BF9B009BB03D /* YourPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourPointView.swift; sourceTree = "<group>"; };
-		0FB4E6532C0B8CE000E6926D /* MonthlyWinPrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyWinPrizeView.swift; sourceTree = "<group>"; };
 		0FB4E6572C0B98FC00E6926D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0FB4E65A2C0B991B00E6926D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingNumberView.swift; sourceTree = "<group>"; };
@@ -262,7 +260,6 @@
 		0F37DD6D2C09BEDA009BB03D /* Prize */ = {
 			isa = PBXGroup;
 			children = (
-				0FB4E6532C0B8CE000E6926D /* MonthlyWinPrizeView.swift */,
 				0F37DD6E2C09BF9B009BB03D /* YourPointView.swift */,
 				0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */,
 			);
@@ -513,7 +510,6 @@
 				0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */,
 				0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */,
 				0F37DD462C046D88009BB03D /* ReviewView.swift in Sources */,
-				0FB4E6542C0B8CE000E6926D /* MonthlyWinPrizeView.swift in Sources */,
 				0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */,
 				0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */,
 				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,

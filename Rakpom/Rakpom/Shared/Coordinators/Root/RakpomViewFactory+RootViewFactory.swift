@@ -30,16 +30,8 @@ extension RakpomViewFactory: RootViewFactory {
   }
 
   func makeRootMainView(onLogout _: @escaping () -> Void) -> AnyView {
-    let url = Config.apiURL.appending(path: "users/profiles/me")
-    let service = AlamofireUserAppScaffoldService(url: url, client: client)
-    let scaffoldViewModel = UserAppScaffoldViewModel(service: service)
-    let view = UserAppScaffold(viewModel: scaffoldViewModel, onAvatarPressed: {}, onPointPressed: {}) {
-      CustomerMainView()
-    }
-    .task {
-      await scaffoldViewModel.fetch()
-    }
-
+    let viewModel = UserMainCoordinatorViewModel(factory: self)
+    let view = UserMainCoordinatorView(viewModel: viewModel)
     return AnyView(view)
   }
 

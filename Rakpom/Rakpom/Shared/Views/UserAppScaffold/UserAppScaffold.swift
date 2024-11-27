@@ -21,5 +21,8 @@ struct UserAppScaffold<Content: View>: View {
 
       content
     }
+    .task {
+      await viewModel.fetch()
+    }
   }
 }

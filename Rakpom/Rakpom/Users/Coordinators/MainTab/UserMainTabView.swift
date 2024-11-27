@@ -1,79 +1,95 @@
 //
-//  RootView.swift
+//  UserMainTabView.swift
 //  Rakpom
 //
-//  Created by CatMeox on 20/8/2567 BE.
+//  Created by yossa on 27/11/2567 BE.
 //
 
 import SwiftUI
 
-struct CustomerMainTabView: View {
-  @State var selectedTab: Tabs = .prize
-  
+// MARK: - UserMainTabView
+
+struct UserMainTabView: View {
+
+  // MARK: Internal
+
+  let factory: UserMainTabViewFactory
+
   var body: some View {
     VStack(spacing: 0) {
       TabView(selection: $selectedTab) {
-//        PrizeListView()
-//          .tabItem {
-//            VStack(spacing: 4) {
-//              selectedTab == .prize ? Image("Gift.fill") : Image("Gift")
-//              
-//              Text("ลุ้นรางวัล")
-//                .font(.custom("Noto Sans Thai", size: 10))
-//            }
-//          }
-//          .tag(Tabs.prize)
-        
-        HistoryView()
+        factory.makeUserMainTabPrizeListView()
+          .tabItem {
+            VStack(spacing: 4) {
+              selectedTab == .prize ? Image("Gift.fill") : Image("Gift")
+
+              Text("ลุ้นรางวัล")
+                .font(.custom("Noto Sans Thai", size: 10))
+            }
+          }
+          .tag(Tabs.prize)
+
+        factory.makeUserMainTabShopListView()
           .tabItem {
             VStack(spacing: 4) {
               selectedTab == .reservation ? Image("Q.fill") : Image("Q")
-              
+
               Text("จองคิว")
                 .font(.custom("Noto Sans Thai", size: 10))
             }
           }
           .tag(Tabs.reservation)
-        
-        PointView()
+
+        factory.makeUserMainTabBookingHistoryView()
           .tabItem {
             VStack(spacing: 4) {
               selectedTab == .point ? Image("Coin.fill") : Image("CoinIcon")
-              
+
               Text("สะสมแต้ม")
                 .font(.custom("Noto Sans Thai", size: 10))
             }
           }
           .tag(Tabs.point)
-        
-        NotificationView()
+
+        factory.makeUserMainTabNotificationListView()
           .tabItem {
             VStack(spacing: 4) {
               selectedTab == .noti ? Image("Bell.fill") : Image("Bell")
-              
+
               Text("แจ้งเตือน")
                 .font(.custom("Noto Sans Thai", size: 10))
             }
           }
           .tag(Tabs.noti)
-        
-        PaymentSelectionView()
+
+        factory.makeUserMainTabPaymentSelectionView()
           .tabItem {
             VStack(spacing: 4) {
               selectedTab == .payment ? Image("Wallet.fill") : Image("Wallet")
-              
+
               Text("การชำระเงิน")
                 .font(.custom("Noto Sans Thai", size: 10))
             }
           }
           .tag(Tabs.payment)
       }
-      
+
       CustomTabBar(selectedTab: $selectedTab)
     }
   }
+
+  // MARK: Private
+
+  @State private var selectedTab: Tabs = .reservation
+
 }
 
-#Preview {
-  CustomerMainTabView()
+// MARK: - UserMainTabViewFactory
+
+protocol UserMainTabViewFactory {
+  func makeUserMainTabPrizeListView() -> AnyView
+  func makeUserMainTabShopListView() -> AnyView
+  func makeUserMainTabBookingHistoryView() -> AnyView
+  func makeUserMainTabNotificationListView() -> AnyView
+  func makeUserMainTabPaymentSelectionView() -> AnyView
 }
