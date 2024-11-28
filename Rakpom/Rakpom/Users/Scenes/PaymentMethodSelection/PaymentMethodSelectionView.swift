@@ -1,5 +1,5 @@
 //
-//  PaymentSelectionView.swift
+//  PaymentMethodSelectionView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 28/5/2567 BE.
@@ -11,7 +11,7 @@ struct PaymentMethod: Hashable {
   let type: String
 }
 
-struct PaymentSelectionView: View {
+struct PaymentMethodSelectionView: View {
   @State var isScanSelected: Bool = false
   @State var isCashSelected: Bool = false
   @State var isPointSelected: Bool = false
@@ -72,5 +72,5 @@ struct PaymentSelectionView: View {
 }
 
 #Preview {
-  PaymentSelectionView()
+  PaymentMethodSelectionView()
 }

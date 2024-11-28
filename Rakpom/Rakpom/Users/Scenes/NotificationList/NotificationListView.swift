@@ -1,5 +1,5 @@
 //
-//  NotificationView.swift
+//  NotificationListView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 27/5/2567 BE.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NotificationView: View {
+struct NotificationListView: View {
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
@@ -100,5 +100,5 @@ struct NotificationView: View {
 }
 
 #Preview {
-  NotificationView()
+  NotificationListView()
 }

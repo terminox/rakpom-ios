@@ -29,20 +29,22 @@ extension RakpomViewFactory: UserMainTabViewFactory {
   }
   
   func makeUserMainTabBookingHistoryView() -> AnyView {
-    // TODO
-    let view = PointView()
+    let url = Config.apiURL.appending(path: "users/booking_history_items/pages")
+    let service = AlamofireBookingHistoryService(url: url, client: client)
+    let viewModel = BookingHistoryViewModel(service: service)
+    let view = BookingHistoryView(viewModel: viewModel)
     return AnyView(view)
   }
   
   func makeUserMainTabNotificationListView() -> AnyView {
     // TODO
-    let view = NotificationView()
+    let view = NotificationListView()
     return AnyView(view)
   }
   
   func makeUserMainTabPaymentSelectionView() -> AnyView {
     // TODO
-    let view = PaymentSelectionView()
+    let view = PaymentMethodSelectionView()
     return AnyView(view)
   }
 }
