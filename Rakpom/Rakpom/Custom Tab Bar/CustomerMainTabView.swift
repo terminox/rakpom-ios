@@ -24,16 +24,16 @@ struct CustomerMainTabView: View {
 //          }
 //          .tag(Tabs.prize)
         
-        HistoryView()
-          .tabItem {
-            VStack(spacing: 4) {
-              selectedTab == .reservation ? Image("Q.fill") : Image("Q")
-              
-              Text("จองคิว")
-                .font(.custom("Noto Sans Thai", size: 10))
-            }
-          }
-          .tag(Tabs.reservation)
+//        ShopListView()
+//          .tabItem {
+//            VStack(spacing: 4) {
+//              selectedTab == .reservation ? Image("Q.fill") : Image("Q")
+//              
+//              Text("จองคิว")
+//                .font(.custom("Noto Sans Thai", size: 10))
+//            }
+//          }
+//          .tag(Tabs.reservation)
         
         PointView()
           .tabItem {

@@ -17,8 +17,14 @@ extension RakpomViewFactory: UserMainTabViewFactory {
   }
   
   func makeUserMainTabShopListView() -> AnyView {
-    // TODO
-    let view = HistoryView()
+    let shopListURL = Config.apiURL.appending(path: "users/shops/pages")
+    let shopListService = AlamofireShopListService(url: shopListURL, client: client)
+    
+    let recentBookingURL = Config.apiURL.appending(path: "users/shops/recent")
+    let recentBookingService = AlamofireRecentBookingService(url: recentBookingURL, client: client)
+    
+    let viewModel = ShopListViewModel(recentBookingService: recentBookingService, shopListService: shopListService, onShopSelected: { _ in })
+    let view = ShopListView(viewModel: viewModel)
     return AnyView(view)
   }
   

@@ -27,10 +27,10 @@ struct CustomerMainView: View {
 //              .navigationBarBackButtonHidden(true)
             
             // BOOKING
-          case let booking as RecentBookingItem:
-            ReservationView(id: booking.id)
-              .navigationBarBackButtonHidden(true)
-          case let x as BookingItem:
+//          case let booking as RecentBookingItem:
+//            ReservationView(id: booking.id)
+//              .navigationBarBackButtonHidden(true)
+          case let x as ShopItem:
             ReservationView(id: x.id)
               .navigationBarBackButtonHidden(true)
           case let item as ConfirmationLayoutItem:

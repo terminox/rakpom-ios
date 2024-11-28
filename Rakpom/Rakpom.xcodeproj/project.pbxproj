@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0FB3692BF75558004BD500 /* RakpomApp.swift */; };
-		0F0FB36C2BF75558004BD500 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0FB36B2BF75558004BD500 /* HistoryView.swift */; };
 		0F0FB36E2BF7555A004BD500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB36D2BF7555A004BD500 /* Assets.xcassets */; };
 		0F0FB3712BF7555A004BD500 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */; };
 		0F37DD412BFF06D0009BB03D /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD402BFF06D0009BB03D /* ReservationView.swift */; };
@@ -59,7 +58,6 @@
 		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
 		986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC52CF0ECD300EA4297 /* FirebaseAuth */; };
 		986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC72CF0ECD300EA4297 /* FirebaseStorage */; };
-		98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */; };
 		98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */; };
 		98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D03D2CEFAA9400722600 /* Alamofire */; };
 		98B1D0432CEFAAFF00722600 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D0422CEFAAFF00722600 /* FirebaseAuth */; };
@@ -69,7 +67,6 @@
 /* Begin PBXFileReference section */
 		0F0FB3662BF75558004BD500 /* Rakpom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rakpom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0FB3692BF75558004BD500 /* RakpomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakpomApp.swift; sourceTree = "<group>"; };
-		0F0FB36B2BF75558004BD500 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		0F0FB36D2BF7555A004BD500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F37DD402BFF06D0009BB03D /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 		0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomTabBar.swift; sourceTree = "<group>"; };
 		0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainTabView.swift; sourceTree = "<group>"; };
 		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
-		98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
 		98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -419,8 +415,6 @@
 		98AFA44F2C82417C00C95DA4 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				0F0FB36B2BF75558004BD500 /* HistoryView.swift */,
-				98AFA44A2C8240C500C95DA4 /* HistoryViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -513,7 +507,6 @@
 				0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */,
 				0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */,
 				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,
-				0F0FB36C2BF75558004BD500 /* HistoryView.swift in Sources */,
 				0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */,
 				98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */,
 				0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */,
@@ -554,7 +547,6 @@
 				0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */,
 				0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */,
 				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
-				98AFA44B2C8240C500C95DA4 /* HistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
