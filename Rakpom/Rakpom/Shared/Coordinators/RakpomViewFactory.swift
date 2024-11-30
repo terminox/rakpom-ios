@@ -17,8 +17,12 @@ class RakpomViewFactory {
 
   func makeRootView() -> AnyView {
     let viewModel = RootViewModel(factory: self)
-    let userProfileService = AlamofireRootInitialStateAdapterUserProfileService()
+    
+    let userURL = Config.apiURL.appending(path: "users/profiles/me")
+    let userProfileService = AlamofireRootInitialStateAdapterUserProfileService(url: userURL, client: client)
+    
     let shopProfileService = AlamofireRootInitialStateAdapterShopProfileService()
+    
     let adapter = RootInitialStateAdapter(
       userProfileService: userProfileService,
       shopProfileService: shopProfileService)

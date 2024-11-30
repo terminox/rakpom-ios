@@ -15,9 +15,11 @@ class AggregatedOTPService: OTPService {
 
   // MARK: Lifecycle
 
-  init(url: URL, auth: Auth = .auth()) {
+  init(url: URL, registrationType: RegistrationType, auth: Auth = .auth(), userDefaults: UserDefaults = .standard) {
     self.url = url
+    self.registrationType = registrationType
     self.auth = auth
+    self.userDefaults = userDefaults
 
     #if DEBUG
     auth.settings?.isAppVerificationDisabledForTesting = true
@@ -29,7 +31,9 @@ class AggregatedOTPService: OTPService {
   struct MissingPhoneNumberError: Error { }
 
   let url: URL
+  let registrationType: RegistrationType
   let auth: Auth
+  let userDefaults: UserDefaults
 
   func submit(_ payload: OTPFormPayload) async throws -> SignupState {
     let provider = PhoneAuthProvider.provider(auth: auth)
@@ -60,6 +64,13 @@ class AggregatedOTPService: OTPService {
     guard let data = response.data else {
       throw MissingRemoteDataError()
     }
+    
+    switch registrationType {
+    case .user:
+      userDefaults.set("USER", forKey: "registrationType")
+    case .shop:
+      userDefaults.set("SHOP", forKey: "registrationType")
+    }
 
     return data.status.toLocal()
   }
@@ -87,5 +98,4 @@ class AggregatedOTPService: OTPService {
       }
     }
   }
-
 }

@@ -10,8 +10,21 @@ import Foundation
 // MARK: - AlamofireRootInitialStateAdapterUserProfileService
 
 class AlamofireRootInitialStateAdapterUserProfileService: RootInitialStateAdapterUserProfileService {
+
+  // MARK: Lifecycle
+
+  init(url: URL, client: RakpomAlamofireWrapper) {
+    self.url = url
+    self.client = client
+  }
+
+  // MARK: Internal
+
+  let url: URL
+  let client: RakpomAlamofireWrapper
+
   func verifyUserProfile() async throws {
-    // TODO
-    throw NSError(domain: "", code: -1)
+    let request = try await client.getRequest(from: url)
+    try await client.perform(request)
   }
 }
