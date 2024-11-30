@@ -10,33 +10,46 @@ import SwiftUI
 extension RakpomViewFactory: UserMainCoordinatorViewFactory {
   func makeUserMainTabView(
     onAvatarPressed: @escaping () -> Void,
-    onHomePressed: @escaping () -> Void,
+    onHomePressed _: @escaping () -> Void,
     onPointPressed: @escaping () -> Void,
-    onSearchClicked: @escaping () -> Void,
-    onShopSelected: @escaping () -> Void,
-    onPaymentMethodSelected: @escaping () -> Void)
+    onSearchClicked _: @escaping () -> Void,
+    onShopSelected: @escaping (ShopItem) -> Void,
+    onPaymentMethodSelected: @escaping (PaymentMethod) -> Void)
     -> AnyView
   {
     let url = Config.apiURL.appending(path: "users/profiles/me")
     let service = AlamofireUserAppScaffoldService(url: url, client: client)
     let scaffoldViewModel = UserAppScaffoldViewModel(service: service)
     let view = UserAppScaffold(viewModel: scaffoldViewModel, onAvatarPressed: onAvatarPressed, onPointPressed: onPointPressed) {
-      UserMainTabView(factory: self)
+      UserMainTabView(factory: self, onShopSelected: onShopSelected, onPaymentMethodConfirmed: onPaymentMethodSelected)
     }
-    
+
     return AnyView(view)
   }
 
-  func makeUserMainShopDetailView() -> AnyView {
+  func makeUserMainShopDetailView(for shop: ShopItem) -> AnyView {
     // TODO
     let view = EmptyView()
     return AnyView(view)
   }
 
-  func makeUserMainPaymentView() -> AnyView {
-    // TODO
-    let view = EmptyView()
-    return AnyView(view)
+  func makeUserMainPaymentView(for paymentMethod: PaymentMethod) -> AnyView {
+    switch paymentMethod {
+    case .qr:
+      // TODO
+      let view = EmptyView()
+      return AnyView(view)
+      
+    case .cash:
+      // TODO
+      let view = EmptyView()
+      return AnyView(view)
+      
+    case .point:
+      // TODO
+      let view = EmptyView()
+      return AnyView(view)
+    }
   }
 
   func makeUserMainPointsView() -> AnyView {

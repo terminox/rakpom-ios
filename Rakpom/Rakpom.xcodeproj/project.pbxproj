@@ -46,7 +46,6 @@
 		0FF351B52C2C1269002EE1E7 /* BarberReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */; };
 		0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */; };
 		0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */; };
-		0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */; };
 		0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */; };
 		0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */; };
 		0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */; };
@@ -101,7 +100,6 @@
 		0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberReviewView.swift; sourceTree = "<group>"; };
 		0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNewsView.swift; sourceTree = "<group>"; };
 		0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSettingsView.swift; sourceTree = "<group>"; };
-		0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainView.swift; sourceTree = "<group>"; };
 		0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomTabBar.swift; sourceTree = "<group>"; };
 		0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainTabView.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
-				0FF351D82C5162AF002EE1E7 /* CustomerMainView.swift */,
 				0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */,
 				0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */,
 				0FB4E66C2C183E5400E6926D /* Registration */,
@@ -478,7 +475,6 @@
 				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,
 				0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */,
 				98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */,
-				0FF351D92C5162AF002EE1E7 /* CustomerMainView.swift in Sources */,
 				0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */,
 				0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */,
 				0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */,

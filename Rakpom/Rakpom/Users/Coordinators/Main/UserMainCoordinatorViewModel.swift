@@ -15,11 +15,11 @@ protocol UserMainCoordinatorViewFactory {
     onHomePressed: @escaping () -> Void,
     onPointPressed: @escaping () -> Void,
     onSearchClicked: @escaping () -> Void,
-    onShopSelected: @escaping () -> Void,
-    onPaymentMethodSelected: @escaping () -> Void) -> AnyView
+    onShopSelected: @escaping (ShopItem) -> Void,
+    onPaymentMethodSelected: @escaping (PaymentMethod) -> Void) -> AnyView
 
-  func makeUserMainShopDetailView() -> AnyView
-  func makeUserMainPaymentView() -> AnyView
+  func makeUserMainShopDetailView(for shop: ShopItem) -> AnyView
+  func makeUserMainPaymentView(for paymentMethod: PaymentMethod) -> AnyView
   func makeUserMainPointsView() -> AnyView
   func makeUserMainSettingsView() -> AnyView
 }
@@ -45,8 +45,8 @@ class UserMainCoordinatorViewModel: ObservableObject {
     onHomePressed: {},
     onPointPressed: {},
     onSearchClicked: {},
-    onShopSelected: {},
-    onPaymentMethodSelected: {})
+    onShopSelected: { [weak self] in self?.displayShopDetail($0) },
+    onPaymentMethodSelected: { [weak self] in self?.displayPayment($0) })
 
   func view(for node: UserMainCoordinatorNode) -> AnyView {
     switch node {
@@ -55,7 +55,8 @@ class UserMainCoordinatorViewModel: ObservableObject {
     case .shopDetail:
       return rootView
     case .payment:
-      return rootView
+      guard let paymentMethod = paymentMethod else { return AnyView(EmptyView()) }
+      return factory.makeUserMainPaymentView(for: paymentMethod)
     case .points:
       return rootView
     case .settings:
@@ -66,6 +67,22 @@ class UserMainCoordinatorViewModel: ObservableObject {
   func back() {
     _ = path.removeLast()
   }
+  
+  func displayShopDetail(_ shop: ShopItem) {
+    self.shop = shop
+    path.append(.shopDetail)
+  }
+
+  func displayPayment(_ paymentMethod: PaymentMethod) {
+    self.paymentMethod = paymentMethod
+    path.append(.payment)
+  }
+
+  // MARK: Private
+
+  private var shop: ShopItem?
+  private var paymentMethod: PaymentMethod?
+  
 }
 
 // MARK: - UserMainCoordinatorNode

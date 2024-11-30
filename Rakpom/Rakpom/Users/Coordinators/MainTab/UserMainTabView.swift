@@ -14,6 +14,9 @@ struct UserMainTabView: View {
   // MARK: Internal
 
   let factory: UserMainTabViewFactory
+  
+  let onShopSelected: (ShopItem) -> Void
+  let onPaymentMethodConfirmed: (PaymentMethod) -> Void
 
   var body: some View {
     VStack(spacing: 0) {
@@ -29,7 +32,7 @@ struct UserMainTabView: View {
           }
           .tag(Tabs.prize)
 
-        factory.makeUserMainTabShopListView()
+        factory.makeUserMainTabShopListView(onShopSelected: onShopSelected)
           .tabItem {
             VStack(spacing: 4) {
               selectedTab == .reservation ? Image("Q.fill") : Image("Q")
@@ -62,7 +65,7 @@ struct UserMainTabView: View {
           }
           .tag(Tabs.noti)
 
-        factory.makeUserMainTabPaymentSelectionView()
+        factory.makeUserMainTabPaymentSelectionView(onConfirmed: onPaymentMethodConfirmed)
           .tabItem {
             VStack(spacing: 4) {
               selectedTab == .payment ? Image("Wallet.fill") : Image("Wallet")
@@ -88,8 +91,8 @@ struct UserMainTabView: View {
 
 protocol UserMainTabViewFactory {
   func makeUserMainTabPrizeListView() -> AnyView
-  func makeUserMainTabShopListView() -> AnyView
+  func makeUserMainTabShopListView(onShopSelected: @escaping (ShopItem) -> Void) -> AnyView
   func makeUserMainTabBookingHistoryView() -> AnyView
   func makeUserMainTabNotificationListView() -> AnyView
-  func makeUserMainTabPaymentSelectionView() -> AnyView
+  func makeUserMainTabPaymentSelectionView(onConfirmed: @escaping (PaymentMethod) -> Void) -> AnyView
 }
