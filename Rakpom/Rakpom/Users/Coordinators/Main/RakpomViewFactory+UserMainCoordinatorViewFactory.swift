@@ -28,23 +28,29 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
   }
 
   func makeUserMainShopDetailView(for shop: ShopItem) -> AnyView {
-    // TODO
-    let view = EmptyView()
+    let viewModel = ShopCoordinatorViewModel(factory: self, shop: shop)
+    let view = StackCoordinatorView(viewModel: viewModel)
+      .navigationBarBackButtonHidden()
     return AnyView(view)
   }
 
   func makeUserMainPaymentView(for paymentMethod: PaymentMethod) -> AnyView {
     switch paymentMethod {
     case .qr:
-      // TODO
-      let view = EmptyView()
+      let url = Config.apiURL.appending(path: "users/payment/qr")
+      let service = AlamofireQRPaymentService(url: url, client: client)
+      let viewModel = QRPaymentViewModel(service: service, onCompleted: { _ in /* TODO */ })
+      let view = BackScaffold {
+        QRPaymentView(viewModel: viewModel)
+      }
+      .navigationBarBackButtonHidden()
       return AnyView(view)
-      
+
     case .cash:
       // TODO
       let view = EmptyView()
       return AnyView(view)
-      
+
     case .point:
       // TODO
       let view = EmptyView()
@@ -60,7 +66,13 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
 
   func makeUserMainSettingsView() -> AnyView {
     // TODO
-    let view = EmptyView()
+    let view = SettingsView(
+      onProfilePressed: {},
+      onAboutUsPressed: {},
+      onPrivacyPolicyPressed: {},
+      onTermsPressed: {},
+      onLogoutPressed: {})
+      .navigationBarBackButtonHidden()
     return AnyView(view)
   }
 }

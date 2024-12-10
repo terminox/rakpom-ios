@@ -1,5 +1,5 @@
 //
-//  CashConfirmView.swift
+//  CashPaymentView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 30/5/2567 BE.
@@ -7,17 +7,14 @@
 
 import SwiftUI
 
-struct CashConfirmView: View {
+struct CashPaymentView: View {
+  
   @State var price: String = ""
   @State var shopID: String = ""
-  
-  let type: String
   
   var body: some View {
     GeometryReader { geo in
       VStack(spacing: 0) {
-        BackHeaderView(title: "การชำระ", id: "qwerty")
-        
         TitleView(title: "ชำระด้วยเงินสด", color: .lightGray)
         
         ZStack {
@@ -76,5 +73,7 @@ struct CashConfirmView: View {
 }
 
 #Preview {
-  CashConfirmView(type: "Cash")
+  BackScaffold {
+    CashPaymentView()
+  }
 }

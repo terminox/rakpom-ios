@@ -11,17 +11,18 @@ import SwiftUI
 
 struct BackScaffold<Content: View>: View {
 
-  let back: () -> Void
-
   @ViewBuilder var content: Content
 
   var body: some View {
     VStack(spacing: .zero) {
-      BackBar(back: back)
+      BackBar(back: { dismiss() })
 
       content
     }
   }
+
+  @Environment(\.dismiss) private var dismiss
+
 }
 
 // MARK: - BackBar
@@ -59,7 +60,7 @@ struct BackBar: View {
 }
 
 #Preview {
-  BackScaffold(back: {}) {
+  BackScaffold {
     EmptyView()
     Spacer()
   }

@@ -10,16 +10,9 @@
 		0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0FB3692BF75558004BD500 /* RakpomApp.swift */; };
 		0F0FB36E2BF7555A004BD500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB36D2BF7555A004BD500 /* Assets.xcassets */; };
 		0F0FB3712BF7555A004BD500 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */; };
-		0F37DD412BFF06D0009BB03D /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD402BFF06D0009BB03D /* ReservationView.swift */; };
 		0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */; };
 		0F37DD462C046D88009BB03D /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD452C046D88009BB03D /* ReviewView.swift */; };
 		0F37DD4F2C04F072009BB03D /* NotoSansThai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */; };
-		0F37DD5E2C05DE90009BB03D /* ScanConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD5D2C05DE90009BB03D /* ScanConfirmView.swift */; };
-		0F37DD622C08DBA1009BB03D /* CashConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD612C08DBA1009BB03D /* CashConfirmView.swift */; };
-		0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD652C08E579009BB03D /* PointConfirmView.swift */; };
-		0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD672C08ECB3009BB03D /* SubmitPaymentView.swift */; };
-		0F37DD6A2C08F106009BB03D /* WriteReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD692C08F106009BB03D /* WriteReviewView.swift */; };
-		0F37DD6C2C08F7F8009BB03D /* ReviewCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD6B2C08F7F8009BB03D /* ReviewCompletedView.swift */; };
 		0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6572C0B98FC00E6926D /* SettingsView.swift */; };
 		0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65A2C0B991B00E6926D /* HomeView.swift */; };
 		0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */; };
@@ -52,7 +45,6 @@
 		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
 		986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC52CF0ECD300EA4297 /* FirebaseAuth */; };
 		986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC72CF0ECD300EA4297 /* FirebaseStorage */; };
-		98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */; };
 		98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D03D2CEFAA9400722600 /* Alamofire */; };
 		98B1D0432CEFAAFF00722600 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D0422CEFAAFF00722600 /* FirebaseAuth */; };
 		98FAC9C82CF0A4800010572B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */; };
@@ -63,17 +55,10 @@
 		0F0FB3692BF75558004BD500 /* RakpomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakpomApp.swift; sourceTree = "<group>"; };
 		0F0FB36D2BF7555A004BD500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0F37DD402BFF06D0009BB03D /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReservationView.swift; sourceTree = "<group>"; };
 		0F37DD452C046D88009BB03D /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansThai.ttf; sourceTree = "<group>"; };
 		0F37DD502C04F09F009BB03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0F37DD5D2C05DE90009BB03D /* ScanConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanConfirmView.swift; sourceTree = "<group>"; };
-		0F37DD612C08DBA1009BB03D /* CashConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashConfirmView.swift; sourceTree = "<group>"; };
-		0F37DD652C08E579009BB03D /* PointConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointConfirmView.swift; sourceTree = "<group>"; };
-		0F37DD672C08ECB3009BB03D /* SubmitPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPaymentView.swift; sourceTree = "<group>"; };
-		0F37DD692C08F106009BB03D /* WriteReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewView.swift; sourceTree = "<group>"; };
-		0F37DD6B2C08F7F8009BB03D /* ReviewCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCompletedView.swift; sourceTree = "<group>"; };
 		0FB4E6572C0B98FC00E6926D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0FB4E65A2C0B991B00E6926D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingNumberView.swift; sourceTree = "<group>"; };
@@ -104,7 +89,6 @@
 		0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomTabBar.swift; sourceTree = "<group>"; };
 		0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainTabView.swift; sourceTree = "<group>"; };
 		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
-		98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
 		98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,49 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				98AFA44F2C82417C00C95DA4 /* History */,
-				0F37DD402BFF06D0009BB03D /* ReservationView.swift */,
-				98AFA44C2C8240D000C95DA4 /* ReservationViewModel.swift */,
 				0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */,
 				0F37DD452C046D88009BB03D /* ReviewView.swift */,
 			);
 			path = Reservation;
-			sourceTree = "<group>";
-		};
-		0F37DD512C050CFA009BB03D /* Payment */ = {
-			isa = PBXGroup;
-			children = (
-				0F37DD672C08ECB3009BB03D /* SubmitPaymentView.swift */,
-				0F37DD692C08F106009BB03D /* WriteReviewView.swift */,
-				0F37DD6B2C08F7F8009BB03D /* ReviewCompletedView.swift */,
-				0F37DD5A2C05DDFB009BB03D /* Scan */,
-				0F37DD5B2C05DE4B009BB03D /* Cash */,
-				0F37DD5C2C05DE58009BB03D /* Point */,
-			);
-			path = Payment;
-			sourceTree = "<group>";
-		};
-		0F37DD5A2C05DDFB009BB03D /* Scan */ = {
-			isa = PBXGroup;
-			children = (
-				0F37DD5D2C05DE90009BB03D /* ScanConfirmView.swift */,
-			);
-			path = Scan;
-			sourceTree = "<group>";
-		};
-		0F37DD5B2C05DE4B009BB03D /* Cash */ = {
-			isa = PBXGroup;
-			children = (
-				0F37DD612C08DBA1009BB03D /* CashConfirmView.swift */,
-			);
-			path = Cash;
-			sourceTree = "<group>";
-		};
-		0F37DD5C2C05DE58009BB03D /* Point */ = {
-			isa = PBXGroup;
-			children = (
-				0F37DD652C08E579009BB03D /* PointConfirmView.swift */,
-			);
-			path = Point;
 			sourceTree = "<group>";
 		};
 		0F37DD6D2C09BEDA009BB03D /* Prize */ = {
@@ -237,7 +182,6 @@
 				0FB4E6562C0B98A500E6926D /* Home */,
 				0F37DD6D2C09BEDA009BB03D /* Prize */,
 				0F37DD442C008481009BB03D /* Reservation */,
-				0F37DD512C050CFA009BB03D /* Payment */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -473,8 +417,6 @@
 				0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */,
 				0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */,
 				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,
-				0F37DD662C08E579009BB03D /* PointConfirmView.swift in Sources */,
-				98AFA44D2C8240D000C95DA4 /* ReservationViewModel.swift in Sources */,
 				0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */,
 				0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */,
 				0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */,
@@ -486,26 +428,20 @@
 				0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */,
 				0FB4E66B2C17719800E6926D /* TermsView.swift in Sources */,
 				0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */,
-				0F37DD622C08DBA1009BB03D /* CashConfirmView.swift in Sources */,
 				0FF351B12C29DE75002EE1E7 /* WithdrawListView.swift in Sources */,
 				0FF351AE2C2974CA002EE1E7 /* MyAccountView.swift in Sources */,
 				0FB4E6692C1770F600E6926D /* PrivacyPolicyView.swift in Sources */,
-				0F37DD6C2C08F7F8009BB03D /* ReviewCompletedView.swift in Sources */,
 				0FB4E6672C175EEE00E6926D /* AboutUsView.swift in Sources */,
 				0FF351B52C2C1269002EE1E7 /* BarberReviewView.swift in Sources */,
-				0F37DD6A2C08F106009BB03D /* WriteReviewView.swift in Sources */,
 				0FB4E67A2C1C40CD00E6926D /* OTPView.swift in Sources */,
 				0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */,
 				0FB4E6742C19993A00E6926D /* RakpomSignUpView.swift in Sources */,
-				0F37DD5E2C05DE90009BB03D /* ScanConfirmView.swift in Sources */,
 				0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */,
 				0FB4E6772C1AE19C00E6926D /* BarberRegisterView.swift in Sources */,
 				0FB4E66E2C183EE000E6926D /* LaunchView.swift in Sources */,
 				0FF351A82C241542002EE1E7 /* ShopReservationView.swift in Sources */,
-				0F37DD412BFF06D0009BB03D /* ReservationView.swift in Sources */,
 				0FB4E6722C18D02300E6926D /* SignupView.swift in Sources */,
 				0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */,
-				0F37DD682C08ECB3009BB03D /* SubmitPaymentView.swift in Sources */,
 				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

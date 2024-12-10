@@ -14,13 +14,11 @@ protocol SignupCoordinatorViewFactory {
   func makeSignupMethodSelectionView(onSignupPressed: @escaping () -> Void) -> AnyView
 
   func makeSignupPhoneFormView(
-    back: @escaping () -> Void,
     registrationType: RegistrationType,
     onSuccess: @escaping (PhoneFormResponse) -> Void)
     -> AnyView
 
   func makeSignupOTPFormView(
-    back: @escaping () -> Void,
     registrationType: RegistrationType,
     refCode: String,
     onSuccess: @escaping (SignupState) -> Void)
@@ -65,7 +63,6 @@ class SignupCoordinatorViewModel: ObservableObject {
       }
       
       return factory.makeSignupPhoneFormView(
-        back: { [weak self] in self?.back() },
         registrationType: registrationType,
         onSuccess: { [weak self] response in
           self?.displayOTPForm(response: response)
@@ -77,7 +74,6 @@ class SignupCoordinatorViewModel: ObservableObject {
       }
 
       return factory.makeSignupOTPFormView(
-        back: { [weak self] in self?.back() },
         registrationType: registrationType,
         refCode: refCode,
         onSuccess: { [weak self] state in
@@ -85,10 +81,6 @@ class SignupCoordinatorViewModel: ObservableObject {
           self?.onCompleted(result)
         })
     }
-  }
-  
-  func back() {
-    _ = path.removeLast()
   }
 
   func displaySignupMethod(registrationType: RegistrationType) {

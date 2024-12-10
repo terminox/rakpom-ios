@@ -1,5 +1,5 @@
 //
-//  ReviewCompletedView.swift
+//  ReviewCompletionView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 31/5/2567 BE.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReviewCompletedView: View {
+struct ReviewCompletionContentView: View {
   var body: some View {
     VStack(spacing: 25) {
       Image("Thump")
@@ -31,5 +31,5 @@ struct ReviewCompletedView: View {
 }
 
 #Preview {
-  ReviewCompletedView()
+  ReviewCompletionContentView()
 }

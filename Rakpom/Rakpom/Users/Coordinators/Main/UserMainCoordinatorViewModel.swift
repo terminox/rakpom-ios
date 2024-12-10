@@ -26,7 +26,7 @@ protocol UserMainCoordinatorViewFactory {
 
 // MARK: - UserMainCoordinatorViewModel
 
-class UserMainCoordinatorViewModel: ObservableObject {
+class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
 
   // MARK: Lifecycle
 
@@ -36,17 +36,22 @@ class UserMainCoordinatorViewModel: ObservableObject {
 
   // MARK: Internal
 
+  typealias Node = UserMainCoordinatorNode
+
   let factory: UserMainCoordinatorViewFactory
 
-  @Published var path: [UserMainCoordinatorNode] = []
-
+  @Published var path: [Node] = []
+  
   lazy var rootView = factory.makeUserMainTabView(
-    onAvatarPressed: {},
-    onHomePressed: {},
+    onAvatarPressed: { [weak self] in self?.displaySettings() },
+    onHomePressed: { }, // Do nothing here
     onPointPressed: {},
     onSearchClicked: {},
     onShopSelected: { [weak self] in self?.displayShopDetail($0) },
     onPaymentMethodSelected: { [weak self] in self?.displayPayment($0) })
+
+  var pathPublished: Published<[Node]> { _path }
+  var pathPublisher: Published<[Node]>.Publisher { $path }
 
   func view(for node: UserMainCoordinatorNode) -> AnyView {
     switch node {
@@ -60,14 +65,14 @@ class UserMainCoordinatorViewModel: ObservableObject {
     case .points:
       return rootView
     case .settings:
-      return rootView
+      return factory.makeUserMainSettingsView()
     }
   }
 
   func back() {
     _ = path.removeLast()
   }
-  
+
   func displayShopDetail(_ shop: ShopItem) {
     self.shop = shop
     path.append(.shopDetail)
@@ -78,11 +83,15 @@ class UserMainCoordinatorViewModel: ObservableObject {
     path.append(.payment)
   }
 
+  func displaySettings() {
+    path.append(.settings)
+  }
+
   // MARK: Private
 
   private var shop: ShopItem?
   private var paymentMethod: PaymentMethod?
-  
+
 }
 
 // MARK: - UserMainCoordinatorNode

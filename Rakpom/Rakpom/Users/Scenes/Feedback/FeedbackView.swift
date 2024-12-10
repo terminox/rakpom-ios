@@ -1,5 +1,5 @@
 //
-//  WriteReviewView.swift
+//  FeedbackView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 31/5/2567 BE.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WriteReviewView: View {
+struct FeedbackContentView: View {
   @State var reviewText: String = ""
   @State private var rating = 0
   
@@ -71,5 +71,5 @@ struct WriteReviewView: View {
 }
 
 #Preview {
-  WriteReviewView()
+  FeedbackContentView()
 }

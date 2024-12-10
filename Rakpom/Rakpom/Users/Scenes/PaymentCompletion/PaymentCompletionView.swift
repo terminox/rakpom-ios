@@ -1,5 +1,5 @@
 //
-//  SubmitPaymentView.swift
+//  PaymentCompletionView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 31/5/2567 BE.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SubmitPaymentView: View {
+struct PaymentCompletionView: View {
   var body: some View {
     VStack(spacing: 16) {
       Image(systemName: "checkmark.circle.fill")
@@ -52,5 +52,5 @@ struct SubmitPaymentView: View {
 }
 
 #Preview {
-  SubmitPaymentView()
+  PaymentCompletionView()
 }

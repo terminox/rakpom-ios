@@ -39,7 +39,7 @@ struct PhoneFormView: View {
 }
 
 #Preview {
-  BackScaffold(back: {}) {
+  BackScaffold {
     PhoneFormView(onSubmit: { _ in })
   }
 }

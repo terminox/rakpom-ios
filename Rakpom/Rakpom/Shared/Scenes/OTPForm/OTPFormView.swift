@@ -40,7 +40,7 @@ struct OTPFormView: View {
 }
 
 #Preview {
-  BackScaffold(back: {}) {
+  BackScaffold {
     OTPFormView(onSubmit: { _ in })
   }
 }
