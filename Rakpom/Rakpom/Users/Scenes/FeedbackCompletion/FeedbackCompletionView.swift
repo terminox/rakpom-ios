@@ -1,5 +1,5 @@
 //
-//  ReviewCompletionView.swift
+//  FeedbackCompletionView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 31/5/2567 BE.
@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct ReviewCompletionContentView: View {
+struct FeedbackCompletionView: View {
+  
+  let onConfirmed: () -> Void
+  
   var body: some View {
     VStack(spacing: 25) {
       Image("Thump")
@@ -18,7 +21,7 @@ struct ReviewCompletionContentView: View {
         .fontWeight(.semibold)
       
       Button {
-        // Back to Home scrreen
+        onConfirmed()
       } label: {
         AppButton(title: "กลับสู่หน้าหลัก")
           .padding(.horizontal)
@@ -31,5 +34,5 @@ struct ReviewCompletionContentView: View {
 }
 
 #Preview {
-  ReviewCompletionContentView()
+  FeedbackCompletionView(onConfirmed: {})
 }

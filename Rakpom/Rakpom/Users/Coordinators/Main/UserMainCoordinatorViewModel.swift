@@ -19,7 +19,7 @@ protocol UserMainCoordinatorViewFactory {
     onPaymentMethodSelected: @escaping (PaymentMethod) -> Void) -> AnyView
 
   func makeUserMainShopDetailView(for shop: ShopItem) -> AnyView
-  func makeUserMainPaymentView(for paymentMethod: PaymentMethod) -> AnyView
+  func makeUserMainPaymentView(for paymentMethod: PaymentMethod, onCompleted: @escaping () -> Void) -> AnyView
   func makeUserMainPointsView() -> AnyView
   func makeUserMainSettingsView() -> AnyView
 }
@@ -61,16 +61,12 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
       return rootView
     case .payment:
       guard let paymentMethod = paymentMethod else { return AnyView(EmptyView()) }
-      return factory.makeUserMainPaymentView(for: paymentMethod)
+      return factory.makeUserMainPaymentView(for: paymentMethod, onCompleted: { [weak self] in self?.reset() })
     case .points:
       return rootView
     case .settings:
       return factory.makeUserMainSettingsView()
     }
-  }
-
-  func back() {
-    _ = path.removeLast()
   }
 
   func displayShopDetail(_ shop: ShopItem) {
@@ -85,6 +81,10 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
 
   func displaySettings() {
     path.append(.settings)
+  }
+  
+  func reset() {
+    path = []
   }
 
   // MARK: Private

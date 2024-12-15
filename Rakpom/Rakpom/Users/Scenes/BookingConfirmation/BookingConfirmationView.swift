@@ -1,5 +1,5 @@
 //
-//  ConfirmReservation.swift
+//  BookingConfirmationView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 24/5/2567 BE.
@@ -27,7 +27,7 @@ struct DetailConfirmation: View {
   }
 }
 
-struct ConfirmReservationView: View {
+struct BookingConfirmationView: View {
   
   let confirm: ConfirmationLayoutItem
   @Binding var stackPath: [AnyHashable]
@@ -75,7 +75,3 @@ struct ConfirmationRowItem: Hashable {
   let title: String
   let value: String
 }
-
-//#Preview {
-//  ConfirmReservationView(confirm: )
-//}

@@ -34,28 +34,10 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
     return AnyView(view)
   }
 
-  func makeUserMainPaymentView(for paymentMethod: PaymentMethod) -> AnyView {
-    switch paymentMethod {
-    case .qr:
-      let url = Config.apiURL.appending(path: "users/payment/qr")
-      let service = AlamofireQRPaymentService(url: url, client: client)
-      let viewModel = QRPaymentViewModel(service: service, onCompleted: { _ in /* TODO */ })
-      let view = BackScaffold {
-        QRPaymentView(viewModel: viewModel)
-      }
-      .navigationBarBackButtonHidden()
-      return AnyView(view)
-
-    case .cash:
-      // TODO
-      let view = EmptyView()
-      return AnyView(view)
-
-    case .point:
-      // TODO
-      let view = EmptyView()
-      return AnyView(view)
-    }
+  func makeUserMainPaymentView(for paymentMethod: PaymentMethod, onCompleted: @escaping () -> Void) -> AnyView {
+    let viewModel = PaymentCoordinatorViewModel(paymentMethod: paymentMethod, factory: self, onCompleted: {})
+    let view = StackCoordinatorView(viewModel: viewModel)
+    return AnyView(view)
   }
 
   func makeUserMainPointsView() -> AnyView {

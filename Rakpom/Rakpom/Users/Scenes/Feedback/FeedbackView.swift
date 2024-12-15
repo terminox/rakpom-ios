@@ -7,27 +7,57 @@
 
 import SwiftUI
 
-struct FeedbackContentView: View {
-  @State var reviewText: String = ""
+// MARK: - FeedbackView
+
+struct FeedbackView: View {
+
+  @ObservedObject var viewModel: FeedbackViewModel
+
+  @State private var reviewText = ""
   @State private var rating = 0
-  
+
+  var body: some View {
+    FeedbackContentView(
+      reviewText: $reviewText,
+      rating: $rating,
+      onConfirmed: {
+        Task { @MainActor in
+          let payload = FeedbackPayload(score: rating, content: reviewText)
+          await viewModel.submit(payload: payload)
+        }
+      },
+      onCanceled: viewModel.onCanceled)
+  }
+}
+
+// MARK: - FeedbackContentView
+
+struct FeedbackContentView: View {
+
+  @Binding var reviewText: String
+  @Binding var rating: Int
+
+  let onConfirmed: () -> Void
+  let onCanceled: () -> Void
+
   var body: some View {
     VStack(spacing: 0) {
-      Image("Review")
+      Image(.review)
+
       Text("ให้คะแนนความพึงพอใจ")
         .font(.custom("Noto Sans Thai", size: 16))
         .foregroundStyle(.black)
         .fontWeight(.semibold)
-      
+
       RatingView(rating: $rating)
         .padding()
         .padding(.bottom)
-      
+
       VStack(alignment: .leading, spacing: 8) {
         Text("เขียนรีวิว")
           .font(.custom("Noto Sans Thai", size: 14))
           .foregroundStyle(.black)
-        
+
         TextField("เขียนข้อความที่นี่...", text: $reviewText)
           .font(.custom("Noto Sans Thai", size: 16))
           .foregroundStyle(.black)
@@ -36,17 +66,16 @@ struct FeedbackContentView: View {
           .frame(height: 48)
           .overlay(
             RoundedRectangle(cornerRadius: 12)
-              .stroke(.gray)
-          )
+              .stroke(.gray))
           .padding(.bottom, 60)
-        
+
         Button {
           // Navigate to write a review
         } label: {
           AppButton(title: "ยืนยัน")
         }
         .padding(.bottom, 8)
-        
+
         Button {
           // Back to home screen
         } label: {
@@ -59,8 +88,7 @@ struct FeedbackContentView: View {
             .clipShape(Capsule())
             .overlay(
               RoundedRectangle(cornerRadius: 50)
-                .stroke(Color("BlueButton"))
-            )
+                .stroke(Color("BlueButton")))
         }
       }
       .padding(.horizontal, 32)
@@ -71,5 +99,8 @@ struct FeedbackContentView: View {
 }
 
 #Preview {
-  FeedbackContentView()
+  @Previewable @State var reviewText = ""
+  @Previewable @State var rating = 0
+
+  FeedbackContentView(reviewText: $reviewText, rating: $rating, onConfirmed: {}, onCanceled: {})
 }

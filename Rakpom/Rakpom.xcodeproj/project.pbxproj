@@ -10,38 +10,7 @@
 		0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0FB3692BF75558004BD500 /* RakpomApp.swift */; };
 		0F0FB36E2BF7555A004BD500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB36D2BF7555A004BD500 /* Assets.xcassets */; };
 		0F0FB3712BF7555A004BD500 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */; };
-		0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */; };
-		0F37DD462C046D88009BB03D /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37DD452C046D88009BB03D /* ReviewView.swift */; };
 		0F37DD4F2C04F072009BB03D /* NotoSansThai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */; };
-		0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6572C0B98FC00E6926D /* SettingsView.swift */; };
-		0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65A2C0B991B00E6926D /* HomeView.swift */; };
-		0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */; };
-		0FB4E65F2C0F119300E6926D /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E65E2C0F119300E6926D /* ProfileSettingsView.swift */; };
-		0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6602C16F6E600E6926D /* GenderSelectionView.swift */; };
-		0FB4E6672C175EEE00E6926D /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6662C175EEE00E6926D /* AboutUsView.swift */; };
-		0FB4E6692C1770F600E6926D /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */; };
-		0FB4E66B2C17719800E6926D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66A2C17719800E6926D /* TermsView.swift */; };
-		0FB4E66E2C183EE000E6926D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66D2C183EE000E6926D /* LaunchView.swift */; };
-		0FB4E6702C1843C400E6926D /* RegisterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E66F2C1843C400E6926D /* RegisterSelectionView.swift */; };
-		0FB4E6722C18D02300E6926D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6712C18D02300E6926D /* SignupView.swift */; };
-		0FB4E6742C19993A00E6926D /* RakpomSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6732C19993A00E6926D /* RakpomSignUpView.swift */; };
-		0FB4E6772C1AE19C00E6926D /* BarberRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6762C1AE19C00E6926D /* BarberRegisterView.swift */; };
-		0FB4E67A2C1C40CD00E6926D /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E6792C1C40CD00E6926D /* OTPView.swift */; };
-		0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67C2C1C434B00E6926D /* CompletedView.swift */; };
-		0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */; };
-		0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF012C22E42A00CA182B /* TransactionView.swift */; };
-		0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEECF072C2362E800CA182B /* TransferDetailView.swift */; };
-		0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351A42C241168002EE1E7 /* CashDetailView.swift */; };
-		0FF351A82C241542002EE1E7 /* ShopReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351A72C241542002EE1E7 /* ShopReservationView.swift */; };
-		0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351AA2C2574F7002EE1E7 /* BarberNotiView.swift */; };
-		0FF351AE2C2974CA002EE1E7 /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351AD2C2974CA002EE1E7 /* MyAccountView.swift */; };
-		0FF351B12C29DE75002EE1E7 /* WithdrawListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B02C29DE75002EE1E7 /* WithdrawListView.swift */; };
-		0FF351B52C2C1269002EE1E7 /* BarberReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */; };
-		0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */; };
-		0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */; };
-		0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */; };
-		0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */; };
-		0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */; };
 		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
 		986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC52CF0ECD300EA4297 /* FirebaseAuth */; };
 		986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC72CF0ECD300EA4297 /* FirebaseStorage */; };
@@ -55,39 +24,8 @@
 		0F0FB3692BF75558004BD500 /* RakpomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakpomApp.swift; sourceTree = "<group>"; };
 		0F0FB36D2BF7555A004BD500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReservationView.swift; sourceTree = "<group>"; };
-		0F37DD452C046D88009BB03D /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansThai.ttf; sourceTree = "<group>"; };
 		0F37DD502C04F09F009BB03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0FB4E6572C0B98FC00E6926D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		0FB4E65A2C0B991B00E6926D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingNumberView.swift; sourceTree = "<group>"; };
-		0FB4E65E2C0F119300E6926D /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
-		0FB4E6602C16F6E600E6926D /* GenderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionView.swift; sourceTree = "<group>"; };
-		0FB4E6662C175EEE00E6926D /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
-		0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
-		0FB4E66A2C17719800E6926D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
-		0FB4E66D2C183EE000E6926D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		0FB4E66F2C1843C400E6926D /* RegisterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectionView.swift; sourceTree = "<group>"; };
-		0FB4E6712C18D02300E6926D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		0FB4E6732C19993A00E6926D /* RakpomSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakpomSignUpView.swift; sourceTree = "<group>"; };
-		0FB4E6762C1AE19C00E6926D /* BarberRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberRegisterView.swift; sourceTree = "<group>"; };
-		0FB4E6792C1C40CD00E6926D /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
-		0FB4E67C2C1C434B00E6926D /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
-		0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberHomeView.swift; sourceTree = "<group>"; };
-		0FEECF012C22E42A00CA182B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
-		0FEECF072C2362E800CA182B /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
-		0FF351A42C241168002EE1E7 /* CashDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashDetailView.swift; sourceTree = "<group>"; };
-		0FF351A72C241542002EE1E7 /* ShopReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReservationView.swift; sourceTree = "<group>"; };
-		0FF351AA2C2574F7002EE1E7 /* BarberNotiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberNotiView.swift; sourceTree = "<group>"; };
-		0FF351AD2C2974CA002EE1E7 /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
-		0FF351B02C29DE75002EE1E7 /* WithdrawListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawListView.swift; sourceTree = "<group>"; };
-		0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberReviewView.swift; sourceTree = "<group>"; };
-		0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNewsView.swift; sourceTree = "<group>"; };
-		0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSettingsView.swift; sourceTree = "<group>"; };
-		0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
-		0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomTabBar.swift; sourceTree = "<group>"; };
-		0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainTabView.swift; sourceTree = "<group>"; };
 		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
 		98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,10 +78,6 @@
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
 				0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */,
-				0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */,
-				0FB4E66C2C183E5400E6926D /* Registration */,
-				0FB4E6552C0B985600E6926D /* Customer */,
-				0FB4E6752C1AE16000E6926D /* BarberShop */,
 				0F0FB36D2BF7555A004BD500 /* Assets.xcassets */,
 				0F0FB36F2BF7555A004BD500 /* Preview Content */,
 			);
@@ -156,177 +90,6 @@
 				0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0F37DD442C008481009BB03D /* Reservation */ = {
-			isa = PBXGroup;
-			children = (
-				98AFA44F2C82417C00C95DA4 /* History */,
-				0F37DD422C00844A009BB03D /* ConfirmReservationView.swift */,
-				0F37DD452C046D88009BB03D /* ReviewView.swift */,
-			);
-			path = Reservation;
-			sourceTree = "<group>";
-		};
-		0F37DD6D2C09BEDA009BB03D /* Prize */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E65C2C0B9EB400E6926D /* SearchingNumberView.swift */,
-			);
-			path = Prize;
-			sourceTree = "<group>";
-		};
-		0FB4E6552C0B985600E6926D /* Customer */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E6562C0B98A500E6926D /* Home */,
-				0F37DD6D2C09BEDA009BB03D /* Prize */,
-				0F37DD442C008481009BB03D /* Reservation */,
-			);
-			path = Customer;
-			sourceTree = "<group>";
-		};
-		0FB4E6562C0B98A500E6926D /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E65A2C0B991B00E6926D /* HomeView.swift */,
-				0FB4E6652C175EB000E6926D /* Settings */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		0FB4E6642C175E6800E6926D /* ProfileSettings */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E65E2C0F119300E6926D /* ProfileSettingsView.swift */,
-				0FB4E6602C16F6E600E6926D /* GenderSelectionView.swift */,
-			);
-			path = ProfileSettings;
-			sourceTree = "<group>";
-		};
-		0FB4E6652C175EB000E6926D /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E6572C0B98FC00E6926D /* SettingsView.swift */,
-				0FB4E6662C175EEE00E6926D /* AboutUsView.swift */,
-				0FB4E6682C1770F600E6926D /* PrivacyPolicyView.swift */,
-				0FB4E66A2C17719800E6926D /* TermsView.swift */,
-				0FB4E6642C175E6800E6926D /* ProfileSettings */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		0FB4E66C2C183E5400E6926D /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E66D2C183EE000E6926D /* LaunchView.swift */,
-				0FB4E66F2C1843C400E6926D /* RegisterSelectionView.swift */,
-				0FB4E6712C18D02300E6926D /* SignupView.swift */,
-				0FB4E6732C19993A00E6926D /* RakpomSignUpView.swift */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
-		0FB4E6752C1AE16000E6926D /* BarberShop */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E6782C1C40B100E6926D /* Register */,
-				0FB4E67E2C1C46DA00E6926D /* Home */,
-				0FEECF002C22E2B100CA182B /* Transaction */,
-				0FF351A62C241504002EE1E7 /* Reservation */,
-				0FF351A92C2432DA002EE1E7 /* Notification */,
-				0FF351AC2C297406002EE1E7 /* Account */,
-				0FF351AF2C297B3C002EE1E7 /* Review */,
-			);
-			path = BarberShop;
-			sourceTree = "<group>";
-		};
-		0FB4E6782C1C40B100E6926D /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E6762C1AE19C00E6926D /* BarberRegisterView.swift */,
-				0FB4E6792C1C40CD00E6926D /* OTPView.swift */,
-				0FB4E67C2C1C434B00E6926D /* CompletedView.swift */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		0FB4E67E2C1C46DA00E6926D /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				0FB4E67F2C1C474800E6926D /* BarberHomeView.swift */,
-				0FF351B62C354DDC002EE1E7 /* ImportantNewsView.swift */,
-				0FF351B82C37F579002EE1E7 /* ShopSettings */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		0FEECF002C22E2B100CA182B /* Transaction */ = {
-			isa = PBXGroup;
-			children = (
-				0FEECF012C22E42A00CA182B /* TransactionView.swift */,
-				0FEECF072C2362E800CA182B /* TransferDetailView.swift */,
-				0FF351A42C241168002EE1E7 /* CashDetailView.swift */,
-			);
-			path = Transaction;
-			sourceTree = "<group>";
-		};
-		0FF351A62C241504002EE1E7 /* Reservation */ = {
-			isa = PBXGroup;
-			children = (
-				0FF351A72C241542002EE1E7 /* ShopReservationView.swift */,
-			);
-			path = Reservation;
-			sourceTree = "<group>";
-		};
-		0FF351A92C2432DA002EE1E7 /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				0FF351AA2C2574F7002EE1E7 /* BarberNotiView.swift */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
-		0FF351AC2C297406002EE1E7 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				0FF351AD2C2974CA002EE1E7 /* MyAccountView.swift */,
-				0FF351B02C29DE75002EE1E7 /* WithdrawListView.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
-		0FF351AF2C297B3C002EE1E7 /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				0FF351B42C2C1269002EE1E7 /* BarberReviewView.swift */,
-			);
-			path = Review;
-			sourceTree = "<group>";
-		};
-		0FF351B82C37F579002EE1E7 /* ShopSettings */ = {
-			isa = PBXGroup;
-			children = (
-				0FF351B92C37F59F002EE1E7 /* ShopSettingsView.swift */,
-			);
-			path = ShopSettings;
-			sourceTree = "<group>";
-		};
-		0FF351DA2C73B5BE002EE1E7 /* Custom Tab Bar */ = {
-			isa = PBXGroup;
-			children = (
-				0FF351DB2C73B5FB002EE1E7 /* CustomTabBar.swift */,
-				0FF351E12C7493C2002EE1E7 /* BarberMainTabView.swift */,
-				0FF351DF2C74910D002EE1E7 /* BarberCustomTabBar.swift */,
-			);
-			path = "Custom Tab Bar";
-			sourceTree = "<group>";
-		};
-		98AFA44F2C82417C00C95DA4 /* History */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,39 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FB4E6702C1843C400E6926D /* RegisterSelectionView.swift in Sources */,
-				0FB4E6582C0B98FC00E6926D /* SettingsView.swift in Sources */,
-				0FB4E6612C16F6E600E6926D /* GenderSelectionView.swift in Sources */,
-				0F37DD462C046D88009BB03D /* ReviewView.swift in Sources */,
-				0FEECF082C2362E800CA182B /* TransferDetailView.swift in Sources */,
-				0FB4E65B2C0B991B00E6926D /* HomeView.swift in Sources */,
-				0FF351A52C241168002EE1E7 /* CashDetailView.swift in Sources */,
-				0FF351E22C7493C2002EE1E7 /* BarberMainTabView.swift in Sources */,
-				0FF351AB2C2574F7002EE1E7 /* BarberNotiView.swift in Sources */,
-				0FF351DC2C73B5FB002EE1E7 /* CustomTabBar.swift in Sources */,
-				0FB4E65F2C0F119300E6926D /* ProfileSettingsView.swift in Sources */,
-				0FB4E65D2C0B9EB400E6926D /* SearchingNumberView.swift in Sources */,
-				0FF351E02C74910D002EE1E7 /* BarberCustomTabBar.swift in Sources */,
-				0FB4E67D2C1C434B00E6926D /* CompletedView.swift in Sources */,
-				0FB4E6802C1C474800E6926D /* BarberHomeView.swift in Sources */,
-				0FF351BA2C37F59F002EE1E7 /* ShopSettingsView.swift in Sources */,
-				0FB4E66B2C17719800E6926D /* TermsView.swift in Sources */,
 				0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */,
-				0FF351B12C29DE75002EE1E7 /* WithdrawListView.swift in Sources */,
-				0FF351AE2C2974CA002EE1E7 /* MyAccountView.swift in Sources */,
-				0FB4E6692C1770F600E6926D /* PrivacyPolicyView.swift in Sources */,
-				0FB4E6672C175EEE00E6926D /* AboutUsView.swift in Sources */,
-				0FF351B52C2C1269002EE1E7 /* BarberReviewView.swift in Sources */,
-				0FB4E67A2C1C40CD00E6926D /* OTPView.swift in Sources */,
-				0FF351B72C354DDC002EE1E7 /* ImportantNewsView.swift in Sources */,
-				0FB4E6742C19993A00E6926D /* RakpomSignUpView.swift in Sources */,
 				0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */,
-				0FB4E6772C1AE19C00E6926D /* BarberRegisterView.swift in Sources */,
-				0FB4E66E2C183EE000E6926D /* LaunchView.swift in Sources */,
-				0FF351A82C241542002EE1E7 /* ShopReservationView.swift in Sources */,
-				0FB4E6722C18D02300E6926D /* SignupView.swift in Sources */,
-				0F37DD432C00844A009BB03D /* ConfirmReservationView.swift in Sources */,
-				0FEECF022C22E42A00CA182B /* TransactionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

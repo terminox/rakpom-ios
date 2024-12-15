@@ -8,28 +8,34 @@
 import SwiftUI
 
 struct PaymentCompletionView: View {
+
+  let onConfirmed: () -> Void
+  let onCanceled: () -> Void
+
   var body: some View {
     VStack(spacing: 16) {
       Image(systemName: "checkmark.circle.fill")
         .resizable()
         .frame(width: 70, height: 70)
         .foregroundStyle(.black)
-      
+
       Text("ชำระเงินสำเร็จ")
         .font(.custom("Noto Sans Thai", size: 18))
         .foregroundStyle(.black)
         .fontWeight(.bold)
         .padding(.bottom)
-      
+
       Button {
         // Navigate to write a review
+        onConfirmed()
       } label: {
         AppButton(title: "เขียนรีวิว")
           .padding(.horizontal)
       }
-      
+
       Button {
         // Back to home screen
+        onCanceled()
       } label: {
         Text("กลับสู่หน้าหลัก")
           .font(.custom("Noto Sans Thai", size: 16))
@@ -39,9 +45,8 @@ struct PaymentCompletionView: View {
           .background(.white)
           .clipShape(Capsule())
           .overlay(
-          RoundedRectangle(cornerRadius: 50)
-            .stroke(Color("BlueButton"))
-          )
+            RoundedRectangle(cornerRadius: 50)
+              .stroke(Color("BlueButton")))
           .padding(.horizontal)
       }
     }
@@ -52,5 +57,5 @@ struct PaymentCompletionView: View {
 }
 
 #Preview {
-  PaymentCompletionView()
+  PaymentCompletionView(onConfirmed: {}, onCanceled: {})
 }
