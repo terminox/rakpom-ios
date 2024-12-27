@@ -18,7 +18,6 @@ protocol UserMainCoordinatorViewFactory {
     onShopSelected: @escaping (ShopItem) -> Void,
     onPaymentMethodSelected: @escaping (PaymentMethod) -> Void) -> AnyView
 
-  func makeUserMainShopDetailView(for shop: ShopItem) -> AnyView
   func makeUserMainPaymentView(for paymentMethod: PaymentMethod, onCompleted: @escaping () -> Void) -> AnyView
   func makeUserMainPointsView() -> AnyView
   func makeUserMainSettingsView() -> AnyView
@@ -30,19 +29,24 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
 
   // MARK: Lifecycle
 
-  init(factory: UserMainCoordinatorViewFactory) {
-    self.factory = factory
+  init(
+    mainFactory: any UserMainCoordinatorViewFactory,
+    shopFactory: any ShopCoordinatorViewFactory)
+  {
+    self.mainFactory = mainFactory
+    self.shopFactory = shopFactory
   }
 
   // MARK: Internal
 
   typealias Node = UserMainCoordinatorNode
 
-  let factory: UserMainCoordinatorViewFactory
+  let mainFactory: any UserMainCoordinatorViewFactory
+  let shopFactory: any ShopCoordinatorViewFactory
 
   @Published var path: [Node] = []
-  
-  lazy var rootView = factory.makeUserMainTabView(
+
+  lazy var rootView = mainFactory.makeUserMainTabView(
     onAvatarPressed: { [weak self] in self?.displaySettings() },
     onHomePressed: { }, // Do nothing here
     onPointPressed: {},
@@ -57,15 +61,31 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
     switch node {
     case .tab:
       return rootView
+      
     case .shopDetail:
-      return rootView
+      guard let shop = shop else { return AnyView(EmptyView()) }
+      return shopFactory.makeShopDetailView(
+        for: shop,
+        onReviewsPressed: { [weak self] in self?.displayReviewList() },
+        onConfirmed: { [weak self] in self?.displayConfirmation($0) })
+      
     case .payment:
       guard let paymentMethod = paymentMethod else { return AnyView(EmptyView()) }
-      return factory.makeUserMainPaymentView(for: paymentMethod, onCompleted: { [weak self] in self?.reset() })
+      return mainFactory.makeUserMainPaymentView(for: paymentMethod, onCompleted: { [weak self] in self?.reset() })
+      
     case .points:
       return rootView
+      
     case .settings:
-      return factory.makeUserMainSettingsView()
+      return mainFactory.makeUserMainSettingsView()
+      
+    case .reviewList:
+      guard let shop = shop else { return AnyView(EmptyView()) }
+      return shopFactory.makeShopReviewListView(for: shop)
+
+    case .bookingConfirmation:
+      guard let items = bookingConfirmationItems else { return AnyView(EmptyView()) }
+      return shopFactory.makeShopBookingConfirmationView(for: items, onConfirmed: { [weak self] in self?.reset() })
     }
   }
 
@@ -82,7 +102,16 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
   func displaySettings() {
     path.append(.settings)
   }
-  
+
+  func displayReviewList() {
+    path.append(.reviewList)
+  }
+
+  func displayConfirmation(_ items: [BookingConfirmationDetailItem]) {
+    bookingConfirmationItems = items
+    path.append(.bookingConfirmation)
+  }
+
   func reset() {
     path = []
   }
@@ -90,6 +119,7 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
   // MARK: Private
 
   private var shop: ShopItem?
+  private var bookingConfirmationItems: [BookingConfirmationDetailItem]?
   private var paymentMethod: PaymentMethod?
 
 }
@@ -102,4 +132,6 @@ enum UserMainCoordinatorNode: Hashable {
   case payment
   case points
   case settings
+  case reviewList
+  case bookingConfirmation
 }

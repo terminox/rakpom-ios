@@ -96,7 +96,7 @@ struct CashPaymentContentView: View {
   @Previewable @State var price = ""
   @Previewable @State var shopID = ""
 
-  BackScaffold {
+  BackScaffold(title: "การชำระ") {
     CashPaymentContentView(price: $price, shopID: $shopID) {}
   }
 }

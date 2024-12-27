@@ -17,7 +17,7 @@ struct QRPaymentView: View {
   @ObservedObject var viewModel: QRPaymentViewModel
 
   var body: some View {
-    QRPaymentStatelessView(
+    QRPaymentContentView(
       scanItem: $scanItem,
       scanImage: $scanImage,
       imageData: $imageData,
@@ -47,7 +47,7 @@ struct QRPaymentView: View {
 
 // MARK: - QRPaymentStatelessView
 
-struct QRPaymentStatelessView: View {
+struct QRPaymentContentView: View {
 
   @Binding var scanItem: PhotosPickerItem?
   @Binding var scanImage: Image?
@@ -153,8 +153,8 @@ struct QRPaymentStatelessView: View {
   @Previewable @State var price = ""
   @Previewable @State var shopID = ""
 
-  BackScaffold {
-    QRPaymentStatelessView(
+  BackScaffold(title: "การชำระ") {
+    QRPaymentContentView(
       scanItem: $scanItem,
       scanImage: $scanImage,
       imageData: $imageData,

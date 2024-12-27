@@ -26,7 +26,7 @@ extension RakpomViewFactory: SignupCoordinatorViewFactory {
     -> AnyView {
     let service = FirebasePhoneSubmissionService()
     let viewModel = PhoneFormViewModel(service: service, onSuccess: onSuccess)
-    let view = BackScaffold {
+    let view = BackScaffold(title: "ลงทะเบียน") {
       PhoneFormView(onSubmit: viewModel.submit)
     }
     .navigationBarBackButtonHidden()
@@ -42,7 +42,7 @@ extension RakpomViewFactory: SignupCoordinatorViewFactory {
     let url = Config.apiURL.appending(path: registrationType.signupPath)
     let service = AggregatedOTPService(url: url, registrationType: registrationType)
     let viewModel = OTPFormViewModel(refCode: refCode, service: service, onSuccess: onSuccess)
-    let view = BackScaffold {
+    let view = BackScaffold(title: "ลงทะเบียน") {
       OTPFormView(onSubmit: viewModel.submit)
     }
     .navigationBarBackButtonHidden()

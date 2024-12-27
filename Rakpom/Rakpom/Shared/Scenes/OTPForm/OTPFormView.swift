@@ -40,7 +40,7 @@ struct OTPFormView: View {
 }
 
 #Preview {
-  BackScaffold {
+  BackScaffold(title: "ลงทะเบียน") {
     OTPFormView(onSubmit: { _ in })
   }
 }

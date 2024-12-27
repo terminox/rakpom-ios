@@ -14,7 +14,7 @@ extension RakpomViewFactory: PaymentCoordinatorViewFactory {
       let url = Config.apiURL.appending(path: "users/payment/qr")
       let service = AlamofireQRPaymentService(url: url, client: client)
       let viewModel = QRPaymentViewModel(service: service, onCompleted: onCompleted)
-      let view = BackScaffold {
+      let view = BackScaffold(title: "การชำระ") {
         QRPaymentView(viewModel: viewModel)
       }
       .navigationBarBackButtonHidden()
@@ -23,13 +23,19 @@ extension RakpomViewFactory: PaymentCoordinatorViewFactory {
     case .cash:
       let service = AlamofireCashPaymentService(baseURL: Config.apiURL, tokenManager: tokenManager)
       let viewModel = CashPaymentViewModel(service: service, onCompleted: onCompleted)
-      let view = CashPaymentView(viewModel: viewModel)
+      let view = BackScaffold(title: "การชำระ") {
+        CashPaymentView(viewModel: viewModel)
+      }
+      .navigationBarBackButtonHidden()
       return AnyView(view)
 
     case .point:
       let service = AlamofirePointPaymentService(baseURL: Config.apiURL, tokenManager: tokenManager)
       let viewModel = PointPaymentViewModel(service: service, onCompleted: onCompleted)
-      let view = PointPaymentView(viewModel: viewModel)
+      let view = BackScaffold(title: "การชำระ") {
+        PointPaymentView(viewModel: viewModel)
+      }
+      .navigationBarBackButtonHidden()
       return AnyView(view)
     }
   }

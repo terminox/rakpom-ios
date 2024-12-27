@@ -46,7 +46,7 @@ class PaymentCoordinatorViewModel: StackCoordinatorViewModel {
     self?.shopCode = $0
     self?.displayPaymentCompletion()
   }
-
+  
   var pathPublished: Published<[Node]> { _path }
   var pathPublisher: Published<[Node]>.Publisher { $path }
 

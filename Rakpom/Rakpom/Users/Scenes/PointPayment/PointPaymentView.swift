@@ -104,7 +104,7 @@ struct PointPaymentContentView: View {
   @Previewable @State var points = ""
   @Previewable @State var shopID = ""
 
-  BackScaffold {
+  BackScaffold(title: "การชำระ") {
     PointPaymentContentView(points: $points, shopID: $shopID, onConfirmed: {})
   }
 }

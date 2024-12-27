@@ -17,24 +17,19 @@ struct UserHeaderView: View {
     HStack {
       if let user = user {
         HStack {
-          Button {
-            onAvatarPressed()
-          } label: {
-            AsyncImage(url: user.avatarURL) { image in
-              image
-                .resizable()
-                .frame(width: 53, height: 53)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 2.5))
-            } placeholder: {
-              Image(.user)
-                .resizable()
-                .frame(width: 53, height: 53)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 2.5))
-            }
+          AsyncImage(url: user.avatarURL) { image in
+            image
+              .resizable()
+              .frame(width: 53, height: 53)
+              .clipShape(Circle())
+              .overlay(Circle().stroke(Color.white, lineWidth: 2.5))
+          } placeholder: {
+            Image(.user)
+              .resizable()
+              .frame(width: 53, height: 53)
+              .clipShape(Circle())
+              .overlay(Circle().stroke(Color.white, lineWidth: 2.5))
           }
-          .buttonStyle(.plain)
           
           VStack(alignment: .leading, spacing: 4) {
             Text("สวัสดี! \(user.name)")
@@ -66,16 +61,19 @@ struct UserHeaderView: View {
       Spacer()
       
       HStack(alignment: .center, spacing: 0) {
-//        NavigationLink(value: AnyHashable(HomeScreen(id: id))) {
-//          Image(systemName: "house")
-//            .resizable()
-//            .frame(width: 25, height: 22)
-//            .foregroundColor(Color("Black"))
-//            .frame(width: 42, height: 42)
-//            .background(Color.white.opacity(0.7))
-//            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-//        }
-//        .padding(.top, -8)
+        Button {
+          onAvatarPressed()
+        } label: {
+          Image(systemName: "house")
+            .resizable()
+            .frame(width: 25, height: 22)
+            .foregroundColor(Color("Black"))
+            .frame(width: 42, height: 42)
+            .background(Color.white.opacity(0.7))
+            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            .padding(.top, -8)
+        }
+        .buttonStyle(.plain)
         
         Image(.logo)
       }

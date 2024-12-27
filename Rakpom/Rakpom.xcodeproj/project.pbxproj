@@ -11,7 +11,7 @@
 		0F0FB36E2BF7555A004BD500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB36D2BF7555A004BD500 /* Assets.xcassets */; };
 		0F0FB3712BF7555A004BD500 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */; };
 		0F37DD4F2C04F072009BB03D /* NotoSansThai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */; };
-		0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */; };
+		983450632D0F33AA004321E2 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 983450622D0F33AA004321E2 /* PhoneNumberKit */; };
 		986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC52CF0ECD300EA4297 /* FirebaseAuth */; };
 		986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 986AFDC72CF0ECD300EA4297 /* FirebaseStorage */; };
 		98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98B1D03D2CEFAA9400722600 /* Alamofire */; };
@@ -26,7 +26,6 @@
 		0F0FB3702BF7555A004BD500 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansThai.ttf; sourceTree = "<group>"; };
 		0F37DD502C04F09F009BB03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMainView.swift; sourceTree = "<group>"; };
 		98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B1D03E2CEFAA9400722600 /* Alamofire in Frameworks */,
+				983450632D0F33AA004321E2 /* PhoneNumberKit in Frameworks */,
 				986AFDC82CF0ECD300EA4297 /* FirebaseStorage in Frameworks */,
 				986AFDC62CF0ECD300EA4297 /* FirebaseAuth in Frameworks */,
 				98B1D0432CEFAAFF00722600 /* FirebaseAuth in Frameworks */,
@@ -77,7 +77,6 @@
 				98FAC9C72CF0A4800010572B /* GoogleService-Info.plist */,
 				0F37DD4E2C04F072009BB03D /* NotoSansThai.ttf */,
 				0F0FB3692BF75558004BD500 /* RakpomApp.swift */,
-				0FF351E32C749BF3002EE1E7 /* BarberMainView.swift */,
 				0F0FB36D2BF7555A004BD500 /* Assets.xcassets */,
 				0F0FB36F2BF7555A004BD500 /* Preview Content */,
 			);
@@ -144,6 +143,7 @@
 			packageReferences = (
 				98FAC9C42CF084AE0010572B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				983450612D0F33AA004321E2 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 			);
 			productRefGroup = 0F0FB3672BF75558004BD500 /* Products */;
 			projectDirPath = "";
@@ -174,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F0FB36A2BF75558004BD500 /* RakpomApp.swift in Sources */,
-				0FF351E42C749BF3002EE1E7 /* BarberMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,8 +314,7 @@
 				INFOPLIST_FILE = Rakpom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = la;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -350,8 +348,7 @@
 				INFOPLIST_FILE = Rakpom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = la;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -448,8 +445,7 @@
 				INFOPLIST_FILE = Rakpom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = la;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -495,6 +491,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		983450612D0F33AA004321E2 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -530,6 +534,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		983450622D0F33AA004321E2 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 983450612D0F33AA004321E2 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
 		986AFDC52CF0ECD300EA4297 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 986AFDC42CF0ECD300EA4297 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

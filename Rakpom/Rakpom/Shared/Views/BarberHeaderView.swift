@@ -55,7 +55,8 @@ struct BarberHeaderView: View {
     .padding(.top, 40)
     .frame(maxWidth: .infinity)
     .frame(height: 133)
-    .background(.blueApp)    }
+    .background(.blueApp)
+  }
 }
 
 #Preview {

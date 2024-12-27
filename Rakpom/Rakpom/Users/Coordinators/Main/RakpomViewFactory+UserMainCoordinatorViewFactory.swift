@@ -27,16 +27,10 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
     return AnyView(view)
   }
 
-  func makeUserMainShopDetailView(for shop: ShopItem) -> AnyView {
-    let viewModel = ShopCoordinatorViewModel(factory: self, shop: shop)
+  func makeUserMainPaymentView(for paymentMethod: PaymentMethod, onCompleted: @escaping () -> Void) -> AnyView {
+    let viewModel = PaymentCoordinatorViewModel(paymentMethod: paymentMethod, factory: self, onCompleted: onCompleted)
     let view = StackCoordinatorView(viewModel: viewModel)
       .navigationBarBackButtonHidden()
-    return AnyView(view)
-  }
-
-  func makeUserMainPaymentView(for paymentMethod: PaymentMethod, onCompleted: @escaping () -> Void) -> AnyView {
-    let viewModel = PaymentCoordinatorViewModel(paymentMethod: paymentMethod, factory: self, onCompleted: {})
-    let view = StackCoordinatorView(viewModel: viewModel)
     return AnyView(view)
   }
 

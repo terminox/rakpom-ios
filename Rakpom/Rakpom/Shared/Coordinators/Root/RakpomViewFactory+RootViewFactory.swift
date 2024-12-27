@@ -30,7 +30,7 @@ extension RakpomViewFactory: RootViewFactory {
   }
 
   func makeRootMainView(onLogout _: @escaping () -> Void) -> AnyView {
-    let viewModel = UserMainCoordinatorViewModel(factory: self)
+    let viewModel = UserMainCoordinatorViewModel(mainFactory: self, shopFactory: self)
     let view = StackCoordinatorView(viewModel: viewModel)
     return AnyView(view)
   }

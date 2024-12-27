@@ -33,9 +33,8 @@ class ShopListViewModel: ObservableObject {
   @Published var recentBookings: [ShopItem] = []
   @Published var shops: [ShopItem] = []
 
-
-  func select(_: ShopItem) {
-
+  func select(_ shop: ShopItem) {
+    onShopSelected(shop)
   }
 
   @MainActor

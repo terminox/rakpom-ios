@@ -187,7 +187,7 @@ struct RakpomSignUpView: View {
 }
 
 #Preview {
-  BackScaffold {
+  BackScaffold(title: "ลงทะเบียน") {
     RakpomSignUpView()
   }
 }

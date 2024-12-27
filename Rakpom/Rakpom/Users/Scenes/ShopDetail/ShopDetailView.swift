@@ -1,5 +1,5 @@
 //
-//  Reservation.swift
+//  ShopDetailView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 23/5/2567 BE.
@@ -12,30 +12,51 @@ import SwiftUI
 
 struct ShopDetailView: View {
 
-  @ObservedObject var viewModel: ReservationViewModel
+  // MARK: Internal
+
+  @ObservedObject var viewModel: ShopDetailViewModel
 
   var body: some View {
-    if viewModel.isLoading {
-      ProgressView()
-        .progressViewStyle(.circular)
-    } else if let detail = viewModel.detail {
-      ReservationStatelessView(
-        detail: detail,
-        selectedDate: $selectedDate,
-        startTime: $startTime)
+    VStack {
+      if viewModel.isLoading {
+        Spacer()
+
+        ProgressView()
+          .progressViewStyle(.circular)
+
+        Spacer()
+      } else if let detail = viewModel.detail {
+        ShopDetailContentView(
+          detail: detail,
+          onReviewsPressed: viewModel.didPressReviews,
+          onConfirmPressed: didPressConfirm,
+          selectedDate: $selectedDate,
+          startTime: $startTime)
+      }
     }
+    .onAppear(perform: viewModel.onAppear)
   }
+
+  // MARK: Private
 
   @State private var selectedDate = Date()
   @State private var startTime = Date()
+  
+  private func didPressConfirm() {
+    Task { @MainActor in
+      await viewModel.confirm(date: selectedDate, startTime: startTime)
+    }
+  }
 
 }
 
-// MARK: - ReservationStatelessView
+// MARK: - ShopDetailContentView
 
-struct ReservationStatelessView: View {
+struct ShopDetailContentView: View {
 
   let detail: ShopDetail
+  let onReviewsPressed: () -> Void
+  let onConfirmPressed: () -> Void
 
   @Binding var selectedDate: Date
   @Binding var startTime: Date
@@ -67,20 +88,14 @@ struct ReservationStatelessView: View {
               .foregroundStyle(.black)
 
             Button {
-              // TODO
+              onReviewsPressed()
             } label: {
               HStack(alignment: .center, spacing: 4) {
-                ForEach(0..<detail.rating) { _ in
+                ForEach(0..<5) { i in
                   Image(systemName: "star.fill")
                     .font(.callout)
                     .fontDesign(.rounded)
-                    .foregroundColor(.yellow)
-                }
-                ForEach(0..<(5 - detail.rating)) { _ in
-                  Image(systemName: "star.fill")
-                    .font(.callout)
-                    .fontDesign(.rounded)
-                    .foregroundColor(.lightGray)
+                    .foregroundColor(i < detail.rating ? .yellow : .lightGray)
                 }
 
                 Text("(\(detail.reviewCount))")
@@ -201,12 +216,9 @@ struct ReservationStatelessView: View {
             }
           }
 
-          NavigationLink(value: AnyHashable(ConfirmationLayoutItem(rowItems: [
-            ConfirmationRowItem(title: "ชื่อร้าน", value: "ร้านลุงหนุ่ม"),
-            ConfirmationRowItem(title: "ชื่อลูกค้า", value: "กวิน ยินดี"),
-            ConfirmationRowItem(title: "วันที่", value: "19/08/67"),
-            ConfirmationRowItem(title: "เวลาที่จอง", value: "9:30 - 10:30 น."),
-          ]))) {
+          Button {
+            onConfirmPressed()
+          } label: {
             AppButton(title: "ยืนยัน")
           }
           .padding(.horizontal, 36)
@@ -232,7 +244,12 @@ struct ReservationStatelessView: View {
     businessHours: "เปิดร้าน 10:00 - 20:00 น.",
     address: "35/8 ถนน งามวงศ์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900")
 
-  BackScaffold {
-    ReservationStatelessView(detail: detail, selectedDate: $selectedDate, startTime: $startTime)
+  BackScaffold(title: "จองคิว") {
+    ShopDetailContentView(
+      detail: detail,
+      onReviewsPressed: {},
+      onConfirmPressed: {},
+      selectedDate: $selectedDate,
+      startTime: $startTime)
   }
 }

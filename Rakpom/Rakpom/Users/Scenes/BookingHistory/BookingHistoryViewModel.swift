@@ -23,6 +23,7 @@ class BookingHistoryViewModel: ObservableObject {
 
   @Published var items: [BookingHistoryItem] = []
 
+  @MainActor
   func fetch() async {
     items = (try? await service.fetchBookingHistory()) ?? []
   }

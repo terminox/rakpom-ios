@@ -27,42 +27,28 @@ struct PaymentMethodSelectionView: View {
 
         VStack(spacing: 20) {
           Button {
-            selectedMethod = .qr
+            onConfirmed(.qr)
           } label: {
-            OptionButton(title: "ชำระด้วยการแสกน", isSelected: selectedMethod == .qr, width: geo.size.width / 1.3)
+            OptionButton(title: "ชำระด้วยการแสกน", isSelected: false, width: geo.size.width / 1.3)
           }
 
           Button {
-            selectedMethod = .cash
+            onConfirmed(.cash)
           } label: {
-            OptionButton(title: "ชำระด้วยเงินสด", isSelected: selectedMethod == .cash, width: geo.size.width / 1.3)
+            OptionButton(title: "ชำระด้วยเงินสด", isSelected: false, width: geo.size.width / 1.3)
           }
 
           Button {
-            selectedMethod = .point
+            onConfirmed(.point)
           } label: {
-            OptionButton(title: "ชำระด้วยแต้มสะสม", isSelected: selectedMethod == .point, width: geo.size.width / 1.3)
+            OptionButton(title: "ชำระด้วยแต้มสะสม", isSelected: false, width: geo.size.width / 1.3)
           }
         }
-
-        Button(action: {
-          guard let selectedMethod = selectedMethod else { return }
-          onConfirmed(selectedMethod)
-        }) {
-          AppButton(title: "ถัดไป")
-            .padding(36)
-        }
-        .buttonStyle(.plain)
       }
     }
     .background(.blueBG)
     .ignoresSafeArea()
   }
-
-  // MARK: Private
-
-  @State private var selectedMethod: PaymentMethod?
-  
 }
 
 // MARK: - PaymentMethod

@@ -39,7 +39,7 @@ struct PhoneFormView: View {
 }
 
 #Preview {
-  BackScaffold {
+  BackScaffold(title: "ลงทะเบียน") {
     PhoneFormView(onSubmit: { _ in })
   }
 }

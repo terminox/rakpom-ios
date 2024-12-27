@@ -11,11 +11,12 @@ import SwiftUI
 
 struct BackScaffold<Content: View>: View {
 
+  let title: String?
   @ViewBuilder var content: Content
 
   var body: some View {
     VStack(spacing: .zero) {
-      BackBar(back: { dismiss() })
+      BackBar(title: title, back: { dismiss() })
 
       content
     }
@@ -29,6 +30,7 @@ struct BackScaffold<Content: View>: View {
 
 struct BackBar: View {
 
+  let title: String?
   let back: () -> Void
 
   var body: some View {
@@ -43,10 +45,12 @@ struct BackBar: View {
             .foregroundColor(.black)
         }
 
-        Text("ลงทะเบียน")
-          .font(.custom("Noto Sans Thai", size: 20))
-          .foregroundStyle(.black)
-          .padding()
+        if let title = title {
+          Text("ลงทะเบียน")
+            .font(.custom("Noto Sans Thai", size: 20))
+            .foregroundStyle(.black)
+            .padding()
+        }
       }
 
       Spacer()
@@ -60,7 +64,7 @@ struct BackBar: View {
 }
 
 #Preview {
-  BackScaffold {
+  BackScaffold(title: nil) {
     EmptyView()
     Spacer()
   }
