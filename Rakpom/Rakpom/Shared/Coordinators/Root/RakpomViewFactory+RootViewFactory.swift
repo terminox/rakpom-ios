@@ -29,8 +29,8 @@ extension RakpomViewFactory: RootViewFactory {
     AnyView(EmptyView())
   }
 
-  func makeRootMainView(onLogout _: @escaping () -> Void) -> AnyView {
-    let viewModel = UserMainCoordinatorViewModel(mainFactory: self, shopFactory: self)
+  func makeRootMainView(onLogout: @escaping () -> Void) -> AnyView {
+    let viewModel = UserMainCoordinatorViewModel(mainFactory: self, shopFactory: self, onLogoutPressed: onLogout)
     let view = StackCoordinatorView(viewModel: viewModel)
     return AnyView(view)
   }

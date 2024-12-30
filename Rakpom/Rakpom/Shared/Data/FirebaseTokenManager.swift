@@ -35,6 +35,10 @@ class FirebaseTokenManager {
       }
     }
   }
+  
+  func clearToken() throws {
+    try auth.signOut()
+  }
 
   // MARK: Private
 

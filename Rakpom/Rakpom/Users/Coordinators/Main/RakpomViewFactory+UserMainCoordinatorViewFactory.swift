@@ -35,19 +35,38 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
   }
 
   func makeUserMainPointsView() -> AnyView {
-    // TODO
-    let view = EmptyView()
+    var service = AlamofirePointListService(baseURL: Config.apiURL, tokenManager: tokenManager)
+    let viewModel = PointListViewModel(service: service)
+    let view = BackScaffold(title: "แต้มของคุณ") {
+      PointListView(viewModel: viewModel)
+    }
+    .navigationBarBackButtonHidden()
     return AnyView(view)
   }
 
-  func makeUserMainSettingsView() -> AnyView {
-    // TODO
+  func makeUserMainSettingsView(onLogout: @escaping () -> Void) -> AnyView {
+    let privacyPolicyUrl = URL(string: "https://certain-fuchsia-42f.notion.site/Privacy-Policy-for-Rakpom-1446d267341680008e8bf56e68260c8c?pvs=4")!
+    let termsUrl = URL(string: "https://certain-fuchsia-42f.notion.site/Terms-of-Use-for-Rakpom-1456d267341680ceb34fd04aea1aa191?pvs=4")!
+    
+    let openURL: (URL) -> Void = { url in
+      if UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url)
+      }
+    }
+    
     let view = SettingsView(
-      onProfilePressed: {},
-      onAboutUsPressed: {},
-      onPrivacyPolicyPressed: {},
-      onTermsPressed: {},
-      onLogoutPressed: {})
+      onProfilePressed: {
+        // TODO
+      },
+      onAboutUsPressed: {
+        // TODO
+      },
+      onPrivacyPolicyPressed: { openURL(privacyPolicyUrl) },
+      onTermsPressed: { openURL(termsUrl) },
+      onLogoutPressed: { [weak self] in
+        onLogout()
+        try? self?.tokenManager.clearToken()
+      })
       .navigationBarBackButtonHidden()
     return AnyView(view)
   }

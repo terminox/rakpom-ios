@@ -46,7 +46,7 @@ struct BackBar: View {
         }
 
         if let title = title {
-          Text("ลงทะเบียน")
+          Text(title)
             .font(.custom("Noto Sans Thai", size: 20))
             .foregroundStyle(.black)
             .padding()

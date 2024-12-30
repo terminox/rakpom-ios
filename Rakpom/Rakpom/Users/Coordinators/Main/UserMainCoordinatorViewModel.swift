@@ -20,7 +20,7 @@ protocol UserMainCoordinatorViewFactory {
 
   func makeUserMainPaymentView(for paymentMethod: PaymentMethod, onCompleted: @escaping () -> Void) -> AnyView
   func makeUserMainPointsView() -> AnyView
-  func makeUserMainSettingsView() -> AnyView
+  func makeUserMainSettingsView(onLogout: @escaping () -> Void) -> AnyView
 }
 
 // MARK: - UserMainCoordinatorViewModel
@@ -31,10 +31,12 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
 
   init(
     mainFactory: any UserMainCoordinatorViewFactory,
-    shopFactory: any ShopCoordinatorViewFactory)
+    shopFactory: any ShopCoordinatorViewFactory,
+    onLogoutPressed: @escaping () -> Void)
   {
     self.mainFactory = mainFactory
     self.shopFactory = shopFactory
+    self.onLogoutPressed = onLogoutPressed
   }
 
   // MARK: Internal
@@ -43,13 +45,14 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
 
   let mainFactory: any UserMainCoordinatorViewFactory
   let shopFactory: any ShopCoordinatorViewFactory
+  let onLogoutPressed: () -> Void
 
   @Published var path: [Node] = []
 
   lazy var rootView = mainFactory.makeUserMainTabView(
     onAvatarPressed: { [weak self] in self?.displaySettings() },
     onHomePressed: { }, // Do nothing here
-    onPointPressed: {},
+    onPointPressed: { [weak self] in self?.displayPoints() },
     onSearchClicked: {},
     onShopSelected: { [weak self] in self?.displayShopDetail($0) },
     onPaymentMethodSelected: { [weak self] in self?.displayPayment($0) })
@@ -74,10 +77,10 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
       return mainFactory.makeUserMainPaymentView(for: paymentMethod, onCompleted: { [weak self] in self?.reset() })
       
     case .points:
-      return rootView
+      return mainFactory.makeUserMainPointsView()
       
     case .settings:
-      return mainFactory.makeUserMainSettingsView()
+      return mainFactory.makeUserMainSettingsView(onLogout: { [weak self] in self?.onLogoutPressed() })
       
     case .reviewList:
       guard let shop = shop else { return AnyView(EmptyView()) }
@@ -87,6 +90,10 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
       guard let items = bookingConfirmationItems else { return AnyView(EmptyView()) }
       return shopFactory.makeShopBookingConfirmationView(for: items, onConfirmed: { [weak self] in self?.reset() })
     }
+  }
+  
+  func displayPoints() {
+    path.append(.points)
   }
 
   func displayShopDetail(_ shop: ShopItem) {
