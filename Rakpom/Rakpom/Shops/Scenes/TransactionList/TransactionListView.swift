@@ -15,6 +15,7 @@ struct TransactionListView: View {
   
   var body: some View {
     TransactionListContentView(items: viewModel.items)
+      .onAppear(perform: viewModel.onAppear)
   }
 }
 

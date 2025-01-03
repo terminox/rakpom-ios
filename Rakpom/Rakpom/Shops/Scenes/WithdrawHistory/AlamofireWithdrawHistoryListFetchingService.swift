@@ -22,7 +22,7 @@ class AlamofireWithdrawHistoryListFetchingService: WithdrawHistoryListFetchingSe
 
   // MARK: Lifecycle
 
-  init(baseURL: String, tokenManager: FirebaseTokenManager) {
+  init(baseURL: URL, tokenManager: FirebaseTokenManager) {
     self.baseURL = baseURL
     self.tokenManager = tokenManager
   }
@@ -38,7 +38,7 @@ class AlamofireWithdrawHistoryListFetchingService: WithdrawHistoryListFetchingSe
       ]
 
       let response = try await AF.request(
-        "\(baseURL)/shops/withdraw-requests",
+        baseURL.appendingPathComponent("shops/withdraw-requests"),
         method: .get,
         headers: headers)
         .serializingDecodable(RemoteResponse<[RemoteWithdrawHistoryItem]>.self)
@@ -62,6 +62,6 @@ class AlamofireWithdrawHistoryListFetchingService: WithdrawHistoryListFetchingSe
 
   // MARK: Private
 
-  private let baseURL: String
+  private let baseURL: URL
   private let tokenManager: FirebaseTokenManager
 }

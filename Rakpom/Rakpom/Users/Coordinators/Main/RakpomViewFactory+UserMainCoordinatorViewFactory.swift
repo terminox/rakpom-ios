@@ -35,7 +35,7 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
   }
 
   func makeUserMainPointsView() -> AnyView {
-    var service = AlamofirePointListService(baseURL: Config.apiURL, tokenManager: tokenManager)
+    let service = AlamofirePointListService(baseURL: Config.apiURL, tokenManager: tokenManager)
     let viewModel = PointListViewModel(service: service)
     let view = BackScaffold(title: "แต้มของคุณ") {
       PointListView(viewModel: viewModel)

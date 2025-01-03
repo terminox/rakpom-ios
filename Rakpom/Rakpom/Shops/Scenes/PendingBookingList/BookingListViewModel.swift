@@ -60,6 +60,7 @@ class BookingListViewModel: ObservableObject {
   private let acceptBookingService: AcceptBookingService
   private let rejectBookingService: RejectBookingService
 
+  @MainActor
   private func fetchBookingList() async {
     do {
       let result = try await fetchingService.fetchPendingBookingList()

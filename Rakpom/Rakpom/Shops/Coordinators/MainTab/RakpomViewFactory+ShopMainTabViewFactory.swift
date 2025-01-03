@@ -27,9 +27,17 @@ extension RakpomViewFactory: ShopMainTabViewFactory {
     return AnyView(view)
   }
 
-  func makeShopMainTabBalanceAccountView(onWithdrawHistoryPressed _: @escaping () -> Void) -> AnyView {
-//    let viewModel = BalanceAccountViewModel(balanceAccountItemListFetchingService: <#T##any BalanceAccountItemListFetchingService#>, withdrawRequestService: <#T##any ShopWithdrawRequestService#>)
-    let view = EmptyView()
+  func makeShopMainTabBalanceAccountView(onWithdrawHistoryPressed: @escaping () -> Void) -> AnyView {
+    let balanceAccountItemListFetchingService = AlamofireBalanceAccountItemListFetchingService(
+      baseURL: Config.apiURL,
+      tokenManager: tokenManager)
+    let withdrawRequestService = AlamofireWithdrawRequestService(endpointURL: Config.apiURL, tokenManager: tokenManager)
+    let viewModel = BalanceAccountViewModel(
+      balanceAccountItemListFetchingService: balanceAccountItemListFetchingService,
+      withdrawRequestService: withdrawRequestService)
+    let view = BalanceAccountView(
+      viewModel: viewModel,
+      onWithdrawHistoryPressed: onWithdrawHistoryPressed)
     return AnyView(view)
   }
 
@@ -37,7 +45,10 @@ extension RakpomViewFactory: ShopMainTabViewFactory {
     let url = Config.apiURL.appending(path: "shops/reviews")
     let service = AlamofireShopReviewListService(endpointURL: url, tokenManager: tokenManager)
     let viewModel = ReviewListViewModel(service: service)
-    let view = ReviewListView(viewModel: viewModel)
+    let view = VStack(spacing: 0) {
+      TitleView(title: "รีวิวร้าน", color: .white)
+      ReviewListView(viewModel: viewModel)
+    }
     return AnyView(view)
   }
 }

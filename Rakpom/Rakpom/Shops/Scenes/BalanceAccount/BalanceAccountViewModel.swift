@@ -10,7 +10,6 @@ import Foundation
 
 // MARK: - BalanceAccountViewModel
 
-@MainActor
 class BalanceAccountViewModel: ObservableObject {
 
   // MARK: Lifecycle
@@ -33,6 +32,7 @@ class BalanceAccountViewModel: ObservableObject {
     }
   }
 
+  @MainActor
   func withdraw() async {
     _ = try? await withdrawRequestService.createWithdrawRequest()
   }
@@ -42,6 +42,7 @@ class BalanceAccountViewModel: ObservableObject {
   private let balanceAccountItemListFetchingService: BalanceAccountItemListFetchingService
   private let withdrawRequestService: ShopWithdrawRequestService
 
+  @MainActor
   private func fetchBalanceInfo() async {
     do {
       let result = try await balanceAccountItemListFetchingService.fetchBalanceAccountItemList()

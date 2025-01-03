@@ -10,29 +10,21 @@ import Foundation
 // MARK: - AlamofireRootInitialStateAdapterShopProfileService
 
 class AlamofireRootInitialStateAdapterShopProfileService: RootInitialStateAdapterShopProfileService {
+
+  // MARK: Lifecycle
+
+  init(url: URL, client: RakpomAlamofireWrapper) {
+    self.url = url
+    self.client = client
+  }
+
+  // MARK: Internal
+
+  let url: URL
+  let client: RakpomAlamofireWrapper
+
   func verifyShopProfile() async throws {
-    // TODO
-    throw NSError(domain: "", code: -1)
+    let request = try await client.getRequest(from: url)
+    try await client.perform(request)
   }
 }
-
-//// Automatic String to URL conversion, Swift concurrency support, and automatic retry.
-//let response = await AF.request("https://httpbin.org/get", interceptor: .retryPolicy)
-//                       // Automatic HTTP Basic Auth.
-//                       .authenticate(username: "user", password: "pass")
-//                       // Caching customization.
-//                       .cacheResponse(using: .cache)
-//                       // Redirect customization.
-//                       .redirect(using: .follow)
-//                       // Validate response code and Content-Type.
-//                       .validate()
-//                       // Produce a cURL command for the request.
-//                       .cURLDescription { description in
-//                         print(description)
-//                       }
-//                       // Automatic Decodable support with background parsing.
-//                       .serializingDecodable(DecodableType.self)
-//                       // Await the full response with metrics and a parsed body.
-//                       .response
-//// Detailed response description for easy debugging.
-//debugPrint(response)

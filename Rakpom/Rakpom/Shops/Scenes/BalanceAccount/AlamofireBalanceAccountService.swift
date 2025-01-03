@@ -14,8 +14,7 @@ class AlamofireBalanceAccountItemListFetchingService: BalanceAccountItemListFetc
 
   // MARK: Lifecycle
 
-
-  init(baseURL: String, tokenManager: FirebaseTokenManager) {
+  init(baseURL: URL, tokenManager: FirebaseTokenManager) {
     self.baseURL = baseURL
     self.tokenManager = tokenManager
   }
@@ -30,7 +29,7 @@ class AlamofireBalanceAccountItemListFetchingService: BalanceAccountItemListFetc
     ]
 
     let response = try await AF.request(
-      "\(baseURL)/shops/balance-info-items",
+      baseURL.appending(path: "shops/balance-info-items"),
       method: .get,
       headers: headers)
       .serializingDecodable(RemoteResponse<[RemoteBalanceAccountItem]>.self)
@@ -50,7 +49,7 @@ class AlamofireBalanceAccountItemListFetchingService: BalanceAccountItemListFetc
 
   // MARK: Private
 
-  private let baseURL: String
+  private let baseURL: URL
   private let tokenManager: FirebaseTokenManager
 }
 

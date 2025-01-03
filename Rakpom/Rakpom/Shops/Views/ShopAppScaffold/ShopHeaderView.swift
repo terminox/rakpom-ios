@@ -49,9 +49,10 @@ struct ShopHeaderView: View {
       
       HStack(alignment: .center, spacing: 0) {
         Button(action: onSettingsPressed) {
-          Image(systemName: "house")
+          Image(systemName: "gearshape")
             .resizable()
-            .frame(width: 25, height: 22)
+            .scaledToFit()
+            .frame(width: 25, height: 25)
             .foregroundColor(Color("Black"))
             .frame(width: 42, height: 42)
             .background(Color.white.opacity(0.7))

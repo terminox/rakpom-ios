@@ -9,7 +9,6 @@ import Foundation
 
 // MARK: - WithdrawHistoryViewModel
 
-@MainActor
 class WithdrawHistoryViewModel: ObservableObject {
 
   // MARK: Lifecycle

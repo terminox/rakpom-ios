@@ -12,13 +12,17 @@ import SwiftUI
 struct BalanceAccountView: View {
 
   @ObservedObject var viewModel: BalanceAccountViewModel
-  let onWithdrawPressed: () -> Void
+
   let onWithdrawHistoryPressed: () -> Void
 
   var body: some View {
     BalanceAccountContentView(
       items: viewModel.items,
-      onWithdrawPressed: onWithdrawPressed,
+      onWithdrawPressed: {
+        Task { @MainActor in
+          await viewModel.withdraw()
+        }
+      },
       onWithdrawHistoryPressed: onWithdrawHistoryPressed)
       .onAppear(perform: viewModel.onAppear)
   }

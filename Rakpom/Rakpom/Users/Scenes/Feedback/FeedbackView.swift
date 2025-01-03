@@ -70,14 +70,14 @@ struct FeedbackContentView: View {
           .padding(.bottom, 60)
 
         Button {
-          // Navigate to write a review
+          onConfirmed()
         } label: {
           AppButton(title: "ยืนยัน")
         }
         .padding(.bottom, 8)
 
         Button {
-          // Back to home screen
+          onCanceled()
         } label: {
           Text("ยกเลิก")
             .font(.custom("Noto Sans Thai", size: 16))

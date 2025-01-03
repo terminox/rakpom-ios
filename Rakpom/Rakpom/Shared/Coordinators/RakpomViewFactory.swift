@@ -21,7 +21,8 @@ class RakpomViewFactory {
     let userURL = Config.apiURL.appending(path: "users/profiles/me")
     let userProfileService = AlamofireRootInitialStateAdapterUserProfileService(url: userURL, client: client)
     
-    let shopProfileService = AlamofireRootInitialStateAdapterShopProfileService()
+    let shopURL = Config.apiURL.appending(path: "shops/profiles/me")
+    let shopProfileService = AlamofireRootInitialStateAdapterShopProfileService(url: shopURL, client: client)
     
     let adapter = RootInitialStateAdapter(
       userProfileService: userProfileService,

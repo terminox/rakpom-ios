@@ -35,7 +35,6 @@ struct ReviewListContentView: View {
         }
       }
     }
-    .padding(.bottom, 100)
     .background(.white)
     .ignoresSafeArea()
   }

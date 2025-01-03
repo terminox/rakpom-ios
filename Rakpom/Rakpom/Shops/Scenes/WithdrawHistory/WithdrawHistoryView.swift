@@ -1,5 +1,5 @@
 //
-//  WithdrawListView.swift
+//  WithdrawHistoryView.swift
 //  Rakpom
 //
 //  Created by CatMeox on 25/6/2567 BE.
@@ -7,77 +7,33 @@
 
 import SwiftUI
 
-struct WithdrawListView: View {
-  @Environment(\.dismiss) var dismiss
+struct WithdrawHistoryView: View {
+  
+  @ObservedObject var viewModel: WithdrawHistoryViewModel
   
   var body: some View {
-    GeometryReader { geo in
+    WithdrawHistoryContentView(items: viewModel.items)
+      .task {
+        await viewModel.fetchItems()
+      }
+  }
+}
+
+// MARK: - WithdrawHistoryContentView
+
+struct WithdrawHistoryContentView: View {
+
+  let items: [WithdrawHistoryItem]
+
+  var body: some View {
+    ScrollView {
       VStack(spacing: 0) {
-        HStack {
-          HStack {
-            Button {
-              dismiss()
-            } label: {
-              Image(systemName: "arrow.left")
-                .resizable()
-                .frame(width: 24, height: 20)
-                .foregroundColor(.black)
-            }
-            
-            Text("ประวัติการถอนเงิน")
-              .font(.custom("Noto Sans Thai", size: 20))
-              .foregroundStyle(.black)
-              .padding()
+        ForEach(items) { item in
+          VStack(spacing: 0) {
+            WithdrawHistoryItemView(item: item)
+
+            Divider()
           }
-          
-          Spacer()
-          
-          Image("Logo")
-        }
-        .padding()
-        .padding(.top, 40)
-        .frame(maxWidth: .infinity)
-        .frame(height: 133)
-        .background(.blueApp)
-        
-        ScrollView {
-          VStack(alignment: .leading) {
-            Text("20 ก.พ. 67")
-              .font(.custom("Noto Sans Thai", size: 16))
-              .bold()
-              .foregroundStyle(.black)
-              .padding(.vertical, 8)
-            
-            HStack(spacing: 20) {
-              Image(systemName: "arrow.left.arrow.right")
-                .resizable()
-                .frame(width: 23, height: 25)
-                .bold()
-                .padding()
-                .foregroundColor(.white)
-                .frame(width: 66, height: 66)
-                .background(.blueButton)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-              
-              VStack(alignment: .leading) {
-                Text("ถอนเงิน")
-                Text("17:00" + " น.")
-                  .foregroundStyle(.gray)
-              }
-              .font(.custom("Noto Sans Thai", size: 16))
-              .foregroundStyle(.black)
-              
-              Spacer()
-              
-              Text("฿ " + "200")
-                .font(.custom("Noto Sans Thai", size: 22))
-                .fontWeight(.medium)
-                .foregroundStyle(.black)
-            }
-          }
-          .padding(.horizontal, 25)
-          
-          Divider()
         }
       }
     }
@@ -86,6 +42,65 @@ struct WithdrawListView: View {
   }
 }
 
+// MARK: - WithdrawHistoryItemView
+
+struct WithdrawHistoryItemView: View {
+
+  let item: WithdrawHistoryItem
+
+  var body: some View {
+    HStack(spacing: 20) {
+      Image(systemName: "arrow.left.arrow.right")
+        .resizable()
+        .frame(width: 23, height: 25)
+        .bold()
+        .padding()
+        .foregroundColor(.white)
+        .frame(width: 66, height: 66)
+        .background(.blueButton)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+
+      VStack(alignment: .leading) {
+        Text("ถอนเงิน")
+
+        Text(item.dateString)
+          .foregroundStyle(.gray)
+      }
+      .font(.custom("Noto Sans Thai", size: 16))
+      .foregroundStyle(.black)
+
+      Spacer()
+
+      Text(item.amountString)
+        .font(.custom("Noto Sans Thai", size: 22))
+        .fontWeight(.medium)
+        .foregroundStyle(.black)
+    }
+    .padding(.horizontal, 25)
+    .padding(.vertical, 16)
+  }
+}
+
 #Preview {
-  WithdrawListView()
+  let items = [
+    WithdrawHistoryItem(
+      id: UUID().uuidString,
+      title: "ถอนเงิน",
+      dateString: "01/01/2024 13:45",
+      amountString: "฿1,000.00"),
+    WithdrawHistoryItem(
+      id: UUID().uuidString,
+      title: "ถอนเงิน",
+      dateString: "31/12/2023 09:30",
+      amountString: "฿500.00"),
+    WithdrawHistoryItem(
+      id: UUID().uuidString,
+      title: "ถอนเงิน",
+      dateString: "30/12/2023 15:20",
+      amountString: "฿750.00"),
+  ]
+
+  BackScaffold(title: "ประวัติการถอนเงิน") {
+    WithdrawHistoryContentView(items: items)
+  }
 }

@@ -41,15 +41,15 @@ struct BarberCustomTabBar: View {
         }
       }
       
-      Button {
-        selectedTab = .barberNoti
-      } label: {
-        if selectedTab == .barberNoti {
-          TabBarButtonSelected(imageName: "Bell.fill", title: "แจ้งเตือน")
-        } else {
-          TabBarButton(imageName: "Bell", title: "แจ้งเตือน")
-        }
-      }
+//      Button {
+//        selectedTab = .barberNoti
+//      } label: {
+//        if selectedTab == .barberNoti {
+//          TabBarButtonSelected(imageName: "Bell.fill", title: "แจ้งเตือน")
+//        } else {
+//          TabBarButton(imageName: "Bell", title: "แจ้งเตือน")
+//        }
+//      }
       
       Button {
         selectedTab = .acc
