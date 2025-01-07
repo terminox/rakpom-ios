@@ -11,8 +11,7 @@ import SwiftUI
 
 protocol UserMainCoordinatorViewFactory {
   func makeUserMainTabView(
-    onAvatarPressed: @escaping () -> Void,
-    onHomePressed: @escaping () -> Void,
+    onSettingsPressed: @escaping () -> Void,
     onPointPressed: @escaping () -> Void,
     onSearchClicked: @escaping () -> Void,
     onShopSelected: @escaping (ShopItem) -> Void,
@@ -21,7 +20,15 @@ protocol UserMainCoordinatorViewFactory {
 
   func makeUserMainPointsView() -> AnyView
 
-  func makeUserMainSettingsView(onLogout: @escaping () -> Void) -> AnyView
+  func makeUserMainSettingsView(
+    onUpdateProfilePressed: @escaping () -> Void,
+    onAboutUsPressed: @escaping () -> Void,
+    onLogout: @escaping () -> Void)
+    -> AnyView
+  
+  func makeUserMainUpdateProfile(onCompleted: @escaping () -> Void) -> AnyView
+  
+  func makeUserMainSettingsAboutUs() -> AnyView
 }
 
 // MARK: - UserMainCoordinatorViewModel
@@ -54,8 +61,7 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
   @Published var path: [Node] = []
 
   lazy var rootView = mainFactory.makeUserMainTabView(
-    onAvatarPressed: { [weak self] in self?.displaySettings() },
-    onHomePressed: { }, // Do nothing here
+    onSettingsPressed: { [weak self] in self?.displaySettings() },
     onPointPressed: { [weak self] in self?.displayPoints() },
     onSearchClicked: {},
     onShopSelected: { [weak self] in self?.displayShopDetail($0) },
@@ -80,7 +86,16 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
       return mainFactory.makeUserMainPointsView()
 
     case .settings:
-      return mainFactory.makeUserMainSettingsView(onLogout: { [weak self] in self?.onLogoutPressed() })
+      return mainFactory.makeUserMainSettingsView(
+        onUpdateProfilePressed: { [weak self] in self?.displayUpdateProfile() },
+        onAboutUsPressed: { [weak self] in self?.displayAboutUs() },
+        onLogout: { [weak self] in self?.onLogoutPressed() })
+      
+    case .updateProfile:
+      return mainFactory.makeUserMainUpdateProfile(onCompleted: { [weak self] in self?.reset() })
+      
+    case .aboutUs:
+      return mainFactory.makeUserMainSettingsAboutUs()
 
     case .reviewList:
       guard let shop = shop else { return AnyView(EmptyView()) }
@@ -134,6 +149,14 @@ class UserMainCoordinatorViewModel: StackCoordinatorViewModel {
     path.append(.settings)
   }
 
+  func displayUpdateProfile() {
+    path.append(.updateProfile)
+  }
+  
+  func displayAboutUs() {
+    path.append(.aboutUs)
+  }
+
   func displayReviewList() {
     path.append(.reviewList)
   }
@@ -175,6 +198,8 @@ enum UserMainCoordinatorNode: Hashable {
   case shopDetail
   case points
   case settings
+  case updateProfile
+  case aboutUs
   case reviewList
   case bookingConfirmation
   case payment

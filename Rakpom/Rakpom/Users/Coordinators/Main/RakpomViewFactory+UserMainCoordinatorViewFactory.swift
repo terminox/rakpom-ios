@@ -9,8 +9,7 @@ import SwiftUI
 
 extension RakpomViewFactory: UserMainCoordinatorViewFactory {
   func makeUserMainTabView(
-    onAvatarPressed: @escaping () -> Void,
-    onHomePressed _: @escaping () -> Void,
+    onSettingsPressed: @escaping () -> Void,
     onPointPressed: @escaping () -> Void,
     onSearchClicked _: @escaping () -> Void,
     onShopSelected: @escaping (ShopItem) -> Void,
@@ -20,7 +19,7 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
     let url = Config.apiURL.appending(path: "users/profiles/me")
     let service = AlamofireUserAppScaffoldService(url: url, client: client)
     let scaffoldViewModel = UserAppScaffoldViewModel(service: service)
-    let view = UserAppScaffold(viewModel: scaffoldViewModel, onAvatarPressed: onAvatarPressed, onPointPressed: onPointPressed) {
+    let view = UserAppScaffold(viewModel: scaffoldViewModel, onAvatarPressed: onSettingsPressed, onPointPressed: onPointPressed) {
       UserMainTabView(factory: self, onShopSelected: onShopSelected, onPaymentMethodConfirmed: onPaymentMethodSelected)
     }
 
@@ -43,8 +42,8 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
     .navigationBarBackButtonHidden()
     return AnyView(view)
   }
-
-  func makeUserMainSettingsView(onLogout: @escaping () -> Void) -> AnyView {
+  
+  func makeUserMainSettingsView(onUpdateProfilePressed: @escaping () -> Void, onAboutUsPressed: @escaping () -> Void, onLogout: @escaping () -> Void) -> AnyView {
     let privacyPolicyUrl = URL(string: "https://certain-fuchsia-42f.notion.site/Privacy-Policy-for-Rakpom-1446d267341680008e8bf56e68260c8c?pvs=4")!
     let termsUrl = URL(string: "https://certain-fuchsia-42f.notion.site/Terms-of-Use-for-Rakpom-1456d267341680ceb34fd04aea1aa191?pvs=4")!
     
@@ -55,12 +54,8 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
     }
     
     let view = SettingsView(
-      onProfilePressed: {
-        // TODO
-      },
-      onAboutUsPressed: {
-        // TODO
-      },
+      onProfilePressed: onUpdateProfilePressed,
+      onAboutUsPressed: onAboutUsPressed,
       onPrivacyPolicyPressed: { openURL(privacyPolicyUrl) },
       onTermsPressed: { openURL(termsUrl) },
       onLogoutPressed: { [weak self] in
@@ -68,6 +63,24 @@ extension RakpomViewFactory: UserMainCoordinatorViewFactory {
         try? self?.tokenManager.clearToken()
       })
       .navigationBarBackButtonHidden()
+    return AnyView(view)
+  }
+  
+  func makeUserMainUpdateProfile(onCompleted: @escaping () -> Void) -> AnyView {
+    let service = AggregatedUserProfileUpdatingService(baseURL: Config.apiURL, tokenManager: tokenManager, imageUploadingService: imageUploader)
+    let viewModel = UserProfileFormViewModel(service: service, onComplete: onCompleted)
+    let view = BackScaffold(title: "ลงทะเบียน") {
+      UserProfileFormView(viewModel: viewModel)
+    }
+    .navigationBarBackButtonHidden()
+    return AnyView(view)
+  }
+  
+  func makeUserMainSettingsAboutUs() -> AnyView {
+    let view = BackScaffold(title: "เกี่ยวกับเรา") {
+      AboutUsView()
+    }
+    .navigationBarBackButtonHidden()
     return AnyView(view)
   }
 }

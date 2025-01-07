@@ -30,14 +30,12 @@ class FeedbackViewModel: ObservableObject {
   func submit(payload: FeedbackPayload) async {
     isLoading = true
 
-    do {
-      try await service.submitFeedback(payload: payload)
-      onCompleted()
-    } catch {
-      // TODO: Handle error
+    defer {
+      isLoading = false
     }
-
-    isLoading = false
+    
+    try? await service.submitFeedback(payload: payload)
+    onCompleted()
   }
 
   // MARK: Private

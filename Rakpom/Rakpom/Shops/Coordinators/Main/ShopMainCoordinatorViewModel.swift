@@ -11,8 +11,7 @@ import SwiftUI
 
 protocol ShopMainCoordinatorViewFactory {
   func makeShopMainTabView(
-    onAvatarPressed: @escaping () -> Void,
-    onHomePressed: @escaping () -> Void,
+    onSettingsPressed: @escaping () -> Void,
     onWithdrawHistoryPressed: @escaping () -> Void)
   -> AnyView
 
@@ -20,10 +19,13 @@ protocol ShopMainCoordinatorViewFactory {
 
   func makeShopMainSettingsView(
     onUpdateProfilePressed: @escaping () -> Void,
+    onAboutUsPressed: @escaping () -> Void,
     onLogout: @escaping () -> Void)
-  -> AnyView
+    -> AnyView
 
   func makeShopMainUpdateProfileView(onCompleted: @escaping () -> Void) -> AnyView
+  
+  func makeShopMainSettingsAboutUs() -> AnyView
 }
 
 // MARK: - ShopMainCoordinatorViewModel
@@ -50,8 +52,7 @@ class ShopMainCoordinatorViewModel: StackCoordinatorViewModel {
   @Published var path: [Node] = []
 
   lazy var rootView = mainFactory.makeShopMainTabView(
-    onAvatarPressed: { [weak self] in self?.displaySettings() },
-    onHomePressed: {},
+    onSettingsPressed: { [weak self] in self?.displaySettings() },
     onWithdrawHistoryPressed: { [weak self] in self?.displayWithdrawHistory() })
 
   var pathPublished: Published<[Node]> { _path }
@@ -64,8 +65,15 @@ class ShopMainCoordinatorViewModel: StackCoordinatorViewModel {
       
     case .settings:
       return mainFactory.makeShopMainSettingsView(
-        onUpdateProfilePressed: {}, // TODO
+        onUpdateProfilePressed: { [weak self] in self?.displayUpdateProfile() },
+        onAboutUsPressed: { [weak self] in self?.displayAboutUs() },
         onLogout: onLogoutPressed)
+      
+    case .updateProfile:
+      return mainFactory.makeShopMainUpdateProfileView(onCompleted: { [weak self] in self?.reset() })
+      
+    case .aboutUs:
+      return mainFactory.makeShopMainSettingsAboutUs()
       
     case .withdrawHistory:
       return mainFactory.makeShopWithdrawHistoryView()
@@ -74,6 +82,14 @@ class ShopMainCoordinatorViewModel: StackCoordinatorViewModel {
   
   func displaySettings() {
     path.append(.settings)
+  }
+
+  func displayUpdateProfile() {
+    path.append(.updateProfile)
+  }
+  
+  func displayAboutUs() {
+    path.append(.aboutUs)
   }
   
   func displayWithdrawHistory() {
@@ -98,5 +114,7 @@ class ShopMainCoordinatorViewModel: StackCoordinatorViewModel {
 enum ShopMainCoordinatorNode: Hashable {
   case tab
   case settings
+  case updateProfile
+  case aboutUs
   case withdrawHistory
 }

@@ -12,7 +12,10 @@ extension RakpomViewFactory: PaymentCoordinatorViewFactory {
     switch paymentMethod {
     case .qr:
       let url = Config.apiURL.appending(path: "users/payment/qr")
-      let service = AlamofireQRPaymentService(url: url, client: client)
+      let service = AggregatedQRPaymentService(
+        baseURL: Config.apiURL,
+        tokenManager: tokenManager,
+        imageUploadingService: imageUploader)
       let viewModel = QRPaymentViewModel(service: service, onCompleted: onCompleted)
       let view = BackScaffold(title: "การชำระ") {
         QRPaymentView(viewModel: viewModel)

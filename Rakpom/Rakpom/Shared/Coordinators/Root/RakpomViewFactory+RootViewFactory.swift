@@ -19,14 +19,24 @@ extension RakpomViewFactory: RootViewFactory {
     return AnyView(view)
   }
 
-  func makeRootUserProfileFormView(onCompleted _: @escaping () -> Void) -> AnyView {
-    // TODO
-    AnyView(EmptyView())
+  func makeRootUserProfileFormView(onCompleted: @escaping () -> Void) -> AnyView {
+    let service = AggregatedUserProfileUpdatingService(baseURL: Config.apiURL, tokenManager: tokenManager, imageUploadingService: imageUploader)
+    let viewModel = UserProfileFormViewModel(service: service, onComplete: onCompleted)
+    let view = BackScaffold(title: "ลงทะเบียน") {
+      UserProfileFormView(viewModel: viewModel)
+    }
+    .navigationBarBackButtonHidden()
+    return AnyView(view)
   }
 
-  func makeRootShopProfileFormView(onCompleted _: @escaping () -> Void) -> AnyView {
-    // TODO
-    AnyView(EmptyView())
+  func makeRootShopProfileFormView(onCompleted: @escaping () -> Void) -> AnyView {
+    let service = AggregatedShopProfileService(baseURL: Config.apiURL, tokenManager: tokenManager, imageUploadingService: imageUploader)
+    let viewModel = ShopProfileFormViewModel(service: service, onComplete: onCompleted)
+    let view = BackScaffold(title: "ลงทะเบียน") {
+      ShopProfileFormView(viewModel: viewModel)
+    }
+    .navigationBarBackButtonHidden()
+    return AnyView(view)
   }
 
   func makeRootMainView(onLogout: @escaping () -> Void) -> AnyView {

@@ -45,7 +45,7 @@ class AlamofirePendingBookingListFetchingService: PendingBookingListFetchingServ
         name: item.fullName,
         dateString: item.date,
         timeString: item.time,
-        imageURL: URL(string: "https://unsplash.com/photos/grayscale-photo")! // TODO
+        imageURL: item.imageURL
       )
     } ?? []
   }
@@ -64,4 +64,5 @@ struct RemoteBookingRequestItem: Decodable {
   let fullName: String
   let date: String
   let time: String
+  let imageURL: URL
 }

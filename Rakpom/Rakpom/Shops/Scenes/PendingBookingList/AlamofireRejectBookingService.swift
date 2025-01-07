@@ -43,7 +43,7 @@ class AlamofireRejectBookingService: RejectBookingService {
           name: item.fullName,
           dateString: item.date,
           timeString: item.time,
-          imageURL: URL(string: "https://unsplash.com/photos/grayscale-photo")! // TODO
+          imageURL: item.imageURL
         )
       } ?? []
     } catch {
