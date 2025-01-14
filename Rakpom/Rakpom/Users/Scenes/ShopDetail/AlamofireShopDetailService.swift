@@ -5,9 +5,8 @@
 //  Created by yossa on 27/12/2567 BE.
 //
 
-import Foundation
-
 import Alamofire
+import Foundation
 
 // MARK: - RemoteShopDetailItem
 
@@ -66,8 +65,7 @@ class AlamofireShopDetailService: ShopDetailService {
         reviewCount: data.reviewCount,
         tel: data.phone,
         businessHours: data.businessHours,
-        address: data.address
-      )
+        address: data.address)
     } catch {
       throw error
     }

@@ -52,7 +52,7 @@ class RootViewModel: ObservableObject {
       case (.user, .completed):
         self?.displayMain()
       case (.shop, .profile):
-        self?.displayUserProfileForm()
+        self?.displayShopProfileForm()
       case (.shop, .completed):
         self?.displayShopMain()
       }

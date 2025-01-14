@@ -19,6 +19,10 @@ struct ShopMainTabView: View {
   var body: some View {
     VStack(spacing: 0) {
       TabView(selection: $selectedTab) {
+        // Home / Shop Detail
+        factory.makeShopMainTabHome()
+          .tag(BarberTabs.home)
+        
         // Transactions
         factory.makeShopMainTabTransactionsView()
           .tag(BarberTabs.trans)
@@ -49,6 +53,8 @@ struct ShopMainTabView: View {
 // MARK: - ShopMainTabViewFactory
 
 protocol ShopMainTabViewFactory {
+  func makeShopMainTabHome() -> AnyView
+  
   func makeShopMainTabTransactionsView() -> AnyView
 
   func makeShopMainTabPendingBookingsView() -> AnyView

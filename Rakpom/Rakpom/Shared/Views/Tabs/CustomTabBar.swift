@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - Tabs
+
 enum Tabs: Int {
   case prize = 0
   case reservation = 1
@@ -15,59 +17,62 @@ enum Tabs: Int {
   case payment = 4
 }
 
+// MARK: - CustomTabBar
+
 struct CustomTabBar: View {
-  
+
   @Binding var selectedTab: Tabs
-  
+
+
   var body: some View {
     HStack {
       Button {
         selectedTab = .prize
       } label: {
         if selectedTab == .prize {
-          TabBarButtonSelected(imageName: "Gift.fill", title: "ลุ้นรางวัล")
+          TabBarButtonSelected(image: Image("Gift.fill"), title: "ลุ้นรางวัล")
         } else {
-          TabBarButton(imageName: "Gift", title: "ลุ้นรางวัล")
+          TabBarButton(image: Image("Gift"), title: "ลุ้นรางวัล")
         }
       }
-      
+
       Button {
         selectedTab = .reservation
       } label: {
         if selectedTab == .reservation {
-          TabBarButtonSelected(imageName: "Q.fill", title: "จองคิว")
+          TabBarButtonSelected(image: Image("Q.fill"), title: "จองคิว")
         } else {
-          TabBarButton(imageName: "Q", title: "จองคิว")
+          TabBarButton(image: Image("Q"), title: "จองคิว")
         }
       }
-      
+
       Button {
         selectedTab = .point
       } label: {
         if selectedTab == .point {
-          TabBarButtonSelected(imageName: "Coin.fill", title: "สะสมแต้ม")
+          TabBarButtonSelected(image: Image("Coin.fill"), title: "สะสมแต้ม")
         } else {
-          TabBarButton(imageName: "CoinIcon", title: "สะสมแต้ม")
+          TabBarButton(image: Image("CoinIcon"), title: "สะสมแต้ม")
         }
       }
-      
+
       Button {
         selectedTab = .noti
       } label: {
         if selectedTab == .noti {
-          TabBarButtonSelected(imageName: "Bell.fill", title: "แจ้งเตือน")
+          TabBarButtonSelected(image: Image("Bell.fill"), title: "แจ้งเตือน")
         } else {
-          TabBarButton(imageName: "Bell", title: "แจ้งเตือน")
+          TabBarButton(image: Image("Bell"), title: "แจ้งเตือน")
         }
       }
-      
+
       Button {
         selectedTab = .payment
       } label: {
         if selectedTab == .payment {
-          TabBarButtonSelected(imageName: "Wallet.fill", title: "การชำระเงิน")
+          TabBarButtonSelected(image: Image("Wallet.fill"), title: "การชำระเงิน")
         } else {
-          TabBarButton(imageName: "Wallet", title: "การชำระเงิน")
+          TabBarButton(image: Image("Wallet"), title: "การชำระเงิน")
         }
       }
     }
@@ -79,52 +84,60 @@ struct CustomTabBar: View {
   CustomTabBar(selectedTab: .constant(.prize))
 }
 
+// MARK: - TabBarButtonSelected
+
 struct TabBarButtonSelected: View {
-  let imageName: String
+
+  let image: Image
   let title: String
-  
+
   var body: some View {
 //    GeometryReader { geo in
-      VStack {
-        Rectangle()
-          .foregroundStyle(.blueButton)
-          .frame(height: 2)
-        
-        Image("\(imageName)")
-          .resizable()
-          .scaledToFit()
-          .frame(width: 35, height: 35)
-        
-        Text(title)
-          .font(.custom("Noto Sans Thai", size: 12))
-          .foregroundStyle(.blueButton)
-          .bold()
-      }
+    VStack {
+      Rectangle()
+        .foregroundStyle(.blueButton)
+        .frame(height: 2)
+
+      image
+        .resizable()
+        .scaledToFit()
+        .frame(width: 35, height: 35)
+        .foregroundStyle(.blueButton)
+
+      Text(title)
+        .font(.custom("Noto Sans Thai", size: 12))
+        .foregroundStyle(.blueButton)
+        .bold()
+    }
 //      .frame(width: geo.size.width)
 //    }
   }
 }
 
+// MARK: - TabBarButton
+
 struct TabBarButton: View {
-  let imageName: String
+
+  let image: Image
   let title: String
-  
+
   var body: some View {
 //    GeometryReader { geo in
-      VStack {
-        Rectangle()
-          .foregroundStyle(.white)
-          .frame(height: 2)
-        
-        Image("\(imageName)")
-          .resizable()
-          .scaledToFit()
-          .frame(width: 35, height: 35)
-        
-        Text(title)
-          .font(.custom("Noto Sans Thai", size: 12))
-          .foregroundStyle(.gray)
-      }
+    VStack {
+      Rectangle()
+        .foregroundStyle(.white)
+        .frame(height: 2)
+
+      image
+        .resizable()
+        .scaledToFit()
+        .frame(width: 35, height: 35)
+        .foregroundStyle(.gray)
+
+      Text(title)
+        .font(.custom("Noto Sans Thai", size: 12))
+        .foregroundStyle(.gray)
+    }
 //      .frame(width: geo.size.width)
 //    }
   }

@@ -8,6 +8,14 @@
 import SwiftUI
 
 extension RakpomViewFactory: ShopMainTabViewFactory {
+  func makeShopMainTabHome() -> AnyView {
+    let url = Config.apiURL.appending(path: "shops/profiles/me")
+    let service = AlamofireShopHomeService(url: url, client: client)
+    let viewModel = ShopHomeViewModel(service: service)
+    let view = ShopHomeView(viewModel: viewModel)
+    return AnyView(view)
+  }
+  
   func makeShopMainTabTransactionsView() -> AnyView {
     let service = AlamofireTransactionListService(baseURL: Config.apiURL, tokenManager: tokenManager)
     let viewModel = TransactionListViewModel(service: service)

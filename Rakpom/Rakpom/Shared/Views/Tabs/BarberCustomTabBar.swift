@@ -8,11 +8,11 @@
 import SwiftUI
 
 enum BarberTabs: Int {
-  case trans = 0
-  case barberQ = 1
-  case barberNoti = 2
-  case acc = 3
-  case review = 4
+  case home
+  case trans
+  case barberQ
+  case acc
+  case review
 }
 
 struct BarberCustomTabBar: View {
@@ -22,12 +22,22 @@ struct BarberCustomTabBar: View {
   var body: some View {
     HStack {
       Button {
+        selectedTab = .home
+      } label: {
+        if selectedTab == .home {
+          TabBarButtonSelected(image: Image(systemName: "house.fill"), title: "ร้านค้า")
+        } else {
+          TabBarButton(image: Image(systemName: "house"), title: "ร้านค้า")
+        }
+      }
+      
+      Button {
         selectedTab = .trans
       } label: {
         if selectedTab == .trans {
-          TabBarButtonSelected(imageName: "Shop.fill", title: "ข้อมูลการใช้")
+          TabBarButtonSelected(image: Image("Shop.fill"), title: "ข้อมูลการใช้")
         } else {
-          TabBarButton(imageName: "Shop", title: "ข้อมูลการใช้")
+          TabBarButton(image: Image("Shop"), title: "ข้อมูลการใช้")
         }
       }
       
@@ -35,9 +45,9 @@ struct BarberCustomTabBar: View {
         selectedTab = .barberQ
       } label: {
         if selectedTab == .barberQ {
-          TabBarButtonSelected(imageName: "Q.fill", title: "รับจองคิว")
+          TabBarButtonSelected(image: Image("Q.fill"), title: "รับจองคิว")
         } else {
-          TabBarButton(imageName: "Q", title: "รับจองคิว")
+          TabBarButton(image: Image("Q"), title: "รับจองคิว")
         }
       }
       
@@ -55,9 +65,9 @@ struct BarberCustomTabBar: View {
         selectedTab = .acc
       } label: {
         if selectedTab == .acc {
-          TabBarButtonSelected(imageName: "WalletShop.fill", title: "บัญชีของคุณ")
+          TabBarButtonSelected(image: Image("WalletShop.fill"), title: "บัญชีของคุณ")
         } else {
-          TabBarButton(imageName: "WalletShop", title: "บัญชีของคุณ")
+          TabBarButton(image: Image("WalletShop"), title: "บัญชีของคุณ")
         }
       }
       
@@ -65,9 +75,9 @@ struct BarberCustomTabBar: View {
         selectedTab = .review
       } label: {
         if selectedTab == .review {
-          TabBarButtonSelected(imageName: "Comment.fill", title: "รีวิวร้าน")
+          TabBarButtonSelected(image: Image("WalletShop"), title: "รีวิวร้าน")
         } else {
-          TabBarButton(imageName: "Comment", title: "รีวิวร้าน")
+          TabBarButton(image: Image("Comment"), title: "รีวิวร้าน")
         }
       }
     }
