@@ -17,7 +17,7 @@ class FirebasePhoneSubmissionService: PhoneSubmissionService {
     self.auth = auth
     auth.languageCode = "th"
 
-    #if DEBUG
+    #if DEBUG || STAGING
     auth.settings?.isAppVerificationDisabledForTesting = true
     #endif
   }

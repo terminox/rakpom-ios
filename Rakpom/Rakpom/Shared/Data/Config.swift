@@ -11,8 +11,8 @@ struct Config {
   #if DEBUG
   static let apiURL: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
   #elseif STAGING
-  static let url: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
+  static let apiURL: URL = URL(string: "https://rakpom-staging-f5b1aec57070.herokuapp.com/api/v1")!
   #else
-  static let url: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
+  static let apiURL: URL = URL(string: "http://127.0.0.1:8000/api/v1")!
   #endif
 }

@@ -21,7 +21,7 @@ class AggregatedOTPService: OTPService {
     self.auth = auth
     self.userDefaults = userDefaults
 
-    #if DEBUG
+    #if DEBUG || STAGING
     auth.settings?.isAppVerificationDisabledForTesting = true
     #endif
   }
