@@ -11,56 +11,60 @@ import SwiftUI
 
 struct ShopListView: View {
 
+  // MARK: Internal
+
   @ObservedObject var viewModel: ShopListViewModel
 
   var body: some View {
     let recentBookings = viewModel.recentBookings
-    let bookings = viewModel.shops
+    let bookings = viewModel.shops.filter { searchText.isEmpty || $0.name.lowercased().contains(searchText.lowercased()) }
 
     GeometryReader { geo in
-      // SEARCH
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
-          //          HStack {
-          //            Image(systemName: "magnifyingglass")
-          //              .foregroundStyle(.gray)
-          //              .font(.headline)
-          //
-          //            Text("ค้นหา...")
-          //              .font(.custom("Noto Sans Thai", size: 14))
-          //              .foregroundStyle(.black)
-          //
-          //            Spacer()
-          //          }
-          //          .padding()
-          //          .frame(width: geo.size.width - 40, height: 44)
-          //          .background(Color("LightGray"))
-          //          .clipShape(Capsule())
-          //          .padding()
+          // SEARCH
+          HStack {
+            Image(systemName: "magnifyingglass")
+              .foregroundStyle(.gray)
+              .font(.headline)
 
-          // LAST VISITED SHOPS
-          VStack(alignment: .leading) {
-            Text("ร้านตัดผมล่าสุด")
-              .font(.custom("Noto Sans Thai", size: 18))
-              .fontWeight(.medium)
+            TextField("ค้นหา...", text: $searchText)
+              .font(.custom("Noto Sans Thai", size: 14))
               .foregroundStyle(.black)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-              HStack {
-                ForEach(recentBookings) { booking in
-                  Button(action: {
-                    viewModel.select(booking)
-                  }) {
-                    RecentBookingItemView(shop: booking)
-                  }
-                  .buttonStyle(.plain)
-                }
-              }
-              .padding(.horizontal, 4)
-              .padding(.bottom, 16)
-            }
+            Spacer()
           }
-          .padding(.horizontal)
+          .padding()
+          .frame(width: geo.size.width - 40, height: 44)
+          .background(Color("LightGray"))
+          .clipShape(Capsule())
+          .padding()
+
+          // LAST VISITED SHOPS
+          if searchText.isEmpty {
+            VStack(alignment: .leading) {
+              Text("ร้านตัดผมล่าสุด")
+                .font(.custom("Noto Sans Thai", size: 18))
+                .fontWeight(.medium)
+                .foregroundStyle(.black)
+
+              ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                  ForEach(recentBookings) { booking in
+                    Button(action: {
+                      viewModel.select(booking)
+                    }) {
+                      RecentBookingItemView(shop: booking)
+                    }
+                    .buttonStyle(.plain)
+                  }
+                }
+                .padding(.horizontal, 4)
+                .padding(.bottom, 16)
+              }
+            }
+            .padding(.horizontal)
+          }
 
           // RESERVATION
           VStack(alignment: .leading) {
@@ -92,6 +96,11 @@ struct ShopListView: View {
       await viewModel.fetch()
     }
   }
+
+  // MARK: Private
+
+  @State private var searchText = ""
+
 }
 
 // MARK: - RecentBookingItemView

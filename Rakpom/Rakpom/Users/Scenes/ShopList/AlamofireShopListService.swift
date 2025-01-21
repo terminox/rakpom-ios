@@ -12,11 +12,12 @@ import SwiftUI
 
 struct RemoteShop: Decodable {
   let id: String
-  let name: String
-  let imageURL: URL
-  let address: String
+  let name: String?
+  let imageURL: URL?
+  let address: String?
 
-  func toLocal() -> ShopItem {
+  func toLocal() -> ShopItem? {
+    guard let imageURL, let name, let address else { return nil }
     return .init(id: id, imageURL: imageURL, name: name, address: address)
   }
 }
@@ -40,9 +41,16 @@ class AlamofireShopListService: ShopListService {
   // MARK: - RemoteShop
 
   func fetchShopList() async throws -> [ShopItem] {
-    let request = try await client.getRequest(from: url)
-    let items: [RemoteShop] = try await client.perform(request)
-    return items.map { $0.toLocal() }
+    do {
+      let request = try await client.getRequest(from: url)
+      let items: [RemoteShop] = try await client.perform(request)
+      return items
+        .map { $0.toLocal() }
+        .compactMap { $0 }
+    } catch {
+      print(error)
+      throw error
+    }
   }
 }
 
@@ -67,6 +75,8 @@ class AlamofireRecentBookingService: RecentBookingService {
   func fetchRecentBookings() async throws -> [ShopItem] {
     let request = try await client.getRequest(from: url)
     let items: [RemoteShop] = try await client.perform(request)
-    return items.map { $0.toLocal() }
+    return items
+      .map { $0.toLocal() }
+      .compactMap { $0 }
   }
 }

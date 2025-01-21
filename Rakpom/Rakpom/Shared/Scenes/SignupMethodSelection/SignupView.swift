@@ -11,43 +11,63 @@ import SwiftUI
 
 struct SignupView: View {
 
+  // MARK: Internal
+
   let onSignupPressed: () -> Void
 
   var body: some View {
-    ZStack {
-      Image("BG")
-        .resizable()
-
-      VStack(spacing: 16) {
-        Image("Logo2")
-
-        Button {
-          onSignupPressed()
-        } label: {
-          HStack {
-            Image("Logo")
-              .resizable()
-              .frame(width: 33, height: 33)
-              .padding(.leading, 44)
-            
-            Text("ลงทะเบียนด้วย รักผม")
-              .font(.custom("Noto Sans Thai", size: 16))
-              .foregroundStyle(.black)
-              .padding(.leading, -6)
-
-            Spacer()
+    ZStack(alignment: .topLeading) {
+      ZStack {
+        Image("BG")
+          .resizable()
+        
+        VStack(spacing: 16) {
+          Image("Logo2")
+          
+          Button {
+            onSignupPressed()
+          } label: {
+            HStack {
+              Image("Logo")
+                .resizable()
+                .frame(width: 33, height: 33)
+                .padding(.leading, 44)
+              
+              Text("ลงทะเบียนด้วย รักผม")
+                .font(.custom("Noto Sans Thai", size: 16))
+                .foregroundStyle(.black)
+                .padding(.leading, -6)
+              
+              Spacer()
+            }
+            .frame(width: 318, height: 42)
+            .background(.white)
+            .clipShape(Capsule())
+            .overlay(
+              Capsule()
+                .stroke(.halfGray))
           }
-          .frame(width: 318, height: 42)
-          .background(.white)
-          .clipShape(Capsule())
-          .overlay(
-            Capsule()
-              .stroke(.halfGray))
         }
       }
+      .ignoresSafeArea()
+
+      Button {
+        dismiss()
+      } label: {
+        Image(systemName: "arrow.left")
+          .resizable()
+          .frame(width: 24, height: 20)
+          .foregroundColor(.black)
+      }
+      .padding()
     }
-    .ignoresSafeArea()
   }
+
+  // MARK: Private
+
+
+  @Environment(\.dismiss) private var dismiss
+
 }
 
 #Preview {
